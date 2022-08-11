@@ -1,5 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
 .atypic-header{
     width:100%;
     height:100vh;
     color:white;
+    h1{
+        font-family: 'Aboreto', cursive;
+    }
+    .current_page_item::before{
+        content:"↦";
+        color: rgb(234, 179, 8);
+        padding-right:0.5rem;
+    }
+    .current_page_item::after{
+        content:"↤";
+        color: rgb(234, 179, 8);
+        padding-left:0.5rem;
+    }
+    .menu{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: larger;
+        justify-content: space-around;
+    }
+    .dashicons{
+        font-size: 60px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+    }
+    .dashicons:before{
+            font-size: 60px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        
+    }
 }

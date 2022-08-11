@@ -22,6 +22,8 @@ function atypique_features()
     add_theme_support('custom-logo');
 
     add_theme_support( 'post-thumbnails' );
+
+    add_theme_support( 'title-tag' );
 }
 
 add_action('after_setup_theme', 'atypique_features');
@@ -30,6 +32,7 @@ function atypic_styles()
 {
     wp_enqueue_style('normalize_styles', get_theme_file_uri('/normalize.css'));
     wp_enqueue_style('tailwind_styles', get_theme_file_uri('/style.css'));
+    wp_enqueue_style( 'dashicons' );
     wp_enqueue_style('index_css', get_theme_file_uri('/build/css/index.css'));
     wp_enqueue_style('header_css', get_theme_file_uri('/build/css/header.css'));
 }
