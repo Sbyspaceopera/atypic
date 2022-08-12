@@ -23,7 +23,6 @@
                     ));
                     ?>
                     <a href="#atypic-main"><span class="dashicons dashicons-arrow-down-alt2 w-5" style="font-size:larger"></span></a>
-                </div>
-                
+                </div>   
         </div>
     </header>
