@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: sebdev.go.yj.fr
+        server: node58-eu.n0c.com
         username: Cheshy@sebdev.go.yj.fr
         password: ${{ secrets.ftp_password }}
