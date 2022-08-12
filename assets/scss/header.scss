@@ -24,6 +24,9 @@
         font-size: larger;
         justify-content: space-around;
     }
+    .page_item{
+        text-align: center;
+    }
     .dashicons{
         font-size: 60px;
         width: 60px;
@@ -31,10 +34,9 @@
         text-align: center;
     }
     .dashicons:before{
-            font-size: 60px;
+        font-size: 60px;
         width: 60px;
         height: 60px;
         text-align: center;
-        
     }
 }

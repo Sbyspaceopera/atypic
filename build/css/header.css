@@ -25,6 +25,9 @@
   font-size: larger;
   justify-content: space-around;
 }
+.atypic-header .page_item {
+  text-align: center;
+}
 .atypic-header .dashicons {
   font-size: 60px;
   width: 60px;
