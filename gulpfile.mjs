@@ -12,7 +12,7 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('imgSquash', () => {
+gulp.task('imgMin', () => {
     gulp.src('assets/images/*')
 		.pipe(imagemin())
 		.pipe(gulp.dest('build/images'))
@@ -24,4 +24,4 @@ gulp.task('watch', () => {
     });
 });
 
-gulp.task('default', gulp.series(['styles','imgSquash','watch']));
+gulp.task('default', gulp.series(['styles', 'watch']));
