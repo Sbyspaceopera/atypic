@@ -1,3 +1,4 @@
 node_modules
 package-lock.json
-assets/images
+assets/images/*
+!assets/images/*.svg
