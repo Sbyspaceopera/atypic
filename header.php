@@ -15,7 +15,7 @@
                     <div class="w-40 border-b-4 border-b-yellow-500 pb-5">
                             <?php the_custom_logo(); ?>
                     </div>
-                    <a href="<?php echo home_url() ?>"><h1 class="text-5xl"><?php echo strtoupper(get_bloginfo('name')); ?></h1></a>
+                    <a href="<?php echo home_url() ?>"><h1 class="text-6xl"><?php echo strtoupper(get_bloginfo('name')); ?></h1></a>
                     <?php
                     wp_nav_menu(array(
                         "theme_location" => "main_menu",
