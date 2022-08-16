@@ -4,9 +4,6 @@
     width:100%;
     height:100vh;
     color:white;
-    h1{
-        font-family: 'Aboreto', cursive;
-    }
     .current_page_item::before{
         content:"↦";
         color: rgb(234, 179, 8);
