@@ -35,6 +35,7 @@ function atypic_styles()
     wp_enqueue_style( 'dashicons' );
     wp_enqueue_style('index_css', get_theme_file_uri('/build/css/index.css'));
     wp_enqueue_style('header_css', get_theme_file_uri('/build/css/header.css'));
+    wp_enqueue_style('footer_css', get_theme_file_uri('/build/css/footer.css'));
     wp_enqueue_style('main_css', get_theme_file_uri('/build/css/main.css'));
 }
 

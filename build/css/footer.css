@@ -1,0 +1,39 @@
+@charset "UTF-8";
+.atypic-footer .current_page_item::before {
+  content: "↦";
+  color: rgb(234, 179, 8);
+  padding-right: 0.5rem;
+}
+.atypic-footer .current_page_item::after {
+  content: "↤";
+  color: rgb(234, 179, 8);
+  padding-left: 0.5rem;
+}
+.atypic-footer .menu {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.atypic-footer .menu ul {
+  display: flex;
+  align-items: center;
+  font-size: larger;
+  justify-content: center;
+}
+.atypic-footer .page_item {
+  text-align: center;
+  font-size: 1.2rem;
+}
+.atypic-footer .dashicons {
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+}
+.atypic-footer .dashicons:before {
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+}
