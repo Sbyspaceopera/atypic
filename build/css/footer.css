@@ -1,14 +1,3 @@
-@charset "UTF-8";
-.atypic-footer .current_page_item::before {
-  content: "↦";
-  color: rgb(234, 179, 8);
-  padding-right: 0.5rem;
-}
-.atypic-footer .current_page_item::after {
-  content: "↤";
-  color: rgb(234, 179, 8);
-  padding-left: 0.5rem;
-}
 .atypic-footer .menu {
   justify-self: center;
   display: flex;
@@ -22,6 +11,8 @@
   justify-content: center;
 }
 .atypic-footer .page_item {
+  padding-right: 1rem;
+  padding-left: 1rem;
   text-align: center;
   font-size: 1.2rem;
 }

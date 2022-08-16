@@ -11,3 +11,7 @@ body {
 h1, h2, h3, h4, h5, h6, .page_item {
   font-family: "Aboreto", cursive;
 }
+
+.current_page_item {
+  color: rgb(234, 179, 8);
+}
