@@ -8,10 +8,21 @@ body{
     height:100%;
 }
 
-h1, h2, h3, h4, h5,h6, .page_item{
+h1, h2, h3, h4, h5,h6, .page_item, a[rel="tag"]{
     font-family: 'Aboreto', cursive;
+    word-break: break-all;
 }
 
 .current_page_item{
     color:rgb(234, 179, 8);
+}
+
+a[rel="tag"]{
+    background-color:lightgray;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding:0.2rem;
+    &:before{
+     content:'#'   
+    }
 }
