@@ -9,6 +9,7 @@
             align-items: center;
             font-size: larger;
             justify-content: center;
+            flex-wrap:wrap;
         }
     }
     .page_item{
@@ -28,5 +29,9 @@
         width: 3rem;
         height: 3rem;
         text-align: center;
+    }
+    .custom-logo{
+        width:100%;
+        height:auto;
     }
 }

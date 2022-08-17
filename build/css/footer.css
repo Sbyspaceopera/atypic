@@ -9,6 +9,7 @@
   align-items: center;
   font-size: larger;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .atypic-footer .page_item {
   padding-right: 1rem;
@@ -27,4 +28,8 @@
   width: 3rem;
   height: 3rem;
   text-align: center;
+}
+.atypic-footer .custom-logo {
+  width: 100%;
+  height: auto;
 }
