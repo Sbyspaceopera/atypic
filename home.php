@@ -11,9 +11,9 @@
         $textColors = ['text-yellow-500', 'text-sky-500', 'text-lime-500', 'text-red-500', 'text-purple-500'];
 
         $categories = get_categories(array(
-            'orderby' => 'name',
+            'orderby' => 'date',
+            'order' => 'DESC',
             'parent' => 0,
-            'hide_empty' => false,
         ));
 
         if ($categories) {
@@ -48,7 +48,10 @@
                                 <p>
                                     <?php echo wp_trim_words($post->post_content, 35) ?>
                                 </p>
-                                <a class="text-blue-500 underline font-semibold" href="<?php echo get_permalink($post->ID) ?>">Lire la suite</a>
+                                <div class="flex justify-between items-center">
+                                    <a class="text-blue-500 underline font-semibold" href="<?php echo get_permalink($post->ID) ?>">Lire la suite</a>
+                                    <p class="text-sm italic text-blue-500"><?php echo get_the_date() ?></p>
+                                </div>
                             <?php
                                 if($key_post === 0){
                                     echo '<hr>';

@@ -28,15 +28,18 @@
                 <p>
                     <?php echo wp_trim_words(get_the_content(), 35) ?>
                 </p>
-                <a class="text-blue-500 underline font-semibold" href="<?php echo get_permalink(the_ID()) ?>">Lire la suite</a>
+                <div class="flex justify-between items-center">
+                    <a class="text-blue-500 underline font-semibold" href="<?php echo get_permalink($post->ID) ?>">Lire la suite</a>
+                    <p class="text-sm italic text-blue-500"><?php echo get_the_date() ?></p>
+                </div>
                 <?php
-                if ($wp_query->current_post +1 != $wp_query->post_count) {
+                if ($wp_query->current_post + 1 != $wp_query->post_count) {
                     echo '<hr>';
                 }
                 ?>
-            <?php 
-                endwhile;
-                wp_reset_postdata()    
+            <?php
+            endwhile;
+            wp_reset_postdata()
             ?>
         </div>
     </div>
