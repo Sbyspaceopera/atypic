@@ -16,6 +16,7 @@
             ?>
         </div>
         <?php the_content() ?>
+        <?php comments_template() ?> 
     </div>
     <div class="atypic-main-right-laurel self-center w-0 md:visible md:w-1/5">
         <?php get_template_part('assets/svg/laurel', 'single-right.svg') ?>

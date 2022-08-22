@@ -1,5 +1,28 @@
 <?php
 
+require_once(get_template_directory().'/class-tgm-plugin-activation.php');
+
+//http://tgmpluginactivation.com/
+function atypic_register_required_plugins(){
+    $plugins = array(
+        array(
+            'name' => 'wpDiscuz',
+            'slug' => 'wpdiscuz',
+            'required' => true,
+            'force_activation' => true,
+        )
+    );
+
+    $config = array(
+        'dismissable' => false,
+        'is_automatic' => true
+    );
+
+    tgmpa($plugins, $config);
+}
+
+add_action('tgmpa_register', 'atypic_register_required_plugins');
+
 function change_default_jquery()
 {
     if (site_url() !== 'http://testing.local') {
