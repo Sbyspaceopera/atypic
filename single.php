@@ -11,7 +11,7 @@
         <p class="text-sm italic text-blue-500 text-center"><?php echo get_the_date() ?></p>
         <div class="flex gap-2 py-1 text-black italic text-xs font-semibold flex-wrap justify-center">
             <?php
-            $tags = get_the_tag_list('', '', '', $post->ID);
+            $tags = get_the_tag_list('', '', '', get_the_ID());
             echo $tags;
             ?>
         </div>
