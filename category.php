@@ -5,7 +5,7 @@
         <?php get_template_part('assets/svg/laurel', 'single-left.svg') ?>
     </div>
     <div class="p-5 md:w-3/5">
-        <h1 class="text-center">Category : <?php single_cat_title(); ?></h1>
+        <h1 class="text-center">Catégorie : <?php single_cat_title(); ?></h1>
         <?php
         // Display optional category description
         if (category_description()) : ?>
