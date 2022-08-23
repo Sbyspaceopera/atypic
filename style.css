@@ -883,6 +883,10 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.pb-\[6px\] {
+  padding-bottom: 6px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -996,6 +1000,28 @@ video {
 .decoration-purple-500 {
   -webkit-text-decoration-color: #a855f7;
           text-decoration-color: #a855f7;
+}
+
+.decoration-black {
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
+}
+
+.decoration-dashed {
+  -webkit-text-decoration-style: dashed;
+          text-decoration-style: dashed;
+}
+
+.decoration-4 {
+  text-decoration-thickness: 4px;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
+.underline-offset-\[6px\] {
+  text-underline-offset: 6px;
 }
 
 .shadow-inner {
