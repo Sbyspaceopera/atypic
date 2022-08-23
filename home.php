@@ -5,7 +5,7 @@
         <?php get_template_part('assets/svg/laurel', 'single-left.svg') ?>
     </div>
 
-    <div class="md:w-3/5 w-full flex flex-col justify-around">
+    <div class="md:w-3/5 w-full flex flex-col gap-5 justify-around">
         <?php
         $decColors = ['decoration-yellow-500', 'decoration-sky-500', 'decoration-lime-500', 'decoration-red-500', 'decoration-purple-500'];
         $textColors = ['text-yellow-500', 'text-sky-500', 'text-lime-500', 'text-red-500', 'text-purple-500'];
@@ -19,14 +19,14 @@
         if ($categories) {
             foreach ($categories as $key => $category) {
         ?>
-                <section class="w-full xl:grid grid-cols-3 grid-rows-2 min-h-[31rem] py-5">
-                    <header class="min-h-[5rem] flex flex-col justify-center rounded-tl-xl rounded-tr-xl xl:rounded-tr-none xl:rounded-bl-xl border-2 border-black w-full bg-no-repeat bg-center bg-cover col-span-1 row-span-2 p-1" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMjAtcGRmYW1vdXNwYWludGluZ2V0YzA4MzAwOS1pbWFnZV8zLmpwZw.jpg)">
+                <section class="w-full xl:grid grid-cols-3 grid-rows-2 shadow-lg rounded-tl-xl rounded-tr-xl xl:rounded-xl">
+                    <header class="flex flex-col justify-center rounded-tl-xl rounded-tr-xl xl:rounded-tr-none xl:rounded-bl-xl xl:rounded-tl-xl w-full bg-no-repeat bg-center bg-cover col-span-1 row-span-2 p-1" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMjAtcGRmYW1vdXNwYWludGluZ2V0YzA4MzAwOS1pbWFnZV8zLmpwZw.jpg)">
                         <h2 class="font-semibold <?php echo $textColors[$key] ?> text-2xl text-white text-center">
                             <a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a>
                         </h2>
                         <p class="text-white text-xl text-center"><?php echo $category->description ?></p>
                     </header>
-                    <main class="flex flex-col justify-around gap-2 border-2 min-h-[15rem] border-black col-span-2 row-span-2 p-1 xl:rounded-tr-xl xl:rounded-br-xl">
+                    <main class="flex flex-col justify-around gap-2 col-span-2 row-span-2 p-2 xl:rounded-tr-xl xl:rounded-br-xl">
                             <?php
                             $posts = get_posts(array(
                                 'numberposts' => 2,
