@@ -16,6 +16,12 @@ function atypic_register_required_plugins(){
             'slug' => 'advanced-custom-fields',
             'required' => true,
             'force_activation' => true,
+        ),
+        array(
+            'name' => 'Highlighting Code Block',
+            'slug' => 'highlighting-code-block',
+            'required' => true,
+            'force_activation' => true,
         )
     );
 
