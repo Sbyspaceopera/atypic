@@ -20,7 +20,7 @@
             foreach ($categories as $key => $category) {
         ?>
                 <section class="w-full xl:grid grid-cols-3 grid-rows-2 shadow-lg rounded-tl-xl rounded-tr-xl xl:rounded-xl">
-                    <header class="flex flex-col justify-center rounded-tl-xl rounded-tr-xl xl:rounded-tr-none xl:rounded-bl-xl xl:rounded-tl-xl w-full bg-no-repeat bg-center bg-cover col-span-1 row-span-2 p-1" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMjAtcGRmYW1vdXNwYWludGluZ2V0YzA4MzAwOS1pbWFnZV8zLmpwZw.jpg)">
+                    <header class="flex flex-col justify-center rounded-tl-xl rounded-tr-xl xl:rounded-tr-none xl:rounded-bl-xl xl:rounded-tl-xl w-full bg-no-repeat bg-center bg-cover col-span-1 row-span-2 p-1" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(<?php echo get_template_directory_uri() ?>/build/images/300930rgsdl.jpg)">
                         <h2 class="font-semibold <?php echo $textColors[$key] ?> text-2xl text-white text-center">
                             <a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a>
                         </h2>
