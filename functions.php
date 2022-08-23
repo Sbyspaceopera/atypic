@@ -10,6 +10,12 @@ function atypic_register_required_plugins(){
             'slug' => 'wpdiscuz',
             'required' => true,
             'force_activation' => true,
+        ),
+        array(
+            'name' => 'Advanced Custom Fields',
+            'slug' => 'advanced-custom-fields',
+            'required' => true,
+            'force_activation' => true,
         )
     );
 
