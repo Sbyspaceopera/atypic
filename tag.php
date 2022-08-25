@@ -19,7 +19,7 @@
                     <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                 </h3>
 
-                <div class="flex py-1 text-black text-xs font-semibold flex-wrap gap-2">
+                <div class="flex py-1 text-black font-semibold flex-wrap gap-2">
                     <?php
                     $tags = get_the_tag_list('', '', '', get_the_ID());
                     echo $tags;
