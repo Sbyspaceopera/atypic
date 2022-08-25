@@ -39,7 +39,7 @@
                                     <a href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a>
                                 </h3>
 
-                                <div class="flex py-1 text-black italic text-xs font-semibold flex-wrap gap-2">
+                                <div class="flex py-1 text-black text-xs font-semibold flex-wrap gap-2">
                                     <?php
                                     $tags = get_the_tag_list('', '', '', $post->ID);
                                     echo $tags;
