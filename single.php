@@ -4,7 +4,7 @@
     <div class="atypic-main-left-laurel self-center w-0 sm:visible md:w-1/5">
         <?php get_template_part('assets/svg/laurel', 'single-left.svg') ?>
     </div>
-    <div class="p-5 md:w-3/5">
+    <div class="atypic-single p-5 md:w-3/5">
         <h1 class="text-2xl text-center font-semibold">
             <?php the_title();?>
         </h1>
