@@ -91,8 +91,8 @@
   /* @todo: appears to be Press This only and overridden */
   /* Theme/Plugin file editor */
   /*
-  * Styles for Theme and Plugin file editors.
-  */
+   * Styles for Theme and Plugin file editors.
+   */
   /* Hide collapsed items. */
   /* Use arrow dashicons for folder states, but hide from screen readers. */
   /* Remove outline, and create our own focus and hover styles */
@@ -102,22 +102,25 @@
   /* rtl:ignore */
   /* @todo: can we use a common class for these? */
   /*!
-  * jQuery UI Draggable/Sortable 1.11.4
-  * http://jqueryui.com
-  *
-  * Copyright jQuery Foundation and other contributors
-  * Released under the MIT license.
-  * http://jquery.org/license
-  */
+   * jQuery UI Draggable/Sortable 1.11.4
+   * http://jqueryui.com
+   *
+   * Copyright jQuery Foundation and other contributors
+   * Released under the MIT license.
+   * http://jquery.org/license
+   */
   /* Accordion */
   /* Edit Site */
   /* My Sites */
   /* =Media Queries
   -------------------------------------------------------------- */
   /**
-  * HiDPI Displays
-  */
+   * HiDPI Displays
+   */
   /* Smartphone */
+}
+.atypic-single * {
+  font-size: 18px;
 }
 .atypic-single #wpwrap {
   height: auto;
@@ -299,7 +302,6 @@
 .atypic-single body {
   background: #f0f0f1;
   color: #3c434a;
-  font-size: 13px;
   line-height: 1.4em;
   min-width: 600px;
 }
@@ -371,7 +373,6 @@
 }
 .atypic-single p,
 .atypic-single .wp-die-message {
-  font-size: 13px;
   line-height: 1.5;
   margin: 1em 0;
 }
@@ -464,13 +465,11 @@
   margin: 0 1px;
   background: #f0f0f1;
   background: rgba(0, 0, 0, 0.07);
-  font-size: 13px;
 }
 .atypic-single .subsubsub {
   list-style: none;
   margin: 8px 0 0;
   padding: 0;
-  font-size: 13px;
   float: left;
   color: #646970;
 }
@@ -530,7 +529,6 @@
 .atypic-single .widefat td p,
 .atypic-single .widefat td ol,
 .atypic-single .widefat td ul {
-  font-size: 13px;
   line-height: 1.5em;
 }
 .atypic-single .widefat th,
@@ -632,7 +630,6 @@
   border-radius: 2px;
   text-shadow: none;
   font-weight: 600;
-  font-size: 13px;
   line-height: normal; /* IE8-IE11 need this for buttons */
   color: #2271b1; /* use the standard color used for buttons */
   background: #f6f7f7;
@@ -803,8 +800,7 @@
 .atypic-single .key-labels label {
   line-height: 24px;
 }
-.atypic-single strong,
-.atypic-single b {
+.atypic-single strong, .atypic-single b {
   font-weight: 600;
 }
 .atypic-single .pre {
@@ -940,7 +936,6 @@
   border: 1px solid #c3c4c7;
   background: #fff;
   color: #50575e;
-  font-size: 13px;
 }
 .atypic-single .wp-filter a {
   text-decoration: none;
@@ -1253,8 +1248,7 @@
   margin: 5px 15px 2px;
   padding: 1px 12px;
 }
-.atypic-single div[class=update-message] {
-  /* back-compat for pre-4.6 */
+.atypic-single div[class=update-message] { /* back-compat for pre-4.6 */
   padding: 0.5em 12px 0.5em 0;
 }
 .atypic-single .notice p,
@@ -1454,8 +1448,7 @@
 .atypic-single .ajax-loading,
 .atypic-single .ajax-feedback,
 .atypic-single .imgedit-wait-spin,
-.atypic-single .list-ajax-loading {
-  /* deprecated */
+.atypic-single .list-ajax-loading { /* deprecated */
   visibility: hidden;
 }
 .atypic-single #ajax-response.alignleft {
@@ -1581,7 +1574,6 @@
 .atypic-single #contextual-help-wrap h5 {
   margin: 0;
   padding: 8px 0;
-  font-size: 13px;
   font-weight: 600;
 }
 .atypic-single .metabox-prefs label {
@@ -1856,12 +1848,10 @@
 .atypic-single .postbox .inside {
   padding: 0 12px 12px;
   line-height: 1.4;
-  font-size: 13px;
 }
 .atypic-single .stuffbox .inside {
   padding: 0;
   line-height: 1.4;
-  font-size: 13px;
   margin-top: 0;
 }
 .atypic-single .postbox .inside {
@@ -1913,7 +1903,6 @@
   color: #50575e;
 }
 .atypic-single #wpfooter p {
-  font-size: 13px;
   margin: 0;
   line-height: 1.55;
 }
@@ -2489,9 +2478,6 @@
   float: left;
   width: 100%;
 }
-.atypic-single .plugin-version-author-uri {
-  font-size: 13px;
-}
 .atypic-single .update-php .button.button-primary {
   margin-right: 1em;
 }
@@ -2672,7 +2658,6 @@
 }
 .atypic-single #template textarea {
   font-family: Consolas, Monaco, monospace;
-  font-size: 13px;
   background: #f6f7f7;
   -o-tab-size: 4;
   tab-size: 4;
@@ -3070,14 +3055,14 @@
   .atypic-single .my-sites.striped li {
     background-color: #fff;
   }
-  .atypic-single .my-sites.striped li:nth-of-type(2n + 1) {
+  .atypic-single .my-sites.striped li:nth-of-type(2n+1) {
     clear: left;
   }
-  .atypic-single .my-sites.striped li:nth-of-type(2n + 2):after {
+  .atypic-single .my-sites.striped li:nth-of-type(2n+2):after {
     content: none;
   }
-  .atypic-single .my-sites li:nth-of-type(4n + 1),
-.atypic-single .my-sites li:nth-of-type(4n + 2) {
+  .atypic-single .my-sites li:nth-of-type(4n+1),
+.atypic-single .my-sites li:nth-of-type(4n+2) {
     background-color: #f6f7f7;
   }
 }
@@ -3087,12 +3072,12 @@
     width: 27.333333%;
     background-color: #fff;
   }
-  .atypic-single .my-sites.striped li:nth-of-type(3n + 3):after {
+  .atypic-single .my-sites.striped li:nth-of-type(3n+3):after {
     content: none;
   }
-  .atypic-single .my-sites li:nth-of-type(6n + 1),
-.atypic-single .my-sites li:nth-of-type(6n + 2),
-.atypic-single .my-sites li:nth-of-type(6n + 3) {
+  .atypic-single .my-sites li:nth-of-type(6n+1),
+.atypic-single .my-sites li:nth-of-type(6n+2),
+.atypic-single .my-sites li:nth-of-type(6n+3) {
     background-color: #f6f7f7;
   }
 }
@@ -3103,16 +3088,16 @@
     padding: 8px 2%;
     background-color: #fff;
   }
-  .atypic-single .my-sites.striped li:nth-of-type(4n + 1) {
+  .atypic-single .my-sites.striped li:nth-of-type(4n+1) {
     clear: left;
   }
-  .atypic-single .my-sites.striped li:nth-of-type(4n + 4):after {
+  .atypic-single .my-sites.striped li:nth-of-type(4n+4):after {
     content: none;
   }
-  .atypic-single .my-sites li:nth-of-type(8n + 1),
-.atypic-single .my-sites li:nth-of-type(8n + 2),
-.atypic-single .my-sites li:nth-of-type(8n + 3),
-.atypic-single .my-sites li:nth-of-type(8n + 4) {
+  .atypic-single .my-sites li:nth-of-type(8n+1),
+.atypic-single .my-sites li:nth-of-type(8n+2),
+.atypic-single .my-sites li:nth-of-type(8n+3),
+.atypic-single .my-sites li:nth-of-type(8n+4) {
     background-color: #f6f7f7;
   }
 }
@@ -3123,17 +3108,17 @@
     padding: 8px 2%;
     background-color: #fff;
   }
-  .atypic-single .my-sites.striped li:nth-of-type(5n + 1) {
+  .atypic-single .my-sites.striped li:nth-of-type(5n+1) {
     clear: left;
   }
-  .atypic-single .my-sites.striped li:nth-of-type(5n + 5):after {
+  .atypic-single .my-sites.striped li:nth-of-type(5n+5):after {
     content: none;
   }
-  .atypic-single .my-sites li:nth-of-type(10n + 1),
-.atypic-single .my-sites li:nth-of-type(10n + 2),
-.atypic-single .my-sites li:nth-of-type(10n + 3),
-.atypic-single .my-sites li:nth-of-type(10n + 4),
-.atypic-single .my-sites li:nth-of-type(10n + 5) {
+  .atypic-single .my-sites li:nth-of-type(10n+1),
+.atypic-single .my-sites li:nth-of-type(10n+2),
+.atypic-single .my-sites li:nth-of-type(10n+3),
+.atypic-single .my-sites li:nth-of-type(10n+4),
+.atypic-single .my-sites li:nth-of-type(10n+5) {
     background-color: #f6f7f7;
   }
 }
@@ -3144,18 +3129,18 @@
     padding: 8px 2%;
     background-color: #fff;
   }
-  .atypic-single .my-sites.striped li:nth-of-type(6n + 1) {
+  .atypic-single .my-sites.striped li:nth-of-type(6n+1) {
     clear: left;
   }
-  .atypic-single .my-sites.striped li:nth-of-type(6n + 6):after {
+  .atypic-single .my-sites.striped li:nth-of-type(6n+6):after {
     content: none;
   }
-  .atypic-single .my-sites li:nth-of-type(12n + 1),
-.atypic-single .my-sites li:nth-of-type(12n + 2),
-.atypic-single .my-sites li:nth-of-type(12n + 3),
-.atypic-single .my-sites li:nth-of-type(12n + 4),
-.atypic-single .my-sites li:nth-of-type(12n + 5),
-.atypic-single .my-sites li:nth-of-type(12n + 6) {
+  .atypic-single .my-sites li:nth-of-type(12n+1),
+.atypic-single .my-sites li:nth-of-type(12n+2),
+.atypic-single .my-sites li:nth-of-type(12n+3),
+.atypic-single .my-sites li:nth-of-type(12n+4),
+.atypic-single .my-sites li:nth-of-type(12n+5),
+.atypic-single .my-sites li:nth-of-type(12n+6) {
     background-color: #f6f7f7;
   }
 }
@@ -3387,7 +3372,6 @@
     margin-left: 32px;
   }
   .atypic-single .wp-filter .button.drawer-toggle {
-    font-size: 13px;
     line-height: 2;
     height: 28px;
   }
@@ -3433,7 +3417,7 @@
 @media screen and (max-width: 600px) {
   .atypic-single {
     /* Disable horizontal scroll when responsive menu is open
-    since we push the main content off to the right. */
+       since we push the main content off to the right. */
     /* Keep full-width boxes on Edit Post page from causing horizontal scroll */
   }
   .atypic-single #wpwrap.wp-responsive-open {
@@ -3475,7 +3459,7 @@
 @media screen and (max-width: 320px) {
   .atypic-single {
     /* Prevent default center alignment and larger font for the Right Now widget when
-    the network dashboard is viewed on a small mobile device. */
+       the network dashboard is viewed on a small mobile device. */
   }
   .atypic-single #network_dashboard_right_now .subsubsub {
     font-size: 14px;
