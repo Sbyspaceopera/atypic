@@ -12,16 +12,16 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('imgMin', () => {
+gulp.task('imgMin', async function () {
     gulp.src('assets/images/*')
 		.pipe(imagemin())
 		.pipe(gulp.dest('build/images'))
 })
 
 gulp.task('watch', () => {
-    gulp.watch('assets/scss/*.scss', (done) => {
-        gulp.series(['styles'])(done);
+    gulp.watch(['assets/scss/*.scss','assets/images/*'], (done) => {
+        gulp.series(['styles','imgMin'])(done);
     });
 });
 
-gulp.task('default', gulp.series(['styles', 'watch']));
+gulp.task('default', gulp.series(['styles', 'imgMin', 'watch']));
