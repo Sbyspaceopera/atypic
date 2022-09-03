@@ -15,11 +15,12 @@
                     <div class="w-40">
                             <?php the_custom_logo(); ?>
                     </div>
-                    <a href="<?php echo home_url() ?>"><h1 class="text-6xl underline underline-offset-[6px] decoration-yellow-500 decoration-4"><?php echo get_bloginfo('name'); ?></h1></a>
+                    <a href="<?php echo home_url() ?>"><h1 class="text-4xl sm:text-6xl underline underline-offset-[6px] decoration-yellow-500 decoration-4"><?php echo get_bloginfo('name'); ?></h1></a>
                     <?php
                     wp_nav_menu(array(
                         "theme_location" => "main_menu",
                         "container" => "nav",
+                        "container_class" =>"text-2xl sm:text-4xl",
                     ));
                     ?>
                     <a href="#atypic-main"><span class="dashicons dashicons-arrow-down-alt2 w-5" style="font-size:larger"></span></a>
