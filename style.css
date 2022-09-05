@@ -458,6 +458,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
   line-height: 1.75rem !important
 }
 
+.text-4xl {
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important
+}
+
 .text-2xl {
   font-size: 1.5rem !important;
   line-height: 2rem !important
@@ -594,8 +599,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
     line-height: 1.75rem !important
   }
 
-  .sm\:text-8xl {
-    font-size: 6rem !important;
+  .sm\:text-6xl {
+    font-size: 3.75rem !important;
     line-height: 1 !important
   }
 
