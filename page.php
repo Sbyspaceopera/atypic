@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<main id="atypic-main" class="flex py-5 px-1" >
+<main id="atypic-main atypic-page" class="flex py-5 px-1" >
     <div class="atypic-main-left-laurel self-center w-0 sm:visible md:w-1/5">
         <?php get_template_part('assets/svg/laurel', 'single-left.svg') ?>
     </div>

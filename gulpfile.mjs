@@ -12,7 +12,7 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('imgMin', async function () {
+gulp.task('imgMin', async function() {
     gulp.src('assets/images/*')
 		.pipe(imagemin())
 		.pipe(gulp.dest('build/images'))

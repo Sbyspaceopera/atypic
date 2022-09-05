@@ -1,0 +1,344 @@
+.atypic-home {
+  /*
+  1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+  2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+  */
+  /*
+  1. Use a consistent sensible line-height in all browsers.
+  2. Prevent adjustments of font size after orientation changes in iOS.
+  3. Use a more readable tab size.
+  4. Use the user's configured `sans` font-family by default.
+  */
+  /*
+  1. Remove the margin in all browsers.
+  2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+  */
+  /*
+  1. Add the correct height in Firefox.
+  2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+  3. Ensure horizontal rules are visible by default.
+  */
+  /*
+  Add the correct text decoration in Chrome, Edge, and Safari.
+  */
+  /*
+  Remove the default font size and weight for headings.
+  */
+  /*
+  Reset links to optimize for opt-in styling instead of opt-out.
+  */
+  /*
+  Add the correct font weight in Edge and Safari.
+  */
+  /*
+  1. Use the user's configured `mono` font family by default.
+  2. Correct the odd `em` font sizing in all browsers.
+  */
+  /*
+  Add the correct font size in all browsers.
+  */
+  /*
+  Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+  */
+  /*
+  1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+  2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+  3. Remove gaps between table borders by default.
+  */
+  /*
+  1. Change the font styles in all browsers.
+  2. Remove the margin in Firefox and Safari.
+  3. Remove default padding in all browsers.
+  */
+  /*
+  Remove the inheritance of text transform in Edge and Firefox.
+  */
+  /*
+  1. Correct the inability to style clickable types in iOS and Safari.
+  2. Remove default button styles.
+  */
+  /*
+  Use the modern Firefox focus style for all focusable elements.
+  */
+  /*
+  Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+  */
+  /*
+  Add the correct vertical alignment in Chrome and Firefox.
+  */
+  /*
+  Correct the cursor style of increment and decrement buttons in Safari.
+  */
+  /*
+  1. Correct the odd appearance in Chrome and Safari.
+  2. Correct the outline style in Safari.
+  */
+  /*
+  Remove the inner padding in Chrome and Safari on macOS.
+  */
+  /*
+  1. Correct the inability to style clickable types in iOS and Safari.
+  2. Change font properties to `inherit` in Safari.
+  */
+  /*
+  Add the correct display in Chrome and Safari.
+  */
+  /*
+  Removes the default spacing and border for appropriate elements.
+  */
+  /*
+  Prevent resizing textareas horizontally by default.
+  */
+  /*
+  1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+  2. Set the default placeholder color to the user's configured gray 400 color.
+  */
+  /*
+  Set the default cursor for buttons.
+  */
+  /*
+  Make sure disabled buttons don't get the pointer cursor.
+  */
+  /*
+  1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+  2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+     This can trigger a poorly considered lint error in some tools but is included by design.
+  */
+  /*
+  Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+  */
+}
+.atypic-home *,
+.atypic-home ::before,
+.atypic-home ::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+.atypic-home ::before,
+.atypic-home ::after {
+  --tw-content: "";
+}
+.atypic-home html {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+}
+.atypic-home body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+.atypic-home hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+.atypic-home abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+.atypic-home h1,
+.atypic-home h2,
+.atypic-home h3,
+.atypic-home h4,
+.atypic-home h5,
+.atypic-home h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+.atypic-home a {
+  color: inherit;
+  text-decoration: none;
+}
+.atypic-home b,
+.atypic-home strong {
+  font-weight: bolder;
+}
+.atypic-home code,
+.atypic-home kbd,
+.atypic-home samp,
+.atypic-home pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+.atypic-home small {
+  font-size: 80%;
+}
+.atypic-home sub,
+.atypic-home sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.atypic-home sub {
+  bottom: -0.25em;
+}
+.atypic-home sup {
+  top: -0.5em;
+}
+.atypic-home table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+.atypic-home button,
+.atypic-home input,
+.atypic-home optgroup,
+.atypic-home select,
+.atypic-home textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+.atypic-home button,
+.atypic-home select {
+  text-transform: none;
+}
+.atypic-home button,
+.atypic-home [type=button],
+.atypic-home [type=reset],
+.atypic-home [type=submit] {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+.atypic-home :-moz-focusring {
+  outline: auto;
+}
+.atypic-home :-moz-ui-invalid {
+  box-shadow: none;
+}
+.atypic-home progress {
+  vertical-align: baseline;
+}
+.atypic-home ::-webkit-inner-spin-button,
+.atypic-home ::-webkit-outer-spin-button {
+  height: auto;
+}
+.atypic-home [type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+.atypic-home ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.atypic-home ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+.atypic-home summary {
+  display: list-item;
+}
+.atypic-home blockquote,
+.atypic-home dl,
+.atypic-home dd,
+.atypic-home h1,
+.atypic-home h2,
+.atypic-home h3,
+.atypic-home h4,
+.atypic-home h5,
+.atypic-home h6,
+.atypic-home hr,
+.atypic-home figure,
+.atypic-home p,
+.atypic-home pre {
+  margin: 0;
+}
+.atypic-home fieldset {
+  margin: 0;
+  padding: 0;
+}
+.atypic-home legend {
+  padding: 0;
+}
+.atypic-home ol,
+.atypic-home ul,
+.atypic-home menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.atypic-home textarea {
+  resize: vertical;
+}
+.atypic-home input::-moz-placeholder,
+.atypic-home textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+.atypic-home input::placeholder,
+.atypic-home textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+.atypic-home button,
+.atypic-home [role=button] {
+  cursor: pointer;
+}
+.atypic-home :disabled {
+  cursor: default;
+}
+.atypic-home img,
+.atypic-home svg,
+.atypic-home video,
+.atypic-home canvas,
+.atypic-home audio,
+.atypic-home iframe,
+.atypic-home embed,
+.atypic-home object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+.atypic-home img,
+.atypic-home video {
+  max-width: 100%;
+  height: auto;
+}
