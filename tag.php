@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<main id="atypic-main" class="flex py-5 px-1">
+<main id="atypic-main atypic-tag" class="flex py-5 px-1">
     <div class="atypic-main-left-laurel self-center w-0 sm:visible md:w-1/5">
         <?php get_template_part('assets/svg/laurel', 'single-left.svg') ?>
     </div>
@@ -15,11 +15,11 @@
             <?php
             $wp_query = new WP_Query(['tag_id' => get_queried_object()->term_id]);
             while ($wp_query->have_posts()) : the_post(); ?>
-                <h3 class="underline text-xl font-semibold">
-                    <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                <h3 class="text-xl font-semibold">
+                    <a class="no-underline text-yellow-600" href="<?php the_permalink() ?>"><?php the_title() ?></a>
                 </h3>
 
-                <div class="flex py-1 text-black font-semibold flex-wrap gap-2">
+                <div class="flex p-3 text-black font-semibold flex-wrap gap-3">
                     <?php
                     $tags = get_the_tag_list('', '', '', get_the_ID());
                     echo $tags;

@@ -22,7 +22,7 @@
                 <section class="w-full xl:grid grid-cols-3 grid-rows-2 shadow-lg rounded-tl-xl rounded-tr-xl xl:rounded-xl">
                     <header class="flex flex-col justify-center rounded-tl-xl rounded-tr-xl xl:rounded-tr-none xl:rounded-bl-xl xl:rounded-tl-xl w-full bg-no-repeat bg-center bg-cover col-span-1 row-span-2 p-1" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(<?php echo get_template_directory_uri() ?>/build/images/300930rgsdl.jpg)">
                         <h2 class="font-semibold <?php echo $textColors[$key] ?> text-2xl text-white text-center">
-                            <a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a>
+                            <a class="<?php echo $textColors[$key] ?>" href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a>
                         </h2>
                         <p class="text-white text-xl text-center"><?php echo $category->description ?></p>
                     </header>
@@ -39,7 +39,7 @@
                                     <a href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a>
                                 </h3>
 
-                                <div class="flex py-1 text-black font-semibold flex-wrap gap-2">
+                                <div class="flex text-black font-semibold flex-wrap gap-3">
                                     <?php
                                     $tags = get_the_tag_list('', '', '', $post->ID);
                                     echo $tags;
