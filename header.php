@@ -15,7 +15,7 @@
                     <div class="w-40 flex items-center content-center justify-center">
                             <?php the_custom_logo(); ?>
                     </div>
-                    <a  href="<?php echo home_url() ?>"><h1 class="text-6xl text-center sm:text-8xl text-white underline decoration-dotted decoration-yellow-500"><?php echo get_bloginfo('name'); ?></h1></a>
+                    <a  href="<?php echo home_url() ?>"><h1 class="text-4xl text-center sm:text-6xl text-white underline decoration-dotted decoration-yellow-500"><?php echo get_bloginfo('name'); ?></h1></a>
                     <?php
                     wp_nav_menu(array(
                         "theme_location" => "main_menu",
