@@ -15,7 +15,7 @@
             <?php
             $wp_query = new WP_Query(['tag_id' => get_queried_object()->term_id]);
             while ($wp_query->have_posts()) : the_post(); ?>
-                <h3 class="text-xl font-semibold">
+                <h3 class="text-center text-xl font-semibold">
                     <a class="text-black underline decoration-yellow-500 decoration-dotted" href="<?php the_permalink() ?>"><?php the_title() ?></a>
                 </h3>
 

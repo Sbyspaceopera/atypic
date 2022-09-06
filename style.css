@@ -293,6 +293,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
   grid-column: span 2 / span 2 !important
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1 !important
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2 !important
+}
+
+.col-span-1 {
+  grid-column: span 1 / span 1 !important
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2 !important
+}
+
+.col-span-1 {
+  grid-column: span 1 / span 1 !important
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2 !important
+}
+
 .row-span-2 {
   grid-row: span 2 / span 2 !important
 }
@@ -371,6 +395,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .w-\[3rem\] {
   width: 3rem !important
+}
+
+.w-0 {
+  width: 0px !important
+}
+
+.w-full {
+  width: 100% !important
+}
+
+.w-0 {
+  width: 0px !important
+}
+
+.w-full {
+  width: 100% !important
+}
+
+.w-0 {
+  width: 0px !important
+}
+
+.w-full {
+  width: 100% !important
 }
 
 .w-0 {
@@ -607,6 +655,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
   gap: 0.75rem !important
 }
 
+.gap-5 {
+  gap: 1.25rem !important
+}
+
+.gap-3 {
+  gap: 0.75rem !important
+}
+
+.gap-5 {
+  gap: 1.25rem !important
+}
+
+.gap-3 {
+  gap: 0.75rem !important
+}
+
+.gap-5 {
+  gap: 1.25rem !important
+}
+
+.gap-3 {
+  gap: 0.75rem !important
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0 !important;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse))) !important;
@@ -628,6 +700,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .rounded-br-full {
   border-bottom-right-radius: 9999px !important
+}
+
+.rounded-tl-xl {
+  border-top-left-radius: 0.75rem !important
+}
+
+.rounded-tr-xl {
+  border-top-right-radius: 0.75rem !important
+}
+
+.rounded-tl-xl {
+  border-top-left-radius: 0.75rem !important
+}
+
+.rounded-tr-xl {
+  border-top-right-radius: 0.75rem !important
+}
+
+.rounded-tl-xl {
+  border-top-left-radius: 0.75rem !important
+}
+
+.rounded-tr-xl {
+  border-top-right-radius: 0.75rem !important
 }
 
 .rounded-tl-xl {
@@ -906,6 +1002,42 @@ Use it to make something cool, have fun, and share what you've learned with othe
   padding: 0.5rem !important
 }
 
+.p-1 {
+  padding: 0.25rem !important
+}
+
+.p-2\.5 {
+  padding: 0.625rem !important
+}
+
+.p-2 {
+  padding: 0.5rem !important
+}
+
+.p-1 {
+  padding: 0.25rem !important
+}
+
+.p-2\.5 {
+  padding: 0.625rem !important
+}
+
+.p-2 {
+  padding: 0.5rem !important
+}
+
+.p-1 {
+  padding: 0.25rem !important
+}
+
+.p-2\.5 {
+  padding: 0.625rem !important
+}
+
+.p-2 {
+  padding: 0.5rem !important
+}
+
 .py-5 {
   padding-top: 1.25rem !important;
   padding-bottom: 1.25rem !important
@@ -1019,6 +1151,51 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .text-sm {
   font-size: 0.875rem !important;
   line-height: 1.25rem !important
+}
+
+.text-xl {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important
+}
+
+.text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important
+}
+
+.text-2xl {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important
+}
+
+.text-xl {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important
+}
+
+.text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important
+}
+
+.text-2xl {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important
+}
+
+.text-xl {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important
+}
+
+.text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important
+}
+
+.text-2xl {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important
 }
 
 .text-xl {
@@ -1427,6 +1604,51 @@ Use it to make something cool, have fun, and share what you've learned with othe
   color: rgb(59 130 246 / var(--tw-text-opacity)) !important
 }
 
+.text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important
+}
+
+.text-black {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(59 130 246 / var(--tw-text-opacity)) !important
+}
+
+.text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important
+}
+
+.text-black {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(59 130 246 / var(--tw-text-opacity)) !important
+}
+
+.text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important
+}
+
+.text-black {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(59 130 246 / var(--tw-text-opacity)) !important
+}
+
 .underline {
   -webkit-text-decoration-line: underline !important;
           text-decoration-line: underline !important
@@ -1497,9 +1719,51 @@ Use it to make something cool, have fun, and share what you've learned with othe
           text-decoration-color: #facc15 !important
 }
 
+.decoration-yellow-500 {
+  -webkit-text-decoration-color: #eab308 !important;
+          text-decoration-color: #eab308 !important
+}
+
+.decoration-yellow-400 {
+  -webkit-text-decoration-color: #facc15 !important;
+          text-decoration-color: #facc15 !important
+}
+
+.decoration-yellow-500 {
+  -webkit-text-decoration-color: #eab308 !important;
+          text-decoration-color: #eab308 !important
+}
+
+.decoration-yellow-400 {
+  -webkit-text-decoration-color: #facc15 !important;
+          text-decoration-color: #facc15 !important
+}
+
+.decoration-yellow-500 {
+  -webkit-text-decoration-color: #eab308 !important;
+          text-decoration-color: #eab308 !important
+}
+
+.decoration-yellow-400 {
+  -webkit-text-decoration-color: #facc15 !important;
+          text-decoration-color: #facc15 !important
+}
+
 .decoration-dotted {
   -webkit-text-decoration-style: dotted !important;
           text-decoration-style: dotted !important
+}
+
+.decoration-2 {
+  text-decoration-thickness: 2px !important
+}
+
+.decoration-8 {
+  text-decoration-thickness: 8px !important
+}
+
+.decoration-4 {
+  text-decoration-thickness: 4px !important
 }
 
 .shadow-lg {
@@ -1667,6 +1931,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
     width: 60% !important
   }
 
+  .md\:w-1\/5 {
+    width: 20% !important
+  }
+
+  .md\:w-3\/5 {
+    width: 60% !important
+  }
+
+  .md\:w-1\/5 {
+    width: 20% !important
+  }
+
+  .md\:w-3\/5 {
+    width: 60% !important
+  }
+
+  .md\:w-1\/5 {
+    width: 20% !important
+  }
+
+  .md\:w-3\/5 {
+    width: 60% !important
+  }
+
   .md\:justify-start {
     justify-content: flex-start !important
   }
@@ -1702,6 +1990,66 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
   .xl\:rounded-xl {
     border-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-tr-none {
+    border-top-right-radius: 0px !important
+  }
+
+  .xl\:rounded-bl-xl {
+    border-bottom-left-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-tl-xl {
+    border-top-left-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-tr-xl {
+    border-top-right-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-br-xl {
+    border-bottom-right-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-tr-none {
+    border-top-right-radius: 0px !important
+  }
+
+  .xl\:rounded-bl-xl {
+    border-bottom-left-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-tl-xl {
+    border-top-left-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-tr-xl {
+    border-top-right-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-br-xl {
+    border-bottom-right-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-tr-none {
+    border-top-right-radius: 0px !important
+  }
+
+  .xl\:rounded-bl-xl {
+    border-bottom-left-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-tl-xl {
+    border-top-left-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-tr-xl {
+    border-top-right-radius: 0.75rem !important
+  }
+
+  .xl\:rounded-br-xl {
+    border-bottom-right-radius: 0.75rem !important
   }
 
   .xl\:rounded-tr-none {
