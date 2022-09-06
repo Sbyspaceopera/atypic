@@ -2,10 +2,10 @@
     
     
     <div class="flex items-center content-center flex-wrap gap-2">
-        <a href="https://github.com/Sbyspaceopera"><img class="w-[3rem] invert saturate-200" src="<?php echo get_template_directory_uri() ?>/build/images/GitHub-Mark-120px-plus.png"></a>
-        <a href="https://www.linkedin.com/in/sebastiencorbisier/"><span class="dashicons dashicons-linkedin"></span></a>
-        <a href="https://www.instagram.com/aiwillreplaceinflucencers/"><span class="dashicons dashicons-instagram"></span></a>
-        <a href="https://tournesol.app/"><img class="w-[3rem]" src="https://tournesol.app/svg/LogoSmall.svg"></a>
+        <a target="_blank" href="https://github.com/Sbyspaceopera"><img class="w-[3rem] invert saturate-200" src="<?php echo get_template_directory_uri() ?>/build/images/GitHub-Mark-120px-plus.png"></a>
+        <a target="_blank" href="https://www.linkedin.com/in/sebastiencorbisier/"><span class="dashicons dashicons-linkedin"></span></a>
+        <a target="_blank" href="https://www.instagram.com/aiwillreplaceinflucencers/"><span class="dashicons dashicons-instagram"></span></a>
+        <a target="_blank" href="https://tournesol.app/"><img class="w-[3rem]" src="https://tournesol.app/svg/LogoSmall.svg"></a>
         <div class="w-[3rem] flex items-center content-center justify-center">
             <?php the_custom_logo(); ?>
         </div>
