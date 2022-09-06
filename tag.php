@@ -16,10 +16,10 @@
             $wp_query = new WP_Query(['tag_id' => get_queried_object()->term_id]);
             while ($wp_query->have_posts()) : the_post(); ?>
                 <h3 class="text-xl font-semibold">
-                    <a class="no-underline text-yellow-600" href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                    <a class="text-black underline decoration-yellow-500 decoration-dotted" href="<?php the_permalink() ?>"><?php the_title() ?></a>
                 </h3>
 
-                <div class="flex p-3 text-black font-semibold flex-wrap gap-3">
+                <div class="flex text-black font-semibold flex-wrap gap-3">
                     <?php
                     $tags = get_the_tag_list('', '', '', get_the_ID());
                     echo $tags;
@@ -30,7 +30,7 @@
                 </p>
                 <div class="flex justify-between items-center">
                     <a class="text-blue-500 underline font-semibold" href="<?php echo get_permalink($post->ID) ?>">Lire la suite</a>
-                    <p class="text-sm italic text-blue-500"><?php echo get_the_date() ?></p>
+                    <p class="text-sm italic text-blue-500 font-semibold"><?php echo get_the_date() ?></p>
                 </div>
                 <?php
                 if ($wp_query->current_post + 1 != $wp_query->post_count) {

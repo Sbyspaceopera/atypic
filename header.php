@@ -23,7 +23,7 @@
                         "container_class" =>"text-2xl sm:text-4xl flex flex-col justify-items-center content-center align-center items-center",
                     ));
                     ?>
-                    <a href="#atypic-main"><span class="dashicons dashicons-arrow-down-alt2 w-18" style="font-size:larger"></span></a>
+                    <a href="#atypic-main"><span class="text-yellow-500 dashicons dashicons-arrow-down-alt2 w-18" style="font-size:larger"></span></a>
                 </div>   
         </div>
     </header>

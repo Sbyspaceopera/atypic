@@ -7,8 +7,6 @@
 
     <div class="md:w-3/5 w-full flex flex-col gap-5 justify-around">
         <?php
-        $decColors = ['decoration-yellow-500', 'decoration-sky-500', 'decoration-lime-500', 'decoration-red-500', 'decoration-purple-500'];
-        $textColors = ['text-yellow-500', 'text-sky-500', 'text-lime-500', 'text-red-500', 'text-purple-500'];
 
         $categories = get_categories(array(
             'orderby' => 'date',
@@ -21,12 +19,12 @@
         ?>
                 <section class="w-full xl:grid grid-cols-3 grid-rows-2 shadow-lg rounded-tl-xl rounded-tr-xl xl:rounded-xl">
                     <header class="flex flex-col justify-center rounded-tl-xl rounded-tr-xl xl:rounded-tr-none xl:rounded-bl-xl xl:rounded-tl-xl w-full bg-no-repeat bg-center bg-cover col-span-1 row-span-2 p-1" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(<?php echo get_template_directory_uri() ?>/build/images/300930rgsdl.jpg)">
-                        <h2 class="font-semibold <?php echo $textColors[$key] ?> text-2xl text-white text-center">
-                            <a class="<?php echo $textColors[$key] ?>" href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a>
+                        <h2 class="font-semibold text-white text-2xl text-center">
+                            <a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a>
                         </h2>
                         <p class="text-white text-xl text-center"><?php echo $category->description ?></p>
                     </header>
-                    <main class="flex flex-col justify-around gap-2 col-span-2 row-span-2 p-2 xl:rounded-tr-xl xl:rounded-br-xl">
+                    <main class="flex flex-col justify-around gap-3 col-span-2 row-span-2 p-2.5 xl:rounded-tr-xl xl:rounded-br-xl">
                             <?php
                             $posts = get_posts(array(
                                 'numberposts' => 2,
@@ -35,11 +33,11 @@
 
                             foreach ($posts as $key_post=>$post) { ?>
 
-                                <h3 class="underline <?php echo $decColors[$key] ?> text-xl font-semibold">
-                                    <a href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a>
+                                <h3 class="text-center xl:text-start mt-1">
+                                    <a class="text-black text-xl font-semibold underline decoration-yellow-400 decoration-dotted" href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a>
                                 </h3>
 
-                                <div class="flex text-black font-semibold flex-wrap gap-3">
+                                <div class="flex justify-center xl:justify-start text-black font-semibold flex-wrap gap-3">
                                     <?php
                                     $tags = get_the_tag_list('', '', '', $post->ID);
                                     echo $tags;
@@ -50,7 +48,7 @@
                                 </p>
                                 <div class="flex justify-between items-center">
                                     <a class="text-blue-500 underline font-semibold" href="<?php echo get_permalink($post->ID) ?>">Lire la suite</a>
-                                    <p class="text-sm italic text-blue-500"><?php echo get_the_date() ?></p>
+                                    <p class="text-sm italic font-semibold text-blue-500"><?php echo get_the_date() ?></p>
                                 </div>
                             <?php
                                 if($key_post === 0){
