@@ -2,7 +2,7 @@
 
 namespace AtypicTheme\Functions;
 
-require_once(get_template_directory() . '/class-tgm-plugin-activation.php');
+require_once(get_template_directory() . '/includes/class-tgm-plugin-activation.php');
 
 //http://tgmpluginactivation.com/
 //Plugins dependencies
