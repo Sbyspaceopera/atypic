@@ -1,11 +1,11 @@
 module.exports = {
-	content: ["./**/*.php"],
+	content: [ './**/*.php' ],
 	theme: {
 		extend: {},
 	},
 	plugins: [],
 	corePlugins: {
-        preflight: false,
-    },
-	important:true
+		preflight: false,
+	},
+	important: true,
 };

@@ -1,12 +1,9 @@
 {
-    "version": 2,
-    "settings": {
-          "color": {
-            "palette":[
-                {},
-                {}
-            ]
-          },
-          "typography": {}  
-    }
+	"version": 2,
+	"settings": {
+		"color": {
+			"palette": [ {}, {} ]
+		},
+		"typography": {}
+	}
 }

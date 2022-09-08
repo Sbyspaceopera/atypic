@@ -1,23 +1,28 @@
 {
-  "name": "atypique",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"gulp",
-    "build:img": "gulp imgMin",
-    "start:tailwind": "npx tailwindcss -i ./tailwind.css -o ./style.css --watch"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@wordpress/scripts": "^23.4.0",
-    "gulp": "^4.0.2",
-    "gulp-imagemin": "^8.0.0",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.54.4",
-    "tailwindcss": "^3.1.8"
-  }
+	"name": "atypic",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"prettier": "@wordpress/prettier-config",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+    "prettier" :"prettier ./**.{js,php,json,scss,md}",
+		"build": "gulp",
+		"build:img": "gulp imgMin",
+		"start:tailwind": "npx tailwindcss -i ./tailwind.css -o ./style.css --watch"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@prettier/plugin-php": "^0.19.0",
+		"@wordpress/prettier-config": "^2.0.0",
+		"@wordpress/scripts": "^23.4.0",
+		"gulp": "^4.0.2",
+		"gulp-imagemin": "^8.0.0",
+		"gulp-sass": "^5.1.0",
+		"prettier": "^2.7.1",
+		"sass": "^1.54.4",
+		"tailwindcss": "^3.1.8"
+	}
 }
