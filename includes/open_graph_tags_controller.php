@@ -10,7 +10,7 @@ class OG_Controller{
     }
 
     public static function get_the_description(){
-        is_front_page() ? bloginfo('description') : (the_excerpt() ? the_excerpt() :  "Description manquante");
+        is_front_page() ? bloginfo('description')  : (get_the_excerpt() ? print(get_the_excerpt())  :  "Description manquante");
     }
 
     public static function get_the_url(){
