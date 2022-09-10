@@ -1,10 +1,6 @@
 <?php get_header(); ?>
 
 <main id="atypic-main" class="flex py-5 md:px-1 atypic-home">
-    <div class="atypic-main-left-laurel self-center w-0 md:visible md:w-1/5 md:px-1">
-        <?php get_template_part('assets/svg/laurel', 'single-left.svg') ?>
-    </div>
-
     <div class="md:w-3/5 w-full flex flex-col gap-5 justify-around">
         <?php
 
@@ -67,10 +63,6 @@
 
         ?>
 
-    </div>
-
-    <div class="atypic-main-right-laurel self-center w-0 md:visible md:w-1/5 md:px-1">
-        <?php get_template_part('assets/svg/laurel', 'single-right.svg') ?>
     </div>
 </main>
 

@@ -6,7 +6,7 @@
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-    "prettier" :"prettier ./**.{js,php,json,scss,md}",
+    "prettier" :"prettier ./*.{js,php,json,scss,md}",
 		"build": "gulp",
 		"build:img": "gulp imgMin",
 		"start:tailwind": "npx tailwindcss -i ./tailwind.css -o ./style.css --watch"

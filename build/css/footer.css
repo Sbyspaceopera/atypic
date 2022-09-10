@@ -342,41 +342,31 @@
   max-width: 100%;
   height: auto;
 }
-.atypic-footer nav {
-  justify-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-}
-.atypic-footer nav .menu {
-  display: flex;
-  align-items: center;
-  font-size: larger;
-  justify-content: space-evenly;
-  align-content: center;
-  flex-wrap: wrap;
-  list-style: none;
-  gap: 2rem;
-}
-.atypic-footer nav .menu li {
-  text-align: center;
-}
-.atypic-footer .page_item {
-  padding-right: 1rem;
-  padding-left: 1rem;
-  text-align: center;
-  text-decoration: none;
-}
 .atypic-footer .dashicons {
-  font-size: 3rem;
-  width: 3rem;
-  height: 3rem;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
   text-align: center;
+}
+@media screen and (min-width: 640px) {
+  .atypic-footer .dashicons {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+  }
 }
 .atypic-footer .dashicons:before {
-  font-size: 3rem;
-  width: 3rem;
-  height: 3rem;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
   text-align: center;
+}
+@media screen and (min-width: 640px) {
+  .atypic-footer .dashicons:before {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+  }
 }

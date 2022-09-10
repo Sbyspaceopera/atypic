@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .atypic-header {
   /*
   1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -108,9 +107,6 @@
   /*
   Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
   */
-  width: 100%;
-  height: 100vh;
-  color: white;
 }
 .atypic-header *,
 .atypic-header ::before,
@@ -346,44 +342,31 @@
   max-width: 100%;
   height: auto;
 }
-.atypic-header .menu {
-  padding: 0px 0px 0px 0px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
-  font-size: larger;
-  justify-content: space-around;
-  list-style: none;
-  row-gap: 2rem;
-}
-.atypic-header .menu .page_item {
-  text-align: center;
-}
-@media (min-width: 640px) {
-  .atypic-header .menu .current_page_item::before {
-    content: "↦";
-    color: rgb(234, 179, 8);
-    padding-right: 0.5rem;
-  }
-  .atypic-header .menu .current_page_item::after {
-    content: "↤";
-    color: rgb(234, 179, 8);
-    padding-left: 0.5rem;
-  }
-}
 .atypic-header .dashicons {
-  font-size: 60px;
-  width: 60px;
-  height: 60px;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
   text-align: center;
+}
+@media screen and (min-width: 640px) {
+  .atypic-header .dashicons {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+  }
 }
 .atypic-header .dashicons:before {
-  font-size: 60px;
-  width: 60px;
-  height: 60px;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
   text-align: center;
+}
+@media screen and (min-width: 640px) {
+  .atypic-header .dashicons:before {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+  }
 }

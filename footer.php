@@ -1,6 +1,16 @@
 <footer class="atypic-footer w-full h-15 p-3 bg-black text-white flex justify-between felx-wrap">
-    
-    
+
+    <div class="skew-x-[-5deg] relative inline-block group hover:block self-end">
+        <?php
+        wp_nav_menu(array(
+            "theme_location" => "main_menu",
+            "container" => "nav",
+            "container_class" => "hidden bottom-[50px] left-0 bg-black text-yellow-500 p-3 absolute group-hover:block text-2xl sm:text-4xl",
+        ));
+        ?>
+        <span class="bg-black rounded-lg rotate-180 text-yellow-500 dashicons dashicons-arrow-down-alt2"></span>
+    </div>
+
     <div class="flex items-center content-center flex-wrap gap-2">
         <a target="_blank" href="https://github.com/Sbyspaceopera"><img class="w-[3rem] invert saturate-200" src="<?php echo get_template_directory_uri() ?>/build/images/GitHub-Mark-120px-plus.png"></a>
         <a target="_blank" href="https://www.linkedin.com/in/sebastiencorbisier/"><span class="dashicons dashicons-linkedin"></span></a>
@@ -10,13 +20,6 @@
             <?php the_custom_logo(); ?>
         </div>
     </div>
-    <?php
-    wp_nav_menu(array(
-        "theme_location" => "footer_menu",
-        "container" => "nav",
-        "container_class" => "text-lg sm:text-xl border-l border-yellow-500 pl-2"
-    ));
-    ?>
 </footer>
 
 <?php wp_footer(); ?>
