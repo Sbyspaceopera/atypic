@@ -5,10 +5,10 @@
 	"main": "index.js",
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
+		"start:dev": "concurrently \"npm:build\" \"npm:start:tailwind\"",
 		"test": "echo \"Error: no test specified\" && exit 1",
-    "prettier" :"prettier ./**.{js,php,json,scss,md}",
+		"prettier": "prettier ./**.{js,php,json,scss,md}",
 		"build": "gulp",
-		"build:img": "gulp imgMin",
 		"start:tailwind": "npx tailwindcss -i ./tailwind.css -o ./style.css --watch"
 	},
 	"keywords": [],
@@ -24,5 +24,8 @@
 		"prettier": "^2.7.1",
 		"sass": "^1.54.4",
 		"tailwindcss": "^3.1.8"
+	},
+	"dependencies": {
+		"concurrently": "^7.4.0"
 	}
 }
