@@ -17,3 +17,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .atypic-main{
+        @apply  flex py-5 md:px-1 justify-center min-h-[80vh];
+    }
+    .atypic-nav-menu{
+        @apply hidden text-center child:child:whitespace-nowrap child:child:p-5 child:divide-y-4 child:divide-white group-hover:block bg-black text-yellow-500 absolute text-2xl sm:text-4xl;
+    }
+}

@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<main id="atypic-main" class="flex py-5 px-1">
+<main class="atypic-main">
     <div class="atypic-single p-5 md:w-3/5">
         <h1 class="text-2xl text-center font-semibold underline decoration-dotted decoration-yellow-500">
             <?php the_title();?>

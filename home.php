@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="atypic-main" class="flex py-5 md:px-1 atypic-home">
+<main class="atypic-main atypic-home">
     <div class="md:w-3/5 w-full flex flex-col gap-5 justify-around">
         <?php
 

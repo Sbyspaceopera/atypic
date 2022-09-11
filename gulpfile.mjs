@@ -6,9 +6,9 @@ import gulpSass from 'gulp-sass';
 import imagemin from 'gulp-imagemin';
 
 import postcss from 'gulp-postcss';
-import autoprefixer from 'autoprefixer';
+import autoprefixer from 'gulp-postcss';
 import postcssNested from 'postcss-nested';
-import cssNano from 'cssnano';
+import cssNano from 'gulp-postcss';
 
 import babel from 'gulp-babel';
 import minify from 'gulp-imagemin';

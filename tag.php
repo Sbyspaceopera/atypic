@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<main id="atypic-main atypic-tag" class="flex py-5 px-1">
+<main class="atypic-main atypic-tag">
     <div class="p-5 md:w-3/5">
         <h1 class="text-center">Tag : <?php single_tag_title(); ?></h1>
         <?php

@@ -1,11 +1,11 @@
-<footer class="atypic-footer w-full h-15 p-3 bg-black text-white flex justify-between felx-wrap">
+<footer class="atypic-footer w-full h-15 p-3 bg-black text-white flex justify-between felx-wrap min-h-[10vh]">
 
-    <div class="skew-x-[-5deg] relative inline-block group hover:block self-end">
+    <div class="skew-x-[-5deg] relative inline-block group hover:block self-start">
         <?php
         wp_nav_menu(array(
             "theme_location" => "main_menu",
             "container" => "nav",
-            "container_class" => "hidden bottom-[50px] left-0 bg-black text-yellow-500 p-3 absolute group-hover:block text-2xl sm:text-4xl",
+            "container_class" => "atypic-nav-menu bottom-[100%]",
         ));
         ?>
         <span class="bg-black rounded-lg rotate-180 text-yellow-500 dashicons dashicons-arrow-down-alt2"></span>

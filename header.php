@@ -16,9 +16,9 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="h-full min-h-[100vh] w-full">
-    <header class="border-yellow-500 sticky top-0 atypic-header bg-white w-full p-3 sm:p-5 flex items-center justify-between">
-            <div class="flex gap-1 sm:gap-3 flex-wrap justify-center">
+<body class="h-full  w-full">
+    <header class="min-h-[10vh] border-dashed border-t-0 border-r-0 border-l-0 border-b-4 atypic-header bg-white w-full p-3 sm:p-5 flex items-center justify-between">
+            <div class="flex gap-1 flex-wrap justify-center sm:gap-3">
                 <div class="w-12 sm:w-20 invert flex">
                         <?php the_custom_logo(); ?>
                 </div>
@@ -26,13 +26,13 @@
                     <h1><?php echo get_bloginfo('name'); ?></h1>
                 </a>
             </div>
-            <div class="skew-x-[-5deg] relative inline-block group hover:block self-end">
+            <div class="skew-x-[-5deg] inline-block group hover:block self-center sm:self-end">
                     <span class="bg-black text-yellow-500 dashicons dashicons-arrow-down-alt2"></span>
                     <?php
                     wp_nav_menu(array(
                         "theme_location" => "main_menu",
                         "container" => "nav",
-                        "container_class" =>"hidden right-0 bg-black text-yellow-500 p-3 absolute group-hover:block text-2xl sm:text-4xl",
+                        "container_class" =>"atypic-nav-menu right-0",
                     ));
                     ?>
             </div>

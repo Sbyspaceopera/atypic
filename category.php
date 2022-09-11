@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<main id="atypic-main" class="flex py-5 px-1">
+<main class="atypic-main atypic-category">
     <div class="p-5 md:w-3/5">
         <h1 class="text-center">Catégorie : <?php single_cat_title(); ?></h1>
         <?php
