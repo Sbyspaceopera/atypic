@@ -1,27 +1,64 @@
-import gulp from 'gulp';
+import gulpPkg from 'gulp';
+
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
+
 import imagemin from 'gulp-imagemin';
 
-const sass = gulpSass( dartSass );
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import postcssNested from 'postcss-nested';
+import cssNano from 'cssnano';
 
-gulp.task( 'styles', () => {
-	return gulp
-		.src( 'assets/scss/*.scss' )
-		.pipe( sass().on( 'error', sass.logError ) )
-		.pipe( gulp.dest( './build/css' ) );
-} );
+import babel from 'gulp-babel';
+import minify from 'gulp-imagemin';
+import stripDebug from 'gulp-strip-debug';
 
-gulp.task( 'imgMin', async function () {
-	gulp.src( 'assets/images/*' )
-		.pipe( imagemin() )
-		.pipe( gulp.dest( 'build/images' ) );
-} );
+import rename from 'gulp-rename';
 
-gulp.task( 'watch', () => {
-	gulp.watch( [ 'assets/scss/*.scss', 'assets/images/*' ], ( done ) => {
-		gulp.series( [ 'styles', 'imgMin' ] )( done );
-	} );
-} );
+import browserSyncObject from 'browser-sync';
 
-gulp.task( 'default', gulp.series( [ 'styles', 'imgMin', 'watch' ] ) );
+const {watch, dest, src, series} = gulpPkg
+
+async function js() {
+	src('assets/src/*.js', {sourcemaps:true})
+		.pipe(stripDebug())
+		.pipe(
+			babel({
+				presets: ['@babel/env'],
+			})
+		)
+		.pipe(minify())
+		.pipe(rename((path) => path.extname = '.min.js'))
+		.pipe(dest('build/js', {sourcemaps:true}));
+}
+
+const sass = gulpSass(dartSass);
+
+function css() {
+	return src('assets/scss/*.scss', {sourcemaps:true})
+		.pipe(sass().on('error', sass.logError))
+		.pipe(postcss([autoprefixer, postcssNested, cssNano]))
+		.pipe(rename((path) => path.extname = '.min.css'))
+		.pipe(dest('./build/css', {sourcemaps:true}));
+}
+
+function img() {
+	src('assets/images/*').pipe(imagemin()).pipe(dest('build/images'));
+}
+
+function watchFiles() {
+	const browserSync = browserSyncObject.create();
+
+	browserSync.init({
+		proxy: 'testing.local',
+	});
+
+	watch('assets/scss/*.scss', { ignoreInitial: false }, css).on('change', browserSync.reload);
+	watch('assets/src/*.js', { ignoreInitial: false }, js).on('change', browserSync.reload);
+	watch('assets/images/*', { ignoreInitial: false }, img).on('change', browserSync.reload);
+}
+
+const build = series(watchFiles);
+
+export default build;
