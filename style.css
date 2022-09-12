@@ -193,8 +193,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
   display: flex;
   min-height: 80vh;
   justify-content: center;
+  align-self: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-top: 1.25rem;
   padding-bottom: 1.25rem
+}
+
+@media (min-width: 640px) {
+  .atypic-main {
+    width: 75vw;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 4px;
+    border-left-width: 4px;
+    border-style: dotted;
+    --tw-border-opacity: 1;
+    border-color: rgb(0 0 0 / var(--tw-border-opacity))
+  }
 }
 
 @media (min-width: 768px) {
@@ -260,113 +276,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   position: relative !important
 }
 
-.sticky {
-  position: -webkit-sticky !important;
-  position: sticky !important
-}
-
 .bottom-\[100\%\] {
   bottom: 100% !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
-}
-
-.right-0 {
-  right: 0px !important
-}
-
-.top-0 {
-  top: 0px !important
 }
 
 .right-0 {
@@ -417,132 +328,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   min-height: 10vh !important
 }
 
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
-}
-
-.min-h-\[100vh\] {
-  min-height: 100vh !important
-}
-
-.min-h-\[10vh\] {
-  min-height: 10vh !important
+.min-h-\[20vh\] {
+  min-height: 20vh !important
 }
 
 .w-full {
@@ -551,134 +338,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .w-\[3rem\] {
   width: 3rem !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
-}
-
-.w-12 {
-  width: 3rem !important
-}
-
-.w-full {
-  width: 100% !important
 }
 
 .w-12 {
@@ -751,10 +410,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
   gap: 1.25rem !important
 }
 
-.gap-1 {
-  gap: 0.25rem !important
-}
-
 .self-start {
   align-self: flex-start !important
 }
@@ -765,18 +420,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .self-center {
   align-self: center !important
-}
-
-.overflow-auto {
-  overflow: auto !important
-}
-
-.overflow-hidden {
-  overflow: hidden !important
-}
-
-.scroll-auto {
-  scroll-behavior: auto !important
 }
 
 .rounded-lg {
@@ -791,179 +434,37 @@ Use it to make something cool, have fun, and share what you've learned with othe
   border-top-right-radius: 0.75rem !important
 }
 
-.border-4 {
-  border-width: 4px !important
+.border-b-0 {
+  border-bottom-width: 0px !important
 }
 
-.border {
-  border-width: 1px !important
+.border-r-0 {
+  border-right-width: 0px !important
+}
+
+.border-l-0 {
+  border-left-width: 0px !important
+}
+
+.border-t-4 {
+  border-top-width: 4px !important
+}
+
+.border-t-0 {
+  border-top-width: 0px !important
 }
 
 .border-b-4 {
   border-bottom-width: 4px !important
-}
-
-.border-b {
-  border-bottom-width: 1px !important
-}
-
-.border-b-2 {
-  border-bottom-width: 2px !important
-}
-
-.border-t-0 {
-  border-top-width: 0px !important
-}
-
-.border-r-0 {
-  border-right-width: 0px !important
-}
-
-.border-l-0 {
-  border-left-width: 0px !important
-}
-
-.border-b-4 {
-  border-bottom-width: 4px !important
-}
-
-.border-t-0 {
-  border-top-width: 0px !important
-}
-
-.border-r-0 {
-  border-right-width: 0px !important
-}
-
-.border-l-0 {
-  border-left-width: 0px !important
-}
-
-.border-b-8 {
-  border-bottom-width: 8px !important
-}
-
-.border-t-0 {
-  border-top-width: 0px !important
-}
-
-.border-r-0 {
-  border-right-width: 0px !important
-}
-
-.border-l-0 {
-  border-left-width: 0px !important
-}
-
-.border-b-8 {
-  border-bottom-width: 8px !important
-}
-
-.border-t-0 {
-  border-top-width: 0px !important
-}
-
-.border-r-0 {
-  border-right-width: 0px !important
-}
-
-.border-l-0 {
-  border-left-width: 0px !important
-}
-
-.border-b-4 {
-  border-bottom-width: 4px !important
-}
-
-.border-t-0 {
-  border-top-width: 0px !important
-}
-
-.border-r-0 {
-  border-right-width: 0px !important
-}
-
-.border-l-0 {
-  border-left-width: 0px !important
-}
-
-.border-b-4 {
-  border-bottom-width: 4px !important
-}
-
-.border-t-0 {
-  border-top-width: 0px !important
-}
-
-.border-r-0 {
-  border-right-width: 0px !important
-}
-
-.border-l-0 {
-  border-left-width: 0px !important
-}
-
-.border-b-4 {
-  border-bottom-width: 4px !important
-}
-
-.border-t-0 {
-  border-top-width: 0px !important
-}
-
-.border-r-0 {
-  border-right-width: 0px !important
-}
-
-.border-l-0 {
-  border-left-width: 0px !important
-}
-
-.border-b-4 {
-  border-bottom-width: 4px !important
-}
-
-.border-t-0 {
-  border-top-width: 0px !important
-}
-
-.border-r-0 {
-  border-right-width: 0px !important
-}
-
-.border-l-0 {
-  border-left-width: 0px !important
-}
-
-.border-b-4 {
-  border-bottom-width: 4px !important
-}
-
-.border-solid {
-  border-style: solid !important
-}
-
-.border-dashed {
-  border-style: dashed !important
 }
 
 .border-dotted {
   border-style: dotted !important
 }
 
-.border-yellow-500 {
+.border-white {
   --tw-border-opacity: 1 !important;
-  border-color: rgb(234 179 8 / var(--tw-border-opacity)) !important
-}
-
-.border-black {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important
-}
-
-.border-yellow-500 {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(234 179 8 / var(--tw-border-opacity)) !important
+  border-color: rgb(255 255 255 / var(--tw-border-opacity)) !important
 }
 
 .bg-black {
@@ -974,161 +475,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .bg-white {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important
-}
-
-.bg-black {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
 }
 
 .bg-cover {
@@ -1161,10 +507,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .p-2 {
   padding: 0.5rem !important
-}
-
-.p-3 {
-  padding: 0.75rem !important
 }
 
 .py-5 {
@@ -1215,11 +557,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
   line-height: 2rem !important
 }
 
-.text-4xl {
-  font-size: 2.25rem !important;
-  line-height: 2.5rem !important
-}
-
 .font-bold {
   font-weight: 700 !important
 }
@@ -1256,166 +593,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important
 }
 
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
-}
-
 .underline {
   -webkit-text-decoration-line: underline !important;
           text-decoration-line: underline !important
@@ -1429,21 +606,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .decoration-yellow-400 {
   -webkit-text-decoration-color: #facc15 !important;
           text-decoration-color: #facc15 !important
-}
-
-.decoration-yellow-500 {
-  -webkit-text-decoration-color: #eab308 !important;
-          text-decoration-color: #eab308 !important
-}
-
-.decoration-black {
-  -webkit-text-decoration-color: #000 !important;
-          text-decoration-color: #000 !important
-}
-
-.decoration-yellow-500 {
-  -webkit-text-decoration-color: #eab308 !important;
-          text-decoration-color: #eab308 !important
 }
 
 .decoration-dotted {
@@ -1475,10 +637,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
   display: block !important
 }
 
-.hover\:overflow-auto:hover {
-  overflow: auto !important
-}
-
 .active\:text-yellow-500:active {
   --tw-text-opacity: 1 !important;
   color: rgb(234 179 8 / var(--tw-text-opacity)) !important
@@ -1504,12 +662,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
   .sm\:text-6xl {
     font-size: 3.75rem !important;
     line-height: 1 !important
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:w-3\/5 {
-    width: 60% !important
   }
 }
 

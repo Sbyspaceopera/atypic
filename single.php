@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <main class="atypic-main">
-    <div class="atypic-single p-5 md:w-3/5">
+    <div class="atypic-single p-5">
         <h1 class="text-2xl text-center font-semibold underline decoration-dotted decoration-yellow-500">
             <?php the_title();?>
         </h1>

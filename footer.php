@@ -1,4 +1,4 @@
-<footer class="atypic-footer w-full h-15 p-3 bg-black text-white flex justify-between felx-wrap min-h-[10vh]">
+<footer class="atypic-footer border-dotted border-b-0 border-r-0 border-l-0 border-t-4 border-white w-full h-15 p-3 bg-black text-white flex justify-between felx-wrap min-h-[10vh]">
 
     <div class="skew-x-[-5deg] relative inline-block group hover:block self-start">
         <?php

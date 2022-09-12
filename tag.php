@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <main class="atypic-main atypic-tag">
-    <div class="p-5 md:w-3/5">
+    <div class="p-5">
         <h1 class="text-center">Tag : <?php single_tag_title(); ?></h1>
         <?php
         // Display optional category description

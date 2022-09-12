@@ -20,7 +20,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @layer components{
     .atypic-main{
-        @apply  flex py-5 md:px-1 justify-center min-h-[80vh];
+        @apply  flex py-5 md:px-1 justify-center min-h-[80vh] bg-white sm:w-[75vw] self-center sm:border-t-0 sm:border-b-0 sm:border-r-4 sm:border-l-4 sm:border-black sm:border-dotted;
     }
     .atypic-nav-menu{
         @apply hidden text-center child:child:whitespace-nowrap child:child:p-5 child:divide-y-4 child:divide-white group-hover:block bg-black text-yellow-500 absolute text-2xl sm:text-4xl;

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="atypic-main atypic-home">
-    <div class="md:w-3/5 w-full flex flex-col gap-5 justify-around">
+    <div class="w-full flex flex-col gap-5 justify-around">
         <?php
 
         $categories = get_categories(array(

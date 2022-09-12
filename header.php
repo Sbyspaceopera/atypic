@@ -16,8 +16,8 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="h-full  w-full">
-    <header class="min-h-[10vh] border-dashed border-t-0 border-r-0 border-l-0 border-b-4 atypic-header bg-white w-full p-3 sm:p-5 flex items-center justify-between">
+<body class="h-full w-full flex flex-col justify-center">
+    <header class="min-h-[20vh] border-dotted border-t-0 border-r-0 border-l-0 border-b-4 atypic-header bg-white w-full p-3 sm:p-5 flex items-center justify-between">
             <div class="flex gap-1 flex-wrap justify-center sm:gap-3">
                 <div class="w-12 sm:w-20 invert flex">
                         <?php the_custom_logo(); ?>

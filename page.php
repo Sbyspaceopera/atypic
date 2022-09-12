@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <main class="atypic-main atypic-page" >
-    <div class="atypic-page p-5 md:w-3/5"><?php the_content() ?></div>
+    <div class="atypic-page p-5"><?php the_content() ?></div>
 </main>
 
 <?php get_footer() ?>

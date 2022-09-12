@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <main class="atypic-main atypic-category">
-    <div class="p-5 md:w-3/5">
+    <div class="p-5">
         <h1 class="text-center">Catégorie : <?php single_cat_title(); ?></h1>
         <?php
         // Display optional category description
