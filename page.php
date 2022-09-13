@@ -1,12 +1,12 @@
 <?php get_header() ?>
 
-<main id="atypic-main atypic-page" class="flex py-5 px-1" >
-    <div class="atypic-main-left-laurel self-center w-0 sm:visible md:w-1/5">
-        <?php get_template_part('assets/svg/laurel', 'single-left.svg') ?>
-    </div>
-    <div class="atypic-page p-5 md:w-3/5"><?php the_content() ?></div>
-    <div class="atypic-main-right-laurel self-center w-0 md:visible md:w-1/5">
-        <?php get_template_part('assets/svg/laurel', 'single-right.svg') ?>
+<main class="atypic-main" >
+    <div class="atypic-page">
+        <h2 class="text-center mt-0 border-solid border-y-2 border-x-0 border-yellow-500"><?php the_title() ?></h2>
+        <?php if(has_post_thumbnail()){
+            the_post_thumbnail('large', ['class' => "w-full self-center mb-2"]);
+        } ?>
+        <?php the_content() ?>
     </div>
 </main>
 

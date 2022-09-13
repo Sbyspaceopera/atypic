@@ -1,25 +1,23 @@
 <?php get_header() ?>
 
-<main id="atypic-main" class="flex py-5 px-1">
-    <div class="atypic-main-left-laurel self-center w-0 sm:visible md:w-1/5">
-        <?php get_template_part('assets/svg/laurel', 'single-left.svg') ?>
-    </div>
-    <div class="p-5 md:w-3/5">
-        <h1 class="text-center">Catégorie : <?php single_cat_title(); ?></h1>
-        <?php
-        // Display optional category description
-        if (category_description()) : ?>
-            <p class="text-center"><?php echo category_description(); ?></p>
-        <?php endif; ?>
-        <div>
+<main class="atypic-main">
+    <div class="atypic-category p-0 sm:rounded-t-lg">
+        <header class="w-full sm:rounded-t-lg">
+            <h1 class="text-center text-yellow-500 text-3xl bg-black mt-0 p-3 sm:rounded-t-lg"><?php single_cat_title(); ?></h1>
+            <div class="border-2 border-x-0 border-t-0 border-dashed border-yellow-500">
+                <span class="text-center font-semibold center italic semi-bold border-2 border-x-0 border-t-0 border-dashed border-yellow-500"><?php echo category_description(); ?></span>
+            </div>
+        </header>
+
+        <main class="px-3 sm:px-8">
             <?php
             $wp_query = new WP_Query(["cat" => get_cat_ID(get_query_var('cat'))]);
             while ($wp_query->have_posts()) : the_post(); ?>
-                <h3>
-                    <a class="text-yellow-500 active:text-yellow-500 text-xl font-semibold" href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                <h3 class="text-center text-2xl font-semibold">
+                    <a class="text-black underline decoration-yellow-500 decoration-dotted" href="<?php the_permalink() ?>"><?php the_title() ?></a>
                 </h3>
 
-                <div class="flex text-black font-semibold flex-wrap gap-3">
+                <div class="flex text-black justify-center font-semibold flex-wrap gap-3">
                     <?php
                     $tags = get_the_tag_list('', '', '', get_the_ID());
                     echo $tags;
@@ -41,10 +39,7 @@
             endwhile;
             wp_reset_postdata()
             ?>
-        </div>
-    </div>
-    <div class="atypic-main-right-laurel self-center w-0 md:visible md:w-1/5">
-        <?php get_template_part('assets/svg/laurel', 'single-right.svg') ?>
+        </main>
     </div>
 </main>
 

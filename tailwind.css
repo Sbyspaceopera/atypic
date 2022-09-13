@@ -1,5 +1,5 @@
-/*
-Theme Name: Atypique
+/*!
+Theme Name: Atypic
 Theme URI: /
 Author: Sébastien CORBISIER
 Author URI: https://www.linkedin.com/in/sebastiencorbisier/
@@ -8,7 +8,7 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog
-Text Domain: atypique
+Text Domain: atypic
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -17,3 +17,22 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .atypic-main{
+        @apply w-full min-h-[85vh] sm:w-[80vw] lg:w-[60vw] self-center flex flex-col content-center justify-center;
+    }
+    .atypic-single, .atypic-page, .atypic-tag, .atypic-category{
+        @apply w-full my-10 bg-white sm:rounded-lg p-3 sm:px-8 sm:py-6;
+    }
+    .atypic-home{
+        @apply flex flex-col gap-8 mb-10;
+    }
+    .atypic-nav-menu-top{
+        @apply hidden text-center child:child:child:inline-block child:child:child:w-full child:child:child:h-full  child:child:whitespace-nowrap child:child:child:p-5 child:divide-y-4 child:divide-white group-hover:block bg-black text-white absolute text-2xl sm:text-4xl;
+    }
+    .atypic-nav-menu-bottom{
+                @apply hidden text-center child:child:child:inline-block child:child:child:w-full child:child:child:h-full child:child:whitespace-nowrap child:child:child:p-5 child:divide-y-4 child:divide-yellow-500 group-hover:block bg-white text-black absolute text-2xl sm:text-4xl;
+
+    }
+}

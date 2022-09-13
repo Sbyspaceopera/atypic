@@ -2,48 +2,28 @@
 
 .atypic-header {
 	@include normalize.normalize;
-	width: 100%;
-	height: 100vh;
-	color: white;
-	.menu {
-		padding: 0px 0px 0px 0px;
+	.dashicons {
+		font-size: 40px;
+		width: 40px;
+		height: 40px;
 		text-align: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		align-content: center;
-		justify-content: center;
-		justify-items: center;
-		font-size: larger;
-		justify-content: space-around;
-		list-style: none;
-		row-gap: 2rem;
-		.page_item {
+		@media screen and (min-width:640px){
+			font-size: 60px;
+			width: 60px;
+			height: 60px;
 			text-align: center;
 		}
-		@media (min-width: 640px) {
-			.current_page_item::before {
-				content: "↦";
-				color: rgb(234, 179, 8);
-				padding-right: 0.5rem;
-			}
-			.current_page_item::after {
-				content: "↤";
-				color: rgb(234, 179, 8);
-				padding-left: 0.5rem;
-			}
-		}
-	}
-	.dashicons {
-		font-size: 60px;
-		width: 60px;
-		height: 60px;
-		text-align: center;
 	}
 	.dashicons:before {
-		font-size: 60px;
-		width: 60px;
-		height: 60px;
+		font-size: 40px;
+		width: 40px;
+		height: 40px;
 		text-align: center;
+		@media screen and (min-width:640px){
+			font-size: 60px;
+			width: 60px;
+			height: 60px;
+			text-align: center;
+		}
 	}
 }

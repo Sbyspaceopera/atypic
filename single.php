@@ -1,14 +1,16 @@
 <?php get_header() ?>
 
-<main id="atypic-main" class="flex py-5 px-1">
-    <div class="atypic-main-left-laurel self-center w-0 sm:visible md:w-1/5">
-        <?php get_template_part('assets/svg/laurel', 'single-left.svg') ?>
-    </div>
-    <div class="atypic-single p-5 md:w-3/5">
-        <h1 class="text-2xl text-center font-semibold underline decoration-dotted decoration-yellow-500">
+<main class="atypic-main">
+    <div class="atypic-single">
+        <h1 class="text-2xl text-center font-semibold underline decoration-dotted decoration-yellow-500 decoration-[5px]">
             <?php the_title();?>
         </h1>
-        <p class="text-sm italic text-blue-500 font-semibold text-center"><?php echo get_the_date() ?></p>
+        <div>
+            <p class="text-lg text-yellow-500 italic font-semibold text-center"><?php echo get_the_date() ?></p>
+        </div>
+        <?php if(has_post_thumbnail()){
+            the_post_thumbnail('full', ['class' => "w-full self-center mb-2"]);
+        } ?>
         <div class="flex gap-3 py-1 text-black font-semibold flex-wrap justify-center">
             <?php
             // Styles : index.scss
@@ -22,9 +24,6 @@
             //This will call wpDiscuz insteed of classic comments template thanks to the plugin behavior.
             comments_template() 
         ?> 
-    </div>
-    <div class="atypic-main-right-laurel self-center w-0 md:visible md:w-1/5">
-        <?php get_template_part('assets/svg/laurel', 'single-right.svg') ?>
     </div>
 </main>
 

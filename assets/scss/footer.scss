@@ -2,42 +2,28 @@
 
 .atypic-footer {
 	@include normalize.normalize;
-	nav {
-		justify-self: center;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		list-style: none;
-		.menu {
-			display: flex;
-			align-items: center;
-			font-size: larger;
-			justify-content: space-evenly;
-			align-content: center;
-			flex-wrap: wrap;
-			list-style: none;
-			gap: 2rem;
-			li {
-				text-align: center;
-			}
+	.dashicons {
+		font-size: 40px;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		@media screen and (min-width:640px){
+			font-size: 60px;
+			width: 60px;
+			height: 60px;
+			text-align: center;
 		}
 	}
-	.page_item {
-		padding-right: 1rem;
-		padding-left: 1rem;
-		text-align: center;
-		text-decoration: none;
-	}
-	.dashicons {
-		font-size: 3rem;
-		width: 3rem;
-		height: 3rem;
-		text-align: center;
-	}
 	.dashicons:before {
-		font-size: 3rem;
-		width: 3rem;
-		height: 3rem;
+		font-size: 40px;
+		width: 40px;
+		height: 40px;
 		text-align: center;
+		@media screen and (min-width:640px){
+			font-size: 60px;
+			width: 60px;
+			height: 60px;
+			text-align: center;
+		}
 	}
 }
