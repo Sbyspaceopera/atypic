@@ -73,7 +73,7 @@ function atypic_styles()
 {
     //Loaded from top to bottom in HTML too
     wp_enqueue_style('dashicons');
-    wp_enqueue_style('tailwind_styles', get_theme_file_uri('/style.css'));
+    wp_enqueue_style('tailwind_styles', get_theme_file_uri('build/css/style.min.css'));
     wp_enqueue_style('index_css', get_theme_file_uri('/build/css/index.min.css'));
     wp_enqueue_style('header_css', get_theme_file_uri('/build/css/header.min.css'));
     wp_enqueue_style('footer_css', get_theme_file_uri('/build/css/footer.min.css'));

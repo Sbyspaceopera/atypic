@@ -6,9 +6,8 @@ import gulpSass from 'gulp-sass';
 import imagemin from 'gulp-imagemin';
 
 import postcss from 'gulp-postcss';
-import autoprefixer from 'gulp-postcss';
-import postcssNested from 'postcss-nested';
-import cssNano from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
 import babel from 'gulp-babel';
 import minify from 'gulp-imagemin';
@@ -33,12 +32,14 @@ async function js() {
 		.pipe(dest('build/js', {sourcemaps:true}));
 }
 
-const sass = gulpSass(dartSass);
 
 function css() {
-	return src('assets/scss/*.scss', {sourcemaps:true})
+	const sass = gulpSass(dartSass);
+	const pluginsPostCSS = [autoprefixer, cssnano] 
+
+	return src(['assets/scss/*.scss', 'style.css'], {sourcemaps:true})
 		.pipe(sass().on('error', sass.logError))
-		.pipe(postcss([autoprefixer, postcssNested, cssNano]))
+		.pipe(postcss(pluginsPostCSS))
 		.pipe(rename((path) => path.extname = '.min.css'))
 		.pipe(dest('./build/css', {sourcemaps:true}));
 }
@@ -54,7 +55,7 @@ function watchFiles() {
 		proxy: 'testing.local',
 	});
 
-	watch('assets/scss/*.scss', { ignoreInitial: false }, css).on('change', browserSync.reload);
+	watch(['assets/scss/*.scss', 'style.css'], { ignoreInitial: false }, css).on('change', browserSync.reload);
 	watch('assets/src/*.js', { ignoreInitial: false }, js).on('change', browserSync.reload);
 	watch('assets/images/*', { ignoreInitial: false }, img).on('change', browserSync.reload);
 }

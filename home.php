@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
-<main class="atypic-main atypic-home">
-    <div class="w-full flex flex-col gap-5 justify-around">
+<main class="atypic-main">
+    <h2 class="text-white text-center bg-black sm:rounded-xl text-3xl">Derniers articles</h2>
+    <div class="atypic-home">
         <?php
 
         $categories = get_categories(array(
@@ -13,14 +14,15 @@
         if ($categories) {
             foreach ($categories as $key => $category) {
         ?>
-                <section class="w-full xl:grid grid-cols-3 grid-rows-2 shadow-lg rounded-tl-xl rounded-tr-xl xl:rounded-xl">
-                    <header class="flex flex-col justify-center rounded-tl-xl rounded-tr-xl xl:rounded-tr-none xl:rounded-bl-xl xl:rounded-tl-xl w-full bg-no-repeat bg-center bg-cover col-span-1 row-span-2 p-1" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(<?php echo get_template_directory_uri() ?>/build/images/300930rgsdl.jpg)">
-                        <h2 class="font-semibold text-yellow-500 text-2xl text-center">
+                <section class="w-full xl:grid grid-cols-3 grid-rows-2 bg-white sm:rounded-xl">
+                    <header class="flex flex-col bg-black justify-between sm:rounded-tl-xl sm:rounded-tr-xl xl:rounded-bl-xl xl:rounded-tr-none  w-full bg-no-repeat bg-center bg-cover col-span-1 row-span-2 p-3">
+                        <h3 class="font-semibold text-yellow-500 text-2xl text-center">
                             <a href="<?php echo get_category_link($category->term_id) ?>"><?php echo $category->name ?></a>
-                        </h2>
+                        </h3>
                         <p class="text-white text-xl text-center"><?php echo $category->description ?></p>
+                        <a class="text-center text-yellow-500 text-xl underline decoration-yellow-500 decoration-dashed underline-offset-4 decoration-2" href="<?php echo get_category_link($category->term_id) ?>">Tous les articles</a>
                     </header>
-                    <main class="flex flex-col justify-around gap-3 col-span-2 row-span-2 p-2.5 xl:rounded-tr-xl xl:rounded-br-xl">
+                    <main class="flex flex-col justify-around gap-3 col-span-2 row-span-2 p-2.5 sm:rounded-b-xl xl:rounded-bl-none xl:border-4 border-black xl:rounded-r-xl">
                             <?php
                             $posts = get_posts(array(
                                 'numberposts' => 2,
@@ -33,8 +35,8 @@
                                 }
                                 ?>
 
-                                <h3 class="text-center xl:text-start mt-1">
-                                    <a class="text-black text-xl font-semibold underline decoration-yellow-400 decoration-dotted" href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a>
+                                <h3 class="text-center xl:text-start">
+                                    <a class="text-black text-xl font-semibold underline decoration-yellow-400 decoration-dotted decoration-[5px]" href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a>
                                 </h3>
 
                                 <div class="flex justify-center xl:justify-start text-black font-semibold flex-wrap gap-3">
@@ -47,8 +49,8 @@
                                     <?php echo wp_trim_words($post->post_content, 35) ?>
                                 </p>
                                 <div class="flex justify-between items-center">
-                                    <a class="text-blue-500 underline font-semibold" href="<?php echo get_permalink($post->ID) ?>">Lire la suite</a>
-                                    <p class="text-sm italic font-semibold text-blue-500"><?php echo get_the_date() ?></p>
+                                    <a class="text-black underline font-semibold decoration-yellow-500 decoration-2 underline-offset-2 decoration-dashed" href="<?php echo get_permalink($post->ID) ?>">Lire la suite</a>
+                                    <p class="text-sm italic font-semibold text-black"><?php echo get_the_date() ?></p>
                                 </div>
                             <?php
 

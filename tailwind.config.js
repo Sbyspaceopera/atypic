@@ -3,7 +3,9 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
 	content: [ './**/*.php' ],
 	theme: {
-		extend: {},
+		fontFamily:{
+			'title' : ['"Abril Fatface"', 'cursive']
+		}
 	},
 	plugins: [
 		plugin(function({addVariant}){

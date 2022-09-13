@@ -17,4 +17,11 @@ class OG_Controller{
         echo "//".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     }
 
+    public static function get_the_image(){
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+        echo has_post_thumbnail() ? get_the_post_thumbnail_url() : $image[0];
+    }
+
 }
