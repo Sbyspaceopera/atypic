@@ -78,6 +78,8 @@ function atypic_styles()
     wp_enqueue_style('header_css', get_theme_file_uri('/build/css/header.min.css'));
     wp_enqueue_style('footer_css', get_theme_file_uri('/build/css/footer.min.css'));
     wp_enqueue_style('home_css', get_theme_file_uri('/build/css/home.min.css'));
+
+    wp_enqueue_script('test', get_template_directory_uri().'/build/js/bundle.js');
 }
 
 add_action('wp_enqueue_scripts', '\AtypicTheme\Functions\atypic_styles');

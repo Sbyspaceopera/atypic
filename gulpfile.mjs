@@ -9,27 +9,22 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
-import babel from 'gulp-babel';
-import minify from 'gulp-imagemin';
-import stripDebug from 'gulp-strip-debug';
-
 import rename from 'gulp-rename';
 
 import browserSyncObject from 'browser-sync';
 
+import compiler from "webpack"
+import webpack from "webpack-stream"
+import webpackConfig from './webpack.config.js'
+
 const {watch, dest, src, series} = gulpPkg
 
-async function js() {
-	src('assets/src/*.js', {sourcemaps:true})
-		.pipe(stripDebug())
-		.pipe(
-			babel({
-				presets: ['@babel/env'],
-			})
-		)
-		.pipe(minify())
-		.pipe(rename((path) => path.extname = '.min.js'))
-		.pipe(dest('build/js', {sourcemaps:true}));
+function js() {
+	src('src/index.js')
+		//Compiler is needed to allow gulp to watch
+		//See webpack-stream docs
+		.pipe(webpack(webpackConfig, compiler))
+		.pipe(dest('build/js'));
 }
 
 
@@ -44,7 +39,7 @@ function css() {
 		.pipe(dest('./build/css', {sourcemaps:true}));
 }
 
-function img() {
+async function img() {
 	src('assets/images/*').pipe(imagemin()).pipe(dest('build/images'));
 }
 
@@ -56,7 +51,7 @@ function watchFiles() {
 	});
 
 	watch(['assets/scss/*.scss', 'style.css'], { ignoreInitial: false }, css).on('change', browserSync.reload);
-	watch('assets/src/*.js', { ignoreInitial: false }, js).on('change', browserSync.reload);
+	watch('src/*.js', { ignoreInitial: false }, js).on('change', browserSync.reload);
 	watch('assets/images/*', { ignoreInitial: false }, img).on('change', browserSync.reload);
 }
 
