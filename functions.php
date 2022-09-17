@@ -73,13 +73,20 @@ function atypic_styles()
 {
     //Loaded from top to bottom in HTML too
     wp_enqueue_style('dashicons');
-    wp_enqueue_style('tailwind_styles', get_theme_file_uri('build/css/style.min.css'));
-    wp_enqueue_style('index_css', get_theme_file_uri('/build/css/index.min.css'));
-    wp_enqueue_style('header_css', get_theme_file_uri('/build/css/header.min.css'));
-    wp_enqueue_style('footer_css', get_theme_file_uri('/build/css/footer.min.css'));
-    wp_enqueue_style('home_css', get_theme_file_uri('/build/css/home.min.css'));
+    wp_enqueue_style('tailwind_styles', get_theme_file_uri('/scss/build/style.min.css'));
+    wp_enqueue_style('index_css', get_theme_file_uri('/scss/build/index.min.css'));
+    wp_enqueue_style('header_css', get_theme_file_uri('/scss/build/header.min.css'));
+    wp_enqueue_style('footer_css', get_theme_file_uri('/scss/build/footer.min.css'));
+    wp_enqueue_style('home_css', get_theme_file_uri('/scss/build/home.min.css'));
 
-    wp_enqueue_script('test', get_template_directory_uri().'/build/js/bundle.js');
+    wp_enqueue_script('test', get_template_directory_uri().'/js/build/bundle.js');
 }
 
 add_action('wp_enqueue_scripts', '\AtypicTheme\Functions\atypic_styles');
+
+//Blocks
+function atypic_blocks(){
+    register_block_type(dirname(__FILE__) .'/build/atypic-header');
+}
+
+add_action('init', '\AtypicTheme\Functions\atypic_blocks');
