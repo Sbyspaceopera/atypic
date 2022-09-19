@@ -2,6 +2,11 @@
 
 namespace AtypicTheme\Functions;
 
+//Core classes namespace import
+use WP_REST_Response;
+use WP_REST_Server;
+use WP_REST_Request;
+
 require_once(get_template_directory() . '/includes/class-tgm-plugin-activation.php');
 
 //http://tgmpluginactivation.com/
@@ -86,7 +91,50 @@ add_action('wp_enqueue_scripts', '\AtypicTheme\Functions\atypic_styles');
 
 //Blocks
 function atypic_blocks(){
-    register_block_type(dirname(__FILE__) .'/build/atypic-header');
+    //Not a priority
+    //register_block_type(__DIR__.'/build/atypic-header');
+
+    
 }
 
 add_action('init', '\AtypicTheme\Functions\atypic_blocks');
+
+//Custom REST routes
+function atypic_rest_routes(){
+    
+    //Custom logo route
+    function get_the_logo_url(){
+        $custom_logo_id = get_theme_mod('custom_logo');
+        $url= wp_get_attachment_image_src($custom_logo_id, 'full')[0];
+        
+        $response = new WP_REST_Response($url);
+        $response->set_status(200);
+        return $response;
+    }
+    
+    register_rest_route('atypic/v1','/logo', array(
+        "methods" => WP_REST_Server::READABLE,
+        "callback" =>"\AtypicTheme\Functions\get_the_logo_url",
+        "permission_callback" => '__return_true'
+    ));
+
+    //Custom menu route
+    function get_the_menu(WP_REST_Request $request){
+        $menu_name = $request->get_param('menu_name');
+
+        $menu = wp_get_nav_menu_items($menu_name);
+
+        $response = new WP_REST_Response($menu);
+        $response->set_status(200);
+
+        return $response;
+    }
+
+    register_rest_route('atypic/v1', '/menu', array(
+        "methods" => WP_REST_Server::READABLE,
+        "callback" => "\AtypicTheme\Functions\get_the_menu",
+        "permission_callback" => '__return_true'
+    ));
+}
+
+add_action('rest_api_init', '\AtypicTheme\Functions\atypic_rest_routes');
