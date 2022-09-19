@@ -9,43 +9,37 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
-import babel from 'gulp-babel';
-import minify from 'gulp-imagemin';
-import stripDebug from 'gulp-strip-debug';
-
 import rename from 'gulp-rename';
 
 import browserSyncObject from 'browser-sync';
 
+import compiler from "webpack"
+import webpack from "webpack-stream"
+import webpackConfig from './atypic.webpack.config.js'
+
 const {watch, dest, src, series} = gulpPkg
 
-async function js() {
-	src('assets/src/*.js', {sourcemaps:true})
-		.pipe(stripDebug())
-		.pipe(
-			babel({
-				presets: ['@babel/env'],
-			})
-		)
-		.pipe(minify())
-		.pipe(rename((path) => path.extname = '.min.js'))
-		.pipe(dest('build/js', {sourcemaps:true}));
+function js() {
+	src('js/index.js')
+		//Compiler is needed to allow gulp to watch
+		//See webpack-stream docs
+		.pipe(webpack(webpackConfig, compiler))
+		.pipe(dest('./js/build/'));
 }
-
 
 function css() {
 	const sass = gulpSass(dartSass);
 	const pluginsPostCSS = [autoprefixer, cssnano] 
 
-	return src(['assets/scss/*.scss', 'style.css'], {sourcemaps:true})
+	return src(['scss/*.scss', 'style.css'], {sourcemaps:true})
 		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss(pluginsPostCSS))
 		.pipe(rename((path) => path.extname = '.min.css'))
-		.pipe(dest('./build/css', {sourcemaps:true}));
+		.pipe(dest('./scss/build/', {sourcemaps:true}));
 }
 
-function img() {
-	src('assets/images/*').pipe(imagemin()).pipe(dest('build/images'));
+async function img() {
+	src('images/*').pipe(imagemin()).pipe(dest('./images/build'));
 }
 
 function watchFiles() {
@@ -55,9 +49,9 @@ function watchFiles() {
 		proxy: 'testing.local',
 	});
 
-	watch(['assets/scss/*.scss', 'style.css'], { ignoreInitial: false }, css).on('change', browserSync.reload);
-	watch('assets/src/*.js', { ignoreInitial: false }, js).on('change', browserSync.reload);
-	watch('assets/images/*', { ignoreInitial: false }, img).on('change', browserSync.reload);
+	watch(['scss/*.scss', 'style.css'], { ignoreInitial: false }, css).on('change', browserSync.reload);
+	watch('js/*.js', { ignoreInitial: false }, js).on('change', browserSync.reload);
+	watch('images/*', { ignoreInitial: false }, img).on('change', browserSync.reload);
 }
 
 const build = series(watchFiles);
