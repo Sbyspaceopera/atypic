@@ -3,6 +3,8 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 
-registerBlockType('atypic/atypic-header', {
+registerBlockType('atypic/header', {
+	apiVersion:2,
 	edit: Edit,
+	save,
 });

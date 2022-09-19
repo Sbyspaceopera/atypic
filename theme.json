@@ -3,7 +3,23 @@
 	"version": 2,
 	"settings": {
 		"color": {
-			"palette": [ {}, {} ]
+			"palette": [
+				{
+					"name": "Yellow",
+					"slug": "yellow",
+					"color":"#eab308"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color":"#FFFFFF"
+				},
+				{
+					"name": "Black",
+					"slug": "black",
+					"color":"#000000"
+				}
+			]
 		},
 		"typography": {}
 	}

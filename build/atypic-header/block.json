@@ -8,7 +8,18 @@
   "icon": "layout",
   "description": "Atypic theme global header",
   "supports": {
-    "html": false
+    "color": {
+      "gradients": true,
+      "text": true
+    }
+  },
+  "attributes": {
+    "logoUrl": {
+      "type": "string"
+    },
+    "siteTitle": {
+      "type": "string"
+    }
   },
   "textdomain": "atypic-header",
   "editorScript": "file:index.js",
