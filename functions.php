@@ -7,7 +7,10 @@ use WP_REST_Response;
 use WP_REST_Server;
 use WP_REST_Request;
 
-require_once(get_template_directory() . '/includes/class-tgm-plugin-activation.php');
+require_once(get_template_directory() .'/includes/class-tgm-plugin-activation.php');
+require_once(get_template_directory().'/includes/atypic_post_types.php');
+require_once(get_template_directory().'/includes/atypic_custom_fields.php');
+require_once(get_template_directory().'/includes/atypic_allowed_blocks.php');
 
 //http://tgmpluginactivation.com/
 //Plugins dependencies
@@ -21,8 +24,8 @@ function atypic_register_required_plugins()
             'force_activation' => true,
         ),
         array(
-            'name' => 'Advanced Custom Fields',
-            'slug' => 'advanced-custom-fields',
+            'name' => 'CMB2',
+            'slug' => 'cmb2',
             'required' => true,
             'force_activation' => true,
         ),
@@ -73,7 +76,7 @@ function atypique_features()
 
 add_action('after_setup_theme', '\AtypicTheme\Functions\atypique_features');
 
-//Frontend styles
+//Front office styles
 function atypic_styles()
 {
     //Loaded from top to bottom in HTML too
@@ -89,10 +92,17 @@ function atypic_styles()
 
 add_action('wp_enqueue_scripts', '\AtypicTheme\Functions\atypic_styles');
 
+//Back office styles
+function add_editor_styles() {
+    wp_enqueue_style('tailwind_styles', get_theme_file_uri('/scss/build/style.min.css'));
+}
+add_action( 'admin_init', '\AtypicTheme\Functions\add_editor_styles' );
+
 //Blocks
 function atypic_blocks(){
     //Not a priority
     //register_block_type(__DIR__.'/build/atypic-header');
+    register_block_type(__DIR__.'/build/gallery');
 
     
 }

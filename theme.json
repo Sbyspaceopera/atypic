@@ -5,8 +5,8 @@
 		"color": {
 			"palette": [
 				{
-					"name": "Yellow",
-					"slug": "yellow",
+					"name": "Atypic Yellow",
+					"slug": "atypic_yellow",
 					"color":"#eab308"
 				},
 				{
@@ -21,6 +21,14 @@
 				}
 			]
 		},
-		"typography": {}
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "Roboto",
+					"name": "Roboto",
+					"slug": "roboto"
+				}
+			]
+		}
 	}
 }

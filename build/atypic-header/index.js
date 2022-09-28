@@ -36,20 +36,35 @@ function Edit(_ref) {
   } = _ref;
   const {
     logoUrl,
-    siteTitle
+    siteTitle,
+    menuItems
   } = attributes;
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3___default()({
-      path: '/atypic/v1/logo'
+      path: "/atypic/v1/logo"
     }).then(data => setAttributes({
       logoUrl: data
     }));
   }, []);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3___default()({
-      path: '/'
+      path: "/"
     }).then(data => setAttributes({
       siteTitle: data.name
+    }));
+  }, []);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3___default()({
+      path: "/atypic/v1/menu",
+      data: {
+        menu_name: "Main Menu"
+      }
+    }).then(data => setAttributes({
+      siteTitle: data.name
+    })).catch(setAttributes({
+      menu: {
+        error: "Please setup the Main Menu"
+      }
     }));
   }, []);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", {
@@ -92,7 +107,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('atypic/header', {
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)("atypic/header", {
   apiVersion: 2,
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]

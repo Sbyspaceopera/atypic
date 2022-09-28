@@ -6,35 +6,23 @@
 	"title": "Atypic Gallery",
 	"category": "theme",
 	"icon": "layout",
-	"description": "Atypic theme global gallery",
+	"description": "Atypic theme images gallery",
 	"supports": {
 		"color": {
 			"gradients": true,
 			"text": true
+		},
+		"typography": {
+			"fontFamily": "Roboto"
 		}
 	},
 	"attributes": {
-		"logoUrl":{
-			"type": "string",
-			"error":{
-				"type":"string"
-			}
-		},
-		"siteTitle":{
-			"type":"string",
-			"error":{
-				"type":"string"
-			}
-		},
-		"menuItems":{
-			"type":"object",
-			"error":{
-				"type":"string"
-			}
+		"collectionID":{
+			"type" : "integer"
 		}
 	},
-	"textdomain": "atypic-header",
+	"textdomain": "atypic-gallery",
 	"editorScript": "file:index.js",
 	"editorStyle": "file:index.css",
-	"style": "file:./style-index.css"
+	"style": "file:./index.css"
 }
