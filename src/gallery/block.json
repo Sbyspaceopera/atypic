@@ -24,7 +24,7 @@
 	"textdomain": "atypic-gallery",
 	"editorScript": "file:index.js",
 	"script":"",
-	"viewScript": "file:Save.js",
+	"viewScript": "file:save.js",
 	"editorStyle": "file:index.css",
 	"style": "file:./index.css"
 }

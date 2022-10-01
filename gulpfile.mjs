@@ -18,10 +18,11 @@ import webpack from "webpack-stream"
 import webpackConfig from './atypic.webpack.config.js'
 
 const {watch, dest, src, series} = gulpPkg
+const browserSync = browserSyncObject.create();
 
 function js() {
-	src('js/index.js')
-		//Compiler is needed to allow gulp to watch
+	return src('js/index.js')
+		//Compiler is needed to allow gulp to watch files
 		//See webpack-stream docs
 		.pipe(webpack(webpackConfig, compiler))
 		.pipe(dest('./js/build/'));
@@ -35,25 +36,27 @@ function css() {
 		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss(pluginsPostCSS))
 		.pipe(rename((path) => path.extname = '.min.css'))
-		.pipe(dest('./scss/build/', {sourcemaps:true}));
+		.pipe(dest('./scss/build/', {sourcemaps:true}))
+		.pipe(browserSync.stream());
 }
 
-async function img() {
-	src('images/*').pipe(imagemin()).pipe(dest('./images/build'));
+function img() {
+	return src('images/*').pipe(imagemin()).pipe(dest('./images/build'));
 }
 
 function watchFiles() {
-	const browserSync = browserSyncObject.create();
+	
 
 	browserSync.init({
 		proxy: 'testing.local',
 	});
 
-	watch(['scss/*.scss', 'style.css'], { ignoreInitial: false }, css).on('change', browserSync.reload);
-	watch(['js/*.js','js/web-components/*js'], { ignoreInitial: false }, js).on('change', browserSync.reload);
-	watch('images/*', { ignoreInitial: false }, img).on('change', browserSync.reload);
+	watch(['js/*.js','js/web-components/*.js'], { ignoreInitial: false }, js).on('ready', browserSync.reload);
+	watch(['scss/*.scss', 'style.css'], { ignoreInitial: false }, css).on('ready', browserSync.reload);
+	watch('images/*', { ignoreInitial: false }, img).on('ready', browserSync.reload);
 }
 
 const build = series(watchFiles);
 
+export {js,css, img}
 export default build;

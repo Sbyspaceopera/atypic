@@ -10,7 +10,7 @@
 		"build:blocks": "wp-scripts build",
 		"start:tailwind": "npx tailwindcss -i ./tailwind.css -o ./style.css --watch",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"prettier": "prettier ./src/**/*.js --write",
+		"prettier": "prettier ./src/**/*.js ./js/web-components/**/*.js --write",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
 		"format": "wp-scripts format",

@@ -20,6 +20,7 @@ export default function Edit({ attributes, setAttributes }) {
   useEffect(() => {
     apiFetch({ path: "/wp/v2/atypic_gallery" })
       .then((data) => setCollections([...collections, ...data]))
+      .then((data) => console.log(data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -79,7 +80,9 @@ export default function Edit({ attributes, setAttributes }) {
             </div>
           </div>
         )}
-        {(preview && collectionID) && <atypic-gallery collectionID={collectionID} />}
+        {preview && collectionID && (
+          <atypic-gallery collectionID={collectionID} />
+        )}
       </Fragment>
     );
   };

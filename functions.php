@@ -46,18 +46,6 @@ function atypic_register_required_plugins()
 }
 add_action('tgmpa_register', '\AtypicTheme\Functions\atypic_register_required_plugins');
 
-
-//Remove jquery in the frontend
-/*function change_default_jquery()
-{
-    if (!is_admin()) {
-        wp_dequeue_script('jquery');
-        wp_deregister_script('jquery');
-    }
-}
-
-add_filter('wp_enqueue_scripts', '\AtypicTheme\Functions\change_default_jquery', PHP_INT_MAX);*/
-
 //Hide admin bar in the frontend
 add_filter('show_admin_bar', '__return_false');
 
@@ -101,6 +89,8 @@ add_action( 'admin_init', '\AtypicTheme\Functions\add_editor_styles' );
 //Web components
 function atypic_components(){
     wp_enqueue_script('atypic-components', get_template_directory_uri().'/js/build/bundle.js');
+    wp_enqueue_style('tailwind_styles', get_theme_file_uri('/scss/build/style.min.css'));
+
 }
 add_action('enqueue_block_editor_assets', '\AtypicTheme\Functions\atypic_components');
 
