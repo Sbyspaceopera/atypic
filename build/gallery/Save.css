@@ -1,0 +1,383 @@
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/header.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+.atypic-header {
+  /*
+  1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+  2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+  */
+  /*
+  1. Use a consistent sensible line-height in all browsers.
+  2. Prevent adjustments of font size after orientation changes in iOS.
+  3. Use a more readable tab size.
+  4. Use the user's configured `sans` font-family by default.
+  */
+  /*
+  1. Remove the margin in all browsers.
+  2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+  */
+  /*
+  1. Add the correct height in Firefox.
+  2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+  3. Ensure horizontal rules are visible by default.
+  */
+  /*
+  Add the correct text decoration in Chrome, Edge, and Safari.
+  */
+  /*
+  Remove the default font size and weight for headings.
+  */
+  /*
+  Reset links to optimize for opt-in styling instead of opt-out.
+  */
+  /*
+  Add the correct font weight in Edge and Safari.
+  */
+  /*
+  1. Use the user's configured `mono` font family by default.
+  2. Correct the odd `em` font sizing in all browsers.
+  */
+  /*
+  Add the correct font size in all browsers.
+  */
+  /*
+  Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+  */
+  /*
+  1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+  2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+  3. Remove gaps between table borders by default.
+  */
+  /*
+  1. Change the font styles in all browsers.
+  2. Remove the margin in Firefox and Safari.
+  3. Remove default padding in all browsers.
+  */
+  /*
+  Remove the inheritance of text transform in Edge and Firefox.
+  */
+  /*
+  1. Correct the inability to style clickable types in iOS and Safari.
+  2. Remove default button styles.
+  */
+  /*
+  Use the modern Firefox focus style for all focusable elements.
+  */
+  /*
+  Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+  */
+  /*
+  Add the correct vertical alignment in Chrome and Firefox.
+  */
+  /*
+  Correct the cursor style of increment and decrement buttons in Safari.
+  */
+  /*
+  1. Correct the odd appearance in Chrome and Safari.
+  2. Correct the outline style in Safari.
+  */
+  /*
+  Remove the inner padding in Chrome and Safari on macOS.
+  */
+  /*
+  1. Correct the inability to style clickable types in iOS and Safari.
+  2. Change font properties to `inherit` in Safari.
+  */
+  /*
+  Add the correct display in Chrome and Safari.
+  */
+  /*
+  Removes the default spacing and border for appropriate elements.
+  */
+  /*
+  Prevent resizing textareas horizontally by default.
+  */
+  /*
+  1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+  2. Set the default placeholder color to the user's configured gray 400 color.
+  */
+  /*
+  Set the default cursor for buttons.
+  */
+  /*
+  Make sure disabled buttons don't get the pointer cursor.
+  */
+  /*
+  1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+  2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+     This can trigger a poorly considered lint error in some tools but is included by design.
+  */
+  /*
+  Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+  */
+}
+.atypic-header *,
+.atypic-header ::before,
+.atypic-header ::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+.atypic-header ::before,
+.atypic-header ::after {
+  --tw-content: "";
+}
+.atypic-header html {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+}
+.atypic-header body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+.atypic-header hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+.atypic-header abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+.atypic-header h1,
+.atypic-header h2,
+.atypic-header h3,
+.atypic-header h4,
+.atypic-header h5,
+.atypic-header h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+.atypic-header a {
+  color: inherit;
+  text-decoration: none;
+}
+.atypic-header b,
+.atypic-header strong {
+  font-weight: bolder;
+}
+.atypic-header code,
+.atypic-header kbd,
+.atypic-header samp,
+.atypic-header pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+.atypic-header small {
+  font-size: 80%;
+}
+.atypic-header sub,
+.atypic-header sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.atypic-header sub {
+  bottom: -0.25em;
+}
+.atypic-header sup {
+  top: -0.5em;
+}
+.atypic-header table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+.atypic-header button,
+.atypic-header input,
+.atypic-header optgroup,
+.atypic-header select,
+.atypic-header textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+.atypic-header button,
+.atypic-header select {
+  text-transform: none;
+}
+.atypic-header button,
+.atypic-header [type=button],
+.atypic-header [type=reset],
+.atypic-header [type=submit] {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+.atypic-header :-moz-focusring {
+  outline: auto;
+}
+.atypic-header :-moz-ui-invalid {
+  box-shadow: none;
+}
+.atypic-header progress {
+  vertical-align: baseline;
+}
+.atypic-header ::-webkit-inner-spin-button,
+.atypic-header ::-webkit-outer-spin-button {
+  height: auto;
+}
+.atypic-header [type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+.atypic-header ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.atypic-header ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+.atypic-header summary {
+  display: list-item;
+}
+.atypic-header blockquote,
+.atypic-header dl,
+.atypic-header dd,
+.atypic-header h1,
+.atypic-header h2,
+.atypic-header h3,
+.atypic-header h4,
+.atypic-header h5,
+.atypic-header h6,
+.atypic-header hr,
+.atypic-header figure,
+.atypic-header p,
+.atypic-header pre {
+  margin: 0;
+}
+.atypic-header fieldset {
+  margin: 0;
+  padding: 0;
+}
+.atypic-header legend {
+  padding: 0;
+}
+.atypic-header ol,
+.atypic-header ul,
+.atypic-header menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.atypic-header textarea {
+  resize: vertical;
+}
+.atypic-header input::-moz-placeholder,
+.atypic-header textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+.atypic-header input::-moz-placeholder, .atypic-header textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+.atypic-header input::placeholder,
+.atypic-header textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+.atypic-header button,
+.atypic-header [role=button] {
+  cursor: pointer;
+}
+.atypic-header :disabled {
+  cursor: default;
+}
+.atypic-header img,
+.atypic-header svg,
+.atypic-header video,
+.atypic-header canvas,
+.atypic-header audio,
+.atypic-header iframe,
+.atypic-header embed,
+.atypic-header object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+.atypic-header img,
+.atypic-header video {
+  max-width: 100%;
+  height: auto;
+}
+.atypic-header .dashicons {
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+@media screen and (min-width: 640px) {
+  .atypic-header .dashicons {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+  }
+}
+.atypic-header .dashicons:before {
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+@media screen and (min-width: 640px) {
+  .atypic-header .dashicons:before {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=Save.css.map*/

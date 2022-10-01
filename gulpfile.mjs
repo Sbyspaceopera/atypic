@@ -50,7 +50,7 @@ function watchFiles() {
 	});
 
 	watch(['scss/*.scss', 'style.css'], { ignoreInitial: false }, css).on('change', browserSync.reload);
-	watch('js/*.js', { ignoreInitial: false }, js).on('change', browserSync.reload);
+	watch(['js/*.js','js/web-components/*js'], { ignoreInitial: false }, js).on('change', browserSync.reload);
 	watch('images/*', { ignoreInitial: false }, img).on('change', browserSync.reload);
 }
 

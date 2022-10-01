@@ -4,8 +4,6 @@ import { Fragment, useEffect, useState, useRef } from "@wordpress/element";
 import apiFetch from "@wordpress/api-fetch";
 import { SelectControl, Spinner } from "@wordpress/components";
 
-import Gallery from "./components/gallery";
-
 import "../../scss/header.scss";
 import "../../style.css";
 
@@ -71,7 +69,7 @@ export default function Edit({ attributes, setAttributes }) {
           {renderOptionHTML()}
         </SelectControl>
 
-        {selectedCollection && (
+        {collectionID && (
           <div className="flex items-center justify-center">
             <div
               className=" text-center ring-4 my-2 rounded-lg w-[200px] ring-yellow-500 ring-offset-3 border-4 border-solid border-black bg-white text-black font-semibold my-0 p-2 hover:cursor-pointer"
@@ -81,7 +79,7 @@ export default function Edit({ attributes, setAttributes }) {
             </div>
           </div>
         )}
-        {preview && <Gallery collection={selectedCollection} />}
+        {(preview && collectionID) && <atypic-gallery collectionID={collectionID} />}
       </Fragment>
     );
   };
