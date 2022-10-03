@@ -65,8 +65,7 @@ export default function Edit({ attributes, setAttributes }) {
               Choose A Collection :
             </div>
           }
-          onChange={(value) => onChange(value)}
-        >
+          onChange={(value) => onChange(value)}>
           {renderOptionHTML()}
         </SelectControl>
 
@@ -74,8 +73,7 @@ export default function Edit({ attributes, setAttributes }) {
           <div className="flex items-center justify-center">
             <div
               className=" text-center ring-4 my-2 rounded-lg w-[200px] ring-yellow-500 ring-offset-3 border-4 border-solid border-black bg-white text-black font-semibold my-0 p-2 hover:cursor-pointer"
-              onClick={() => setPreview(!preview)}
-            >
+              onClick={() => setPreview(!preview)}>
               {preview ? "Hide Preview" : "Show Preview"}
             </div>
           </div>

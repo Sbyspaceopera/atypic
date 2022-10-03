@@ -23,7 +23,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         @apply w-full min-h-[85vh] sm:w-[80vw] lg:w-[60vw] self-center flex flex-col content-center justify-center;
     }
     .atypic-single, .atypic-page, .atypic-tag, .atypic-category{
-        @apply w-full my-10 bg-white sm:rounded-lg p-3 sm:px-8 sm:py-6;
+        @apply w-full my-10 bg-white sm:rounded-lg py-3 sm:p-3 sm:px-8 sm:py-6;
     }
     .atypic-home{
         @apply flex flex-col gap-8 mb-10;

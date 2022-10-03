@@ -224,12 +224,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
   width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding: 0.75rem
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem
 }
 
 @media (min-width: 640px) {
   .atypic-single,  .atypic-page,  .atypic-tag,  .atypic-category {
     border-radius: 0.5rem;
+    padding: 0.75rem;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 1.5rem;
@@ -378,16 +380,32 @@ Use it to make something cool, have fun, and share what you've learned with othe
   top: 0.5rem !important
 }
 
-.right-2 {
-  right: 0.5rem !important
+.right-4 {
+  right: 1rem !important
 }
 
 .top-2 {
   top: 0.5rem !important
 }
 
-.right-3 {
-  right: 0.75rem !important
+.right-4 {
+  right: 1rem !important
+}
+
+.top-2 {
+  top: 0.5rem !important
+}
+
+.right-4 {
+  right: 1rem !important
+}
+
+.top-2 {
+  top: 0.5rem !important
+}
+
+.right-4 {
+  right: 1rem !important
 }
 
 .top-2 {
@@ -423,9 +441,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
   margin-bottom: 0px !important
 }
 
-.my-2 {
-  margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important
+.my-4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important
 }
 
 .mx-auto {
@@ -441,6 +459,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .my-2 {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important
+}
+
+.my-4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important
 }
 
 .mx-auto {
@@ -458,9 +481,49 @@ Use it to make something cool, have fun, and share what you've learned with othe
   margin-right: 0.5rem !important
 }
 
-.my-2 {
-  margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important
+.my-4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important
+}
+
+.my-0 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important
+}
+
+.mx-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important
+}
+
+.my-4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important
+}
+
+.my-0 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important
+}
+
+.mx-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important
+}
+
+.my-4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important
 }
 
 .mx-auto {
@@ -514,8 +577,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   height: 100% !important
 }
 
-.h-\[450px\] {
-  height: 450px !important
+.h-\[400px\] {
+  height: 400px !important
 }
 
 .h-\[100px\] {
@@ -526,6 +589,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
   height: 450px !important
 }
 
+.h-\[400px\] {
+  height: 400px !important
+}
+
 .h-\[100px\] {
   height: 100px !important
 }
@@ -534,8 +601,44 @@ Use it to make something cool, have fun, and share what you've learned with othe
   height: 450px !important
 }
 
+.h-\[400px\] {
+  height: 400px !important
+}
+
 .h-\[100px\] {
   height: 100px !important
+}
+
+.h-\[450px\] {
+  height: 450px !important
+}
+
+.h-\[400px\] {
+  height: 400px !important
+}
+
+.h-\[100px\] {
+  height: 100px !important
+}
+
+.h-\[450px\] {
+  height: 450px !important
+}
+
+.h-\[400px\] {
+  height: 400px !important
+}
+
+.h-\[100px\] {
+  height: 100px !important
+}
+
+.h-\[450px\] {
+  height: 450px !important
+}
+
+.max-h-\[400px\] {
+  max-height: 400px !important
 }
 
 .min-h-\[10vh\] {
@@ -586,8 +689,60 @@ Use it to make something cool, have fun, and share what you've learned with othe
   width: 100% !important
 }
 
+.w-full {
+  width: 100% !important
+}
+
+.w-\[100\%\] {
+  width: 100% !important
+}
+
+.w-full {
+  width: 100% !important
+}
+
+.w-\[100\%\] {
+  width: 100% !important
+}
+
 .max-w-md {
   max-width: 28rem !important
+}
+
+.max-w-\[100\%\] {
+  max-width: 100% !important
+}
+
+.max-w-md {
+  max-width: 28rem !important
+}
+
+.max-w-\[100\%\] {
+  max-width: 100% !important
+}
+
+.max-w-md {
+  max-width: 28rem !important
+}
+
+.max-w-\[100\%\] {
+  max-width: 100% !important
+}
+
+.max-w-md {
+  max-width: 28rem !important
+}
+
+.max-w-\[100\%\] {
+  max-width: 100% !important
+}
+
+.max-w-md {
+  max-width: 28rem !important
+}
+
+.max-w-\[100\%\] {
+  max-width: 100% !important
 }
 
 .rotate-180 {
@@ -705,8 +860,40 @@ Use it to make something cool, have fun, and share what you've learned with othe
   border-radius: 0.375rem !important
 }
 
+.rounded-\[1rem\] {
+  border-radius: 1rem !important
+}
+
+.rounded-md {
+  border-radius: 0.375rem !important
+}
+
+.rounded-\[1rem\] {
+  border-radius: 1rem !important
+}
+
+.rounded-md {
+  border-radius: 0.375rem !important
+}
+
 .border-2 {
   border-width: 2px !important
+}
+
+.border-8 {
+  border-width: 8px !important
+}
+
+.border-4 {
+  border-width: 4px !important
+}
+
+.border-8 {
+  border-width: 8px !important
+}
+
+.border-4 {
+  border-width: 4px !important
 }
 
 .border-8 {
@@ -837,6 +1024,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
   background-color: rgb(255 255 255 / 0.25) !important
 }
 
+.bg-black {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
+}
+
+.bg-white\/25 {
+  background-color: rgb(255 255 255 / 0.25) !important
+}
+
+.bg-black {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
+}
+
+.bg-white\/25 {
+  background-color: rgb(255 255 255 / 0.25) !important
+}
+
 .bg-cover {
   background-size: cover !important
 }
@@ -875,6 +1080,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .p-1 {
   padding: 0.25rem !important
+}
+
+.p-2 {
+  padding: 0.5rem !important
+}
+
+.p-1 {
+  padding: 0.25rem !important
+}
+
+.p-3 {
+  padding: 0.75rem !important
+}
+
+.p-2 {
+  padding: 0.5rem !important
+}
+
+.p-1 {
+  padding: 0.25rem !important
+}
+
+.p-3 {
+  padding: 0.75rem !important
 }
 
 .p-2 {
@@ -997,6 +1226,36 @@ Use it to make something cool, have fun, and share what you've learned with othe
   line-height: 1.75rem !important
 }
 
+.text-2xl {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important
+}
+
+.text-3xl {
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important
+}
+
+.text-2xl {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important
+}
+
+.text-3xl {
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important
+}
+
 .font-bold {
   font-weight: 700 !important
 }
@@ -1058,24 +1317,49 @@ Use it to make something cool, have fun, and share what you've learned with othe
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important
 }
 
+.text-yellow-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
+}
+
+.text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important
+}
+
+.text-yellow-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
+}
+
+.text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important
+}
+
 .underline {
-  text-decoration-line: underline !important
+  -webkit-text-decoration-line: underline !important;
+          text-decoration-line: underline !important
 }
 
 .decoration-yellow-500 {
-  text-decoration-color: #eab308 !important
+  -webkit-text-decoration-color: #eab308 !important;
+          text-decoration-color: #eab308 !important
 }
 
 .decoration-yellow-400 {
-  text-decoration-color: #facc15 !important
+  -webkit-text-decoration-color: #facc15 !important;
+          text-decoration-color: #facc15 !important
 }
 
 .decoration-dotted {
-  text-decoration-style: dotted !important
+  -webkit-text-decoration-style: dotted !important;
+          text-decoration-style: dotted !important
 }
 
 .decoration-dashed {
-  text-decoration-style: dashed !important
+  -webkit-text-decoration-style: dashed !important;
+          text-decoration-style: dashed !important
 }
 
 .decoration-2 {
@@ -1138,7 +1422,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .active\:decoration-yellow-500:active {
-  text-decoration-color: #eab308 !important
+  -webkit-text-decoration-color: #eab308 !important;
+          text-decoration-color: #eab308 !important
 }
 
 .child\:mx-auto > * {
@@ -1159,6 +1444,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
     width: 5rem !important
   }
 
+  .sm\:w-\[600px\] {
+    width: 600px !important
+  }
+
   .sm\:max-w-xl {
     max-width: 36rem !important
   }
@@ -1175,8 +1464,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
     border-radius: 0.75rem !important
   }
 
-  .sm\:rounded-lg {
-    border-radius: 0.5rem !important
+  .sm\:rounded-md {
+    border-radius: 0.375rem !important
   }
 
   .sm\:rounded-t-lg {
@@ -1225,9 +1514,23 @@ Use it to make something cool, have fun, and share what you've learned with othe
   }
 }
 
+@media (min-width: 768px) {
+  .md\:w-\[600px\] {
+    width: 600px !important
+  }
+
+  .md\:max-w-\[750px\] {
+    max-width: 750px !important
+  }
+}
+
 @media (min-width: 1024px) {
-  .lg\:w-\[80\%\] {
-    width: 80% !important
+  .lg\:w-\[500px\] {
+    width: 500px !important
+  }
+
+  .lg\:w-\[600px\] {
+    width: 600px !important
   }
 
   .lg\:px-20 {

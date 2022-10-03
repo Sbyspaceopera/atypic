@@ -38,8 +38,7 @@ export default function Edit({ attributes, setAttributes }) {
           </div>
           <a
             className="justify-end self-end text-left text-4xl sm:text-6xl text-black underline decoration-dotted decoration-yellow-500"
-            href="<?php echo home_url() ?>"
-          >
+            href="<?php echo home_url() ?>">
             <h1 className="font-title">{siteTitle}</h1>
           </a>
         </div>

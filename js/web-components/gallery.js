@@ -43,17 +43,15 @@ const Gallery = ({ collectionid }) => {
 
   return collection ? (
     <div
-      className="bg-black sm:rounded-lg lg:w-[80%] relative my-2 mx-auto"
-      ref={galleryRef}
-    >
+      className="bg-black sm:rounded-md md:max-w-[750px] relative my-4 mx-auto"
+      ref={galleryRef}>
       {selectedImage ? (
         <Fragment>
           <h3 className="text-center p-2 my-0 text-yellow-500 text-2xl font-semibold sm:rounded-t-lg">
             {collection.title.rendered}
             <span
               onClick={() => setShowDescription(!showDescription)}
-              className="dashicons dashicons-info-outline hover:cursor-pointer text-2xl text-yellow-500 text-center mx-2"
-            ></span>
+              className="dashicons dashicons-info-outline hover:cursor-pointer text-2xl text-yellow-500 text-center mx-2"></span>
           </h3>
           <span
             onClick={(e) => handleFullscreen(galleryRef.current)}
@@ -63,15 +61,14 @@ const Gallery = ({ collectionid }) => {
                 ? "dashicons-fullscreen-exit-alt"
                 : "dashicons-fullscreen-alt") +
               " text-white absolute top-2 right-4 hover:cursor-pointer"
-            }
-          ></span>
+            }></span>
 
           {showDescription && (
             <p className="text-yellow-500 text-center m-0 font-semibold italic p-1">
               {selectedImage.description}
             </p>
           )}
-          <div className="h-[450px] w-full flex items-center justify-center">
+          <div className="h-[400px] w-full flex items-center justify-center">
             <img
               ref={previewImageRef}
               key={selectedImage.url}
@@ -80,7 +77,7 @@ const Gallery = ({ collectionid }) => {
                 setPreviewImageFormat(
                   previewImageRef.current.width > previewImageRef.current.height
                     ? "w-[100%] max-w-md sm:max-w-xl block"
-                    : "h-[450px] block"
+                    : "max-h-[400px] max-w-[100%] block"
                 )
               }
               onClick={(e) => handleFullscreen(e.target)}
@@ -116,7 +113,7 @@ const Gallery = ({ collectionid }) => {
               setPreviewImageFormat(
                 imagesRef[index].current.width > imagesRef[index].current.height
                   ? "w-[100%] max-w-md sm:max-w-xl block"
-                  : "h-[450px]"
+                  : "max-h-[400px] max-w-[100%] block"
               );
             }}
           />
