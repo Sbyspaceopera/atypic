@@ -1,10 +1,10 @@
 import { registerBlockType } from "@wordpress/blocks";
-import "./style.scss";
+import "./index.scss";
 import Edit from "./edit";
-import save from "./save";
+import Save from "./save";
 
-registerBlockType("atypic/header", {
+registerBlockType("atypic/gallery", {
   apiVersion: 2,
   edit: Edit,
-  save,
+  save: Save,
 });

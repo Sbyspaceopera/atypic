@@ -2,15 +2,93 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/atypic-header/edit.js":
-/*!***********************************!*\
-  !*** ./src/atypic-header/edit.js ***!
-  \***********************************/
+/***/ "./src/gallery/components/gallery.js":
+/*!*******************************************!*\
+  !*** ./src/gallery/components/gallery.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _scss_header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../scss/header.scss */ "./scss/header.scss");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../style.css */ "./style.css");
+
+
+
+
+
+const Gallery = _ref => {
+  let {
+    collection
+  } = _ref;
+  const [selectedImage, setSelectedImage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const [previewImageFormat, setPreviewImageFormat] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)("");
+  const [imagesRef, setImagesRef] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const [showDescription, setShowDescription] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const previewImageRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  const galleryRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (collection) {
+      setSelectedImage({ ...collection.cmb2.gallery.images[0]
+      });
+      setImagesRef(imagesRef => Array(collection.cmb2.gallery.images.length).fill().map((_, i) => imagesRef[i] || (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRef)()));
+    }
+  }, [collection]);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "bg-black sm:rounded-lg relative my-2",
+    ref: galleryRef
+  }, selectedImage ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "text-center p-2 my-0 text-yellow-500 text-2xl font-semibold sm:rounded-t-lg"
+  }, collection.title.rendered, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    onClick: () => setShowDescription(!showDescription),
+    className: "dashicons dashicons-info-outline hover:cursor-pointer text-2xl text-yellow-500 text-center mx-2"
+  })), showDescription && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "text-yellow-500 text-center m-0 font-semibold italic p-1"
+  }, selectedImage.description), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "h-[450px] w-full flex items-center justify-center"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    ref: previewImageRef,
+    key: selectedImage.url,
+    className: previewImageFormat,
+    onLoad: () => setPreviewImageFormat(previewImageRef.current.width > previewImageRef.current.height ? "w-[100%] max-w-md sm:max-w-xl block" : "h-[450px] block"),
+    onClick: e => galleryRef.current.requestFullscreen(),
+    src: selectedImage.url,
+    alt: selectedImage.description
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
+    className: "text-center p-1  my-0 text-white text-lg font-semibold"
+  }, selectedImage.title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "text-center p-1 italic my-0 text-white"
+  }, "\"", selectedImage.description, "\"")) : null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "flex gap-2 border-8 border-solid p-3 bg-white/25 py-2 atypic-scroll-x scroll-smooth rounded-[1rem]"
+  }, Object.values(collection.cmb2.gallery.images).map((image, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    ref: imagesRef[index],
+    id: image.url_id,
+    key: image.url,
+    className: `h-[100px] hover:cursor-pointer rounded-md ${selectedImage && image.url_id === selectedImage.url_id ? "border-solid border-4 border-yellow-500" : ""}`,
+    src: image.url,
+    alt: image.description,
+    onClick: () => {
+      setSelectedImage({ ...image
+      });
+      setPreviewImageFormat(imagesRef[index].current.width > imagesRef[index].current.height ? "w-[100%] max-w-md sm:max-w-xl block" : "h-[450px]"); //window.location.href = '#'+image.url_id;
+    }
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Gallery);
+
+/***/ }),
+
+/***/ "./src/gallery/save.js":
+/*!*****************************!*\
+  !*** ./src/gallery/save.js ***!
+  \*****************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ Edit; }
+/* harmony export */   "default": function() { return /* binding */ Save; }
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
@@ -20,8 +98,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _scss_header_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../scss/header.scss */ "./scss/header.scss");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../style.css */ "./style.css");
+/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/gallery */ "./src/gallery/components/gallery.js");
+/* harmony import */ var _scss_header_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../scss/header.scss */ "./scss/header.scss");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../style.css */ "./style.css");
 
 
 
@@ -29,107 +108,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Edit(_ref) {
+
+function Save(_ref) {
   let {
-    attributes,
-    setAttributes
+    attributes
   } = _ref;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
   const {
-    logoUrl,
-    siteTitle,
-    menuItems
+    collectionID
   } = attributes;
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3___default()({
-      path: "/atypic/v1/logo"
-    }).then(data => setAttributes({
-      logoUrl: data
-    }));
-  }, []);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3___default()({
-      path: "/"
-    }).then(data => setAttributes({
-      siteTitle: data.name
-    }));
-  }, []);
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3___default()({
-      path: "/atypic/v1/menu",
-      data: {
-        menu_name: "Main Menu"
-      }
-    }).then(data => setAttributes({
-      siteTitle: data.name
-    })).catch(setAttributes({
-      menu: {
-        error: "Please setup the Main Menu"
-      }
-    }));
-  }, []);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", {
-    className: "min-h-[15vh] z-10 top-0 border-solid border-t-0 border-r-0 border-l-0 border-b-4 atypic-header bg-white w-full p-3 sm:p-5 flex items-center justify-between"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "flex gap-1 flex-wrap justify-center sm:gap-3"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "w-12 sm:w-20 flex"
-  }, logoUrl ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: logoUrl
-  }) : null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    className: "justify-end self-end text-left text-4xl sm:text-6xl text-black underline decoration-dotted decoration-yellow-500",
-    href: "<?php echo home_url() ?>"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
-    className: "font-title"
-  }, siteTitle))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "skew-x-[-5deg] inline-block group hover:block self-center"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "bg-black text-yellow-500 dashicons dashicons-menu"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("nav", {
-    className: "atypic-nav-menu-top right-0"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null)))));
-}
-
-/***/ }),
-
-/***/ "./src/atypic-header/index.js":
-/*!************************************!*\
-  !*** ./src/atypic-header/index.js ***!
-  \************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/atypic-header/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/atypic-header/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/atypic-header/save.js");
-
-
-
-
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)("atypic/header", {
-  apiVersion: 2,
-  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
-});
-
-/***/ }),
-
-/***/ "./src/atypic-header/save.js":
-/*!***********************************!*\
-  !*** ./src/atypic-header/save.js ***!
-  \***********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ save; }
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-
-function save() {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Saved header");
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("atypic-gallery", {
+    collectionid: collectionID
+  }));
 }
 
 /***/ }),
@@ -158,18 +148,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/atypic-header/style.scss":
-/*!**************************************!*\
-  !*** ./src/atypic-header/style.scss ***!
-  \**************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "@wordpress/api-fetch":
 /*!**********************************!*\
   !*** external ["wp","apiFetch"] ***!
@@ -187,16 +165,6 @@ module.exports = window["wp"]["apiFetch"];
 /***/ (function(module) {
 
 module.exports = window["wp"]["blockEditor"];
-
-/***/ }),
-
-/***/ "@wordpress/blocks":
-/*!********************************!*\
-  !*** external ["wp","blocks"] ***!
-  \********************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
@@ -332,7 +300,7 @@ module.exports = window["wp"]["i18n"];
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"atypic-header/index": 0,
+/******/ 			"gallery/save": 0,
 /******/ 			"atypic-header/style-index": 0
 /******/ 		};
 /******/ 		
@@ -385,9 +353,9 @@ module.exports = window["wp"]["i18n"];
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["atypic-header/style-index"], function() { return __webpack_require__("./src/atypic-header/index.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["atypic-header/style-index"], function() { return __webpack_require__("./src/gallery/save.js"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=save.js.map

@@ -1,3 +1,4 @@
-//Note that preact is enabled.
+import register from 'preact-custom-element';
+import Gallery from './web-components/gallery'
 
-console.log("test")
+register(Gallery, 'atypic-gallery', ['collectionid'], { shadow: false });

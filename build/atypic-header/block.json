@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "atypic/header",
+  "name": "atypic/gallery",
   "version": "0.1.0",
-  "title": "Atypic Header",
+  "title": "Atypic Gallery",
   "category": "theme",
   "icon": "layout",
-  "description": "Atypic theme global header",
+  "description": "Atypic theme global gallery",
   "supports": {
     "color": {
       "gradients": true,
@@ -15,15 +15,26 @@
   },
   "attributes": {
     "logoUrl": {
-      "type": "string"
+      "type": "string",
+      "error": {
+        "type": "string"
+      }
     },
     "siteTitle": {
-      "type": "string"
+      "type": "string",
+      "error": {
+        "type": "string"
+      }
+    },
+    "menuItems": {
+      "type": "object",
+      "error": {
+        "type": "string"
+      }
     }
   },
   "textdomain": "atypic-header",
   "editorScript": "file:index.js",
   "editorStyle": "file:index.css",
-  "style": "file:./style-index.css",
-  "render": "file:./render.php"
+  "style": "file:./style-index.css"
 }

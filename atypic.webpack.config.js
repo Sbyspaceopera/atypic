@@ -32,5 +32,5 @@ module.exports = {
     stats:{
         errorDetails:true
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
 }

@@ -7,7 +7,10 @@ use WP_REST_Response;
 use WP_REST_Server;
 use WP_REST_Request;
 
-require_once(get_template_directory() . '/includes/class-tgm-plugin-activation.php');
+require_once(get_template_directory() .'/includes/class-tgm-plugin-activation.php');
+require_once(get_template_directory().'/includes/atypic_post_types.php');
+require_once(get_template_directory().'/includes/atypic_custom_fields.php');
+require_once(get_template_directory().'/includes/atypic_allowed_blocks.php');
 
 //http://tgmpluginactivation.com/
 //Plugins dependencies
@@ -21,8 +24,8 @@ function atypic_register_required_plugins()
             'force_activation' => true,
         ),
         array(
-            'name' => 'Advanced Custom Fields',
-            'slug' => 'advanced-custom-fields',
+            'name' => 'CMB2',
+            'slug' => 'cmb2',
             'required' => true,
             'force_activation' => true,
         ),
@@ -43,18 +46,6 @@ function atypic_register_required_plugins()
 }
 add_action('tgmpa_register', '\AtypicTheme\Functions\atypic_register_required_plugins');
 
-
-//Remove jquery in the frontend
-/*function change_default_jquery()
-{
-    if (!is_admin()) {
-        wp_dequeue_script('jquery');
-        wp_deregister_script('jquery');
-    }
-}
-
-add_filter('wp_enqueue_scripts', '\AtypicTheme\Functions\change_default_jquery', PHP_INT_MAX);*/
-
 //Hide admin bar in the frontend
 add_filter('show_admin_bar', '__return_false');
 
@@ -73,7 +64,7 @@ function atypique_features()
 
 add_action('after_setup_theme', '\AtypicTheme\Functions\atypique_features');
 
-//Frontend styles
+//Front office styles
 function atypic_styles()
 {
     //Loaded from top to bottom in HTML too
@@ -84,19 +75,29 @@ function atypic_styles()
     wp_enqueue_style('footer_css', get_theme_file_uri('/scss/build/footer.min.css'));
     wp_enqueue_style('home_css', get_theme_file_uri('/scss/build/home.min.css'));
 
-    wp_enqueue_script('test', get_template_directory_uri().'/js/build/bundle.js');
+    wp_enqueue_script('atypic_bundle', get_template_directory_uri().'/js/build/bundle.js');
 }
 
 add_action('wp_enqueue_scripts', '\AtypicTheme\Functions\atypic_styles');
 
+//Back office styles
+function add_editor_styles() {
+    wp_enqueue_style('tailwind_styles', get_theme_file_uri('/scss/build/style.min.css'));
+}
+add_action( 'admin_init', '\AtypicTheme\Functions\add_editor_styles' );
+
+//Web components
+function atypic_components(){
+    wp_enqueue_script('atypic-components', get_template_directory_uri().'/js/build/bundle.js');
+    wp_enqueue_style('tailwind_styles', get_theme_file_uri('/scss/build/style.min.css'));
+
+}
+add_action('enqueue_block_editor_assets', '\AtypicTheme\Functions\atypic_components');
+
 //Blocks
 function atypic_blocks(){
-    //Not a priority
-    //register_block_type(__DIR__.'/build/atypic-header');
-
-    
+    register_block_type(__DIR__.'/build/gallery');
 }
-
 add_action('init', '\AtypicTheme\Functions\atypic_blocks');
 
 //Custom REST routes
@@ -136,5 +137,4 @@ function atypic_rest_routes(){
         "permission_callback" => '__return_true'
     ));
 }
-
 add_action('rest_api_init', '\AtypicTheme\Functions\atypic_rest_routes');

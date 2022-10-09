@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-	content: [ './**/*.php' ],
+	content: [ './**/*.php','./src/**/*.js','./js/**/*.js','!./js/build/*.??', '!./build/*.??' ],
 	theme: {
 		fontFamily:{
 			'title' : ['"Abril Fatface"', 'cursive']

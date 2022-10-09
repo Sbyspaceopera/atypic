@@ -1,24 +1,24 @@
 # Atypic - A WordPress theme (bêta)
-
-This theme intended to be an all-in-one plugin-free theme at terms. It is basically designed for my own personal blog but feel free to use it for yours or fork it as it is under [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html) 
-
+This theme intended to be an all-in-one plugin-free theme at terms. It is basically designed for my own personal blog but feel free to use it or fork it as it is under [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html) 
 
 ## Local Development
-
 ### Setup environment
+#### PHP
+The code need to be compatible with the version 7.3.33 of PHP for production environment reasons.
+The code is intended to be PHP 8 compliant at terms.
 
 #### Installing Node.js
-This theme uses Node.js tools for build processes through webpack and Gulp.
+This theme uses Node.js tools for build processes through webpack, Gulp and other tools.
 If you haven't Node.js installed yet you can follow those instructions for your specific Operating System :
 
 - https://nodejs.org/en/download/
 
 Make sure you install the LTS version.
 #### Running WordPress locally
-WordPress recommended versions : **6.0** or higher. Note that it is recommend to keep your WordPress version up to date.
+WordPress recommended versions : **Latest**. Note that it is recommend to keep your WordPress version up to date.
 If you haven't already a local setup for WordPress I recommend to use one of these tool :
 
-- [@wordpress/env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) : A NPM package for running WordPress in a Docker container. Highly recommended by myself for its ease of use and configuration.
+- [@wordpress/env](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) : A NPM package for running WordPress in a Docker container. 
 - [Local](https://localwp.com/) by FlyWheel : An intuitive UI that I recommend if you have no prior experience with Docker.
 - [XAMPP](https://www.apachefriends.org/fr/index.html) : Offer an all-in-one PHP and Perl support through Apache and MariaDB. 
 - WAMP, LAMP, or other distribution similar to XAMPP.
@@ -44,13 +44,13 @@ Feel to modify scripts as you please.
 
 | Script name | Full command | Description |
 |--|--|--|
-| dev | `npm run dev` | Run Tailwind, Gulp and wp-scripts concurrently in watch mode. Use this when developing anything. |
-| build | `npm run build`| Trigger the Gulp default task responsible for build. This not include the  WordPress blocks|
-| dev:blocks | `npm run dev:blocks` | Run the development workflow for blocks such as describe in the `@wordpress/scripts` package. To use when developing blocks only.|
-| build:blocks | `npm run build:blocks`| Build the blocks code for production such as describe in the the `@wordpress/scripts` package.|
-| start:tailwind | `npm run start:tailwind` | Use the tailwind JIT compiler |
+| dev | `npm run dev` | Run the TailwindCSS JIT compiler and the Gulp default task responsible for the build. To use when developing for all other things than blocks. |
+|build|`npm run build`| Trigger the Gulp default task responsible for build.|
+|dev:blocks|`npm run dev:blocks`|Run the development workflow for blocks such as describe in the `@wordpress/scripts` package. To use when developing blocks.|
+|build:blocks| `npm run build:blocks`| Build the blocks code for production such as describe in the the `@wordpress/scripts` package.|
+|prettier|`npm run prettier`|Run the prettier formatter configured by `.prettierrc.json` and the command itself in `package.json` |
 
-Basically you just need to run `npm run dev` except if you have some performance issue.
+
 
 ## Production setup
 /!\\
@@ -83,4 +83,26 @@ jobs:
 
 Define GitHub Actions secrets in your repo configuration relatively to your FTP access informations.
 
-The action will be triggered each time new code is push to the `main`  branch so be sure to push only production ready code in `main` or simply delete the `.github\workflows\main.yml`  file if you dont want this feature.
+The action will be triggered each time new code is push to the `main`  branch so be sure to push only production ready code in `main` or simply delete the `.github/workflows/main.yml`  file if you dont want this feature.
+## Note on WordPress plugins
+Custom plugins are actually build in the `includes` folder when the third party plugins are required through [TGM Plugin Activation](http://tgmpluginactivation.com/) to avoid dependencies conflict in production.
+
+New third party dependencies should be register in the `atypic_register_required_plugins` in `functions.php` following the [TGM Plugin Activation](http://tgmpluginactivation.com/) spec.
+## Contribute
+Contributions are welcome.
+
+You can help by the following ways :
+
+ - Suggest improvement about the code, the design or the contribution workflow.
+ - Work on a known issue.
+ - Transforming old features in Gutenberg blocks.
+ - Writing tests or contribute to the test politic.
+ - Writing a `.md` file for a specific folder. Each folder should have one except for `node_modules` and `build` folders.
+ 
+Please open an issue in GitHub for every improvement idea and wait until I respond before you starting to work on. This will avoid you to lost time on unwanted features.
+
+The contribution workflow is intended to be more effective. Don't hesitate to ask question or suggest things in the issue section until this time.
+### Git politic
+
+ - Create a new branch for any new code contribution
+ - The issue tag number should be present in the branch name
