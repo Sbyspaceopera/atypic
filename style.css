@@ -409,6 +409,22 @@ Use it to make something cool, have fun, and share what you've learned with othe
   right: 1rem !important
 }
 
+.top-2 {
+  top: 0.5rem !important
+}
+
+.right-4 {
+  right: 1rem !important
+}
+
+.top-2 {
+  top: 0.5rem !important
+}
+
+.right-4 {
+  right: 1rem !important
+}
+
 .z-10 {
   z-index: 10 !important
 }
@@ -452,6 +468,46 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .my-2 {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important
+}
+
+.my-4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important
+}
+
+.my-0 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important
+}
+
+.mx-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important
+}
+
+.my-4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important
+}
+
+.my-0 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important
+}
+
+.mx-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important
 }
 
 .my-4 {
@@ -582,52 +638,148 @@ Use it to make something cool, have fun, and share what you've learned with othe
   height: 450px !important
 }
 
-.h-\[400px\] {
-  height: 400px !important
+.h-full {
+  height: 100% !important
 }
 
-.h-\[100px\] {
-  height: 100px !important
-}
-
-.h-\[450px\] {
-  height: 450px !important
+.h-\[60vh\] {
+  height: 60vh !important
 }
 
 .h-\[400px\] {
   height: 400px !important
 }
 
+.h-\[20vh\] {
+  height: 20vh !important
+}
+
 .h-\[100px\] {
   height: 100px !important
 }
 
-.h-\[450px\] {
-  height: 450px !important
+.h-full {
+  height: 100% !important
+}
+
+.h-\[60vh\] {
+  height: 60vh !important
 }
 
 .h-\[400px\] {
   height: 400px !important
 }
 
+.h-\[20vh\] {
+  height: 20vh !important
+}
+
 .h-\[100px\] {
   height: 100px !important
 }
 
-.h-\[450px\] {
-  height: 450px !important
+.h-full {
+  height: 100% !important
+}
+
+.h-\[20vh\] {
+  height: 20vh !important
+}
+
+.h-\[60vh\] {
+  height: 60vh !important
 }
 
 .h-\[400px\] {
   height: 400px !important
 }
 
+.h-\[5vh\] {
+  height: 5vh !important
+}
+
+.h-\[15vh\] {
+  height: 15vh !important
+}
+
 .h-\[100px\] {
   height: 100px !important
 }
 
-.h-\[450px\] {
-  height: 450px !important
+.h-full {
+  height: 100% !important
+}
+
+.h-\[15vh\] {
+  height: 15vh !important
+}
+
+.h-\[60vh\] {
+  height: 60vh !important
+}
+
+.h-\[400px\] {
+  height: 400px !important
+}
+
+.h-\[10vh\] {
+  height: 10vh !important
+}
+
+.h-\[100px\] {
+  height: 100px !important
+}
+
+.h-full {
+  height: 100% !important
+}
+
+.h-\[12vh\] {
+  height: 12vh !important
+}
+
+.h-\[60vh\] {
+  height: 60vh !important
+}
+
+.h-\[400px\] {
+  height: 400px !important
+}
+
+.h-\[11vh\] {
+  height: 11vh !important
+}
+
+.h-\[17vh\] {
+  height: 17vh !important
+}
+
+.h-\[100px\] {
+  height: 100px !important
+}
+
+.h-full {
+  height: 100% !important
+}
+
+.h-\[12vh\] {
+  height: 12vh !important
+}
+
+.h-\[60vh\] {
+  height: 60vh !important
+}
+
+.h-\[400px\] {
+  height: 400px !important
+}
+
+.h-\[11vh\] {
+  height: 11vh !important
+}
+
+.h-\[100px\] {
+  height: 100px !important
 }
 
 .max-h-\[400px\] {
@@ -640,6 +792,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .min-h-\[15vh\] {
   min-height: 15vh !important
+}
+
+.min-h-\[100px\] {
+  min-height: 100px !important
 }
 
 .w-20 {
@@ -674,6 +830,26 @@ Use it to make something cool, have fun, and share what you've learned with othe
   width: 100% !important
 }
 
+.w-\[20vh\] {
+  width: 20vh !important
+}
+
+.w-full {
+  width: 100% !important
+}
+
+.w-\[100\%\] {
+  width: 100% !important
+}
+
+.w-full {
+  width: 100% !important
+}
+
+.w-\[100\%\] {
+  width: 100% !important
+}
+
 .w-full {
   width: 100% !important
 }
@@ -696,6 +872,22 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .w-\[100\%\] {
   width: 100% !important
+}
+
+.max-w-md {
+  max-width: 28rem !important
+}
+
+.max-w-\[100\%\] {
+  max-width: 100% !important
+}
+
+.max-w-md {
+  max-width: 28rem !important
+}
+
+.max-w-\[100\%\] {
+  max-width: 100% !important
 }
 
 .max-w-md {
@@ -869,8 +1061,40 @@ Use it to make something cool, have fun, and share what you've learned with othe
   border-radius: 0.375rem !important
 }
 
+.rounded-\[1rem\] {
+  border-radius: 1rem !important
+}
+
+.rounded-md {
+  border-radius: 0.375rem !important
+}
+
+.rounded-\[1rem\] {
+  border-radius: 1rem !important
+}
+
+.rounded-md {
+  border-radius: 0.375rem !important
+}
+
 .border-2 {
   border-width: 2px !important
+}
+
+.border-8 {
+  border-width: 8px !important
+}
+
+.border-4 {
+  border-width: 4px !important
+}
+
+.border-8 {
+  border-width: 8px !important
+}
+
+.border-4 {
+  border-width: 4px !important
 }
 
 .border-8 {
@@ -1035,6 +1259,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
   background-color: rgb(255 255 255 / 0.25) !important
 }
 
+.bg-black {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
+}
+
+.bg-white\/25 {
+  background-color: rgb(255 255 255 / 0.25) !important
+}
+
+.bg-black {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
+}
+
+.bg-white\/25 {
+  background-color: rgb(255 255 255 / 0.25) !important
+}
+
 .bg-cover {
   background-size: cover !important
 }
@@ -1073,6 +1315,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .p-1 {
   padding: 0.25rem !important
+}
+
+.p-2 {
+  padding: 0.5rem !important
+}
+
+.p-1 {
+  padding: 0.25rem !important
+}
+
+.p-3 {
+  padding: 0.75rem !important
+}
+
+.p-2 {
+  padding: 0.5rem !important
+}
+
+.p-1 {
+  padding: 0.25rem !important
+}
+
+.p-3 {
+  padding: 0.75rem !important
 }
 
 .p-2 {
@@ -1249,6 +1515,36 @@ Use it to make something cool, have fun, and share what you've learned with othe
   line-height: 1.75rem !important
 }
 
+.text-2xl {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important
+}
+
+.text-3xl {
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important
+}
+
+.text-2xl {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important
+}
+
+.text-3xl {
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important
+}
+
 .font-bold {
   font-weight: 700 !important
 }
@@ -1283,6 +1579,26 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .text-blue-500 {
   --tw-text-opacity: 1 !important;
   color: rgb(59 130 246 / var(--tw-text-opacity)) !important
+}
+
+.text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important
+}
+
+.text-yellow-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
+}
+
+.text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important
+}
+
+.text-yellow-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
 }
 
 .text-white {
@@ -1437,10 +1753,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
     width: 5rem !important
   }
 
-  .sm\:w-\[600px\] {
-    width: 600px !important
-  }
-
   .sm\:max-w-xl {
     max-width: 36rem !important
   }
@@ -1508,24 +1820,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 @media (min-width: 768px) {
-  .md\:w-\[600px\] {
-    width: 600px !important
-  }
-
   .md\:max-w-\[750px\] {
     max-width: 750px !important
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:w-\[500px\] {
-    width: 500px !important
-  }
-
-  .lg\:w-\[600px\] {
-    width: 600px !important
-  }
-
   .lg\:px-20 {
     padding-left: 5rem !important;
     padding-right: 5rem !important
