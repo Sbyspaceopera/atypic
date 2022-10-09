@@ -1,14 +1,11 @@
 # Atypic - A WordPress theme (bêta)
-
 This theme intended to be an all-in-one plugin-free theme at terms. It is basically designed for my own personal blog but feel free to use it or fork it as it is under [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html) 
-
 
 ## Local Development
 ### Setup environment
 #### PHP
 The code need to be compatible with the version 7.3.33 of PHP for production environment reasons.
 The code is intended to be PHP 8 compliant at terms.
-
 
 #### Installing Node.js
 This theme uses Node.js tools for build processes through webpack, Gulp and other tools.
@@ -51,7 +48,7 @@ Feel to modify scripts as you please.
 |build|`npm run build`| Trigger the Gulp default task responsible for build.|
 |dev:blocks|`npm run dev:blocks`|Run the development workflow for blocks such as describe in the `@wordpress/scripts` package. To use when developing blocks.|
 |build:blocks| `npm run build:blocks`| Build the blocks code for production such as describe in the the `@wordpress/scripts` package.|
-|prettier|`npm run prettier`|Run the prettier formatter setted by .prettierrc.json|
+|prettier|`npm run prettier`|Run the prettier formatter configured by `.prettierrc.json` and the command itself in `package.json` |
 
 
 
@@ -97,9 +94,15 @@ Contributions are welcome.
 You can help by the following ways :
 
  - Suggest improvement about the code, the design or the contribution workflow.
- - Transforming old features in blocks.
+ - Work on a known issue.
+ - Transforming old features in Gutenberg blocks.
+ - Writing tests or contribute to the test politic.
  - Writing a `.md` file for a specific folder. Each folder should have one except for `node_modules` and `build` folders.
  
 Please open an issue in GitHub for every improvement idea and wait until I respond before you starting to work on. This will avoid you to lost time on unwanted features.
 
 The contribution workflow is intended to be more effective. Don't hesitate to ask question or suggest things in the issue section until this time.
+### Git politic
+
+ - Create a new branch for any new code contribution
+ - The issue tag number should be present in the branch name
