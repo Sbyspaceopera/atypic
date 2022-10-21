@@ -21,27 +21,27 @@ const {watch, dest, src, series} = gulpPkg
 const browserSync = browserSyncObject.create();
 
 function js() {
-	return src('js/index.js')
+	return src('assets/js/index.js')
 		//Compiler is needed to allow gulp to watch files
 		//See webpack-stream docs
 		.pipe(webpack(webpackConfig, compiler))
-		.pipe(dest('./js/build/'));
+		.pipe(dest('./assets/js/build/'));
 }
 
 function css() {
 	const sass = gulpSass(dartSass);
 	const pluginsPostCSS = [autoprefixer, cssnano] 
 
-	return src(['scss/*.scss', 'style.css'], {sourcemaps:true})
+	return src(['assets/scss/*.scss', 'style.css'], {sourcemaps:true})
 		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss(pluginsPostCSS))
 		.pipe(rename((path) => path.extname = '.min.css'))
-		.pipe(dest('./scss/build/', {sourcemaps:true}))
+		.pipe(dest('./assets/scss/build/', {sourcemaps:true}))
 		.pipe(browserSync.stream());
 }
 
 function img() {
-	return src('images/*').pipe(imagemin()).pipe(dest('./images/build'));
+	return src('assets/images/*').pipe(imagemin()).pipe(dest('./assets/images/build'));
 }
 
 function watchFiles() {
@@ -51,9 +51,9 @@ function watchFiles() {
 		proxy: 'testing.local',
 	});
 
-	watch(['js/*.js','js/web-components/*.js'], { ignoreInitial: false }, js).on('ready', browserSync.reload);
-	watch(['scss/*.scss', 'style.css'], { ignoreInitial: false }, css).on('ready', browserSync.reload);
-	watch('images/*', { ignoreInitial: false }, img).on('ready', browserSync.reload);
+	watch(['assets/js/*.js','assets/js/web-components/*.js'], { ignoreInitial: false }, js).on('ready', browserSync.reload);
+	watch(['assets/scss/*.scss', 'style.css'], { ignoreInitial: false }, css).on('ready', browserSync.reload);
+	watch('assets/images/*', { ignoreInitial: false }, img).on('ready', browserSync.reload);
 }
 
 const build = series(watchFiles);

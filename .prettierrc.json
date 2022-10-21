@@ -1,5 +1,6 @@
 {
-    "$schema": "http://json.schemastore.org/prettierrc",
-    "printWidth": 80,
-    "bracketSameLine": true
+  "$schema": "http://json.schemastore.org/prettierrc",
+  "printWidth": 80,
+  "bracketSameLine": true,
+  "phpVersion": "7.3"
 }
