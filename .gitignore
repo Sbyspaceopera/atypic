@@ -5,3 +5,4 @@ docs
 .phpdoc
 db
 dev-env/debug.log
+.vscode
