@@ -4,8 +4,8 @@ module.exports = {
 	content: [
 		'./**/*.php',
 		'./src/**/*.js',
-		'./js/**/*.js',
-		'!./js/build/*.??',
+		'./assets/js/**/*.js',
+		'!./assets/js/build/*.??',
 		'!./build/*.??',
 	],
 	theme: {
