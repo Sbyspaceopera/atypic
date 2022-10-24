@@ -1,16 +1,23 @@
-
 # Atypic - A WordPress theme (bêta)
+
 This theme intended to be an all-in-one plugin-free theme at terms. It is basically designed for my own personal blog but feel free to use it or fork it as it is under [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html)
+
 ## Local Development
+
 ### Setup environment
+
 #### PHP
+
 The code need to be compatible with the version 7.3.33 of PHP for production environment reasons.
 
 The code is intended to be PHP 8 compliant at terms and we will no longer support previous versions when reaching this step.
+
 #### Installing Node.js
+
 This theme uses Node.js tools for build processes through webpack, Gulp and other tools.
 
 If you haven't Node.js installed yet you can follow those instructions for your specific Operating System :
+
 - <https://nodejs.org/en/download/>
 
 Make sure you install the LTS version.
@@ -43,18 +50,16 @@ Go activate the theme in your WordPress admin panel and follows the plugins inst
 
 The scripts in this projects are divide in two main types : block related scripts and the others.
 
-*Block related scripts* only affect the `/blocks` folder.
+_Block related scripts_ only affect the `/blocks` folder.
 
-*Other scripts* do not affect the `/blocks` folder.
+_Other scripts_ do not affect the `/blocks` folder.
 
-*All scripts* are used through NPM and must be precede by the `npm run` command, for example :
+_All scripts_ are used through NPM and must be precede by the `npm run` command, for example :
 
-`
-npm run dev
-`
-
+`npm run dev`
 
 #### NPM scripts
+
 **IMPORTANT NOTE :** The docker related scripts will not work if you dont have docker and docker-compose set correctly on your system. This note concern the following scripts : start, phpdoc:windows, phpdoc:unix.
 | Script name | Full command | Description |
 |--|--|--|
@@ -67,7 +72,6 @@ npm run dev
 |phpdoc:windows|`npm run phpdoc:windows`|Windows systems : Run the [phpdoc](https://docs.phpdoc.org/) generator through docker|
 |phpdoc:unix|`npm run phpdoc:unix`|Unix systems : Run the [phpdoc](https://docs.phpdoc.org/) generator through docker|
 
-
 ## Production setup
 
 /!\\
@@ -78,9 +82,7 @@ npm run dev
 
 ### Continuous Deployment
 
-
 An FTP GitHub action is pre-set to push your code into your web server :
- 
 
 ```yaml
 on:
@@ -120,7 +122,7 @@ Contributions are welcome.
 
 You can help by the following ways :
 
-- Suggest improvement about the code, the design,  or the contribution workflow.
+- Suggest improvement about the code, the design, or the contribution workflow.
 
 - Work on a known issue.
 
