@@ -1,9 +1,9 @@
-import { h,createRef, Fragment } from "preact";
+import { h, createRef, Fragment } from "preact";
 import { useEffect, useState, useRef, useCallback } from "preact/hooks";
 
 import apiFetch from "@wordpress/api-fetch";
 import { Spinner } from "@wordpress/components";
-import __ from "@wordpress/i18n"
+import __ from "@wordpress/i18n";
 
 const Gallery = ({ collectionid }) => {
   const [collection, setCollection] = useState(null);
@@ -34,14 +34,17 @@ const Gallery = ({ collectionid }) => {
     }
   }, [collection]);
 
-  const handleFullscreen = useCallback((target) => {
-    if (document.fullscreenElement || ShadowRoot.fullscreenElement) {
-      document.exitFullscreen();
-    } else {
-      target.requestFullscreen();
-    }
-    setIsFullscreen(!isFullscreen);
-  }, [isFullscreen]);
+  const handleFullscreen = useCallback(
+    (target) => {
+      if (document.fullscreenElement || ShadowRoot.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        target.requestFullscreen();
+      }
+      setIsFullscreen(!isFullscreen);
+    },
+    [isFullscreen]
+  );
 
   return collection ? (
     <div
@@ -65,7 +68,7 @@ const Gallery = ({ collectionid }) => {
                 (isFullscreen
                   ? "dashicons-fullscreen-exit-alt"
                   : "dashicons-fullscreen-alt") +
-                  " dashicons text-right text-3xl text-white absolute top-2 right-4 hover:cursor-pointer" 
+                " dashicons text-right text-3xl text-white absolute top-2 right-4 hover:cursor-pointer"
               }></span>
 
             {showDescription && (
@@ -124,7 +127,7 @@ const Gallery = ({ collectionid }) => {
             className={`${
               isFullscreen ? "h-full" : "h-[100px]"
             } hover:cursor-pointer rounded-md ${
-              selectedImage && (image.url_id === selectedImage.url_id)
+              selectedImage && image.url_id === selectedImage.url_id
                 ? "border-solid border-4 border-yellow-500"
                 : ""
             }`}

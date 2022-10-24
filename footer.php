@@ -4,7 +4,7 @@
         <?php wp_nav_menu([
             "theme_location" => "main_menu",
             "container" => "nav",
-            "menu_class" =>"atypic-nav-menu-bottom bottom-[100%]",
+            "menu_class" => "atypic-nav-menu-bottom bottom-[100%]",
             "container_class" => "atypic-nav-menu-bottom bottom-[100%]",
         ]); ?>
         <span class="bg-white rotate-180 text-yellow-500 dashicons dashicons-menu"></span>

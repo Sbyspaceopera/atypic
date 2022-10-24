@@ -4,8 +4,8 @@ namespace AtypicTheme\Functions;
 
 //Blocks
 function atypic_blocks()
-{   
-    register_block_type( __DIR__ . "/../build/gallery");
+{
+    register_block_type(__DIR__ . "/../build/gallery");
 }
 add_action("init", "\AtypicTheme\Functions\atypic_blocks");
 
