@@ -1,6 +1,6 @@
 <?php
 
-namespace Atypic\Helpers;
+namespace AtypicTheme\Helpers;
 
 class OG_Controller
 {

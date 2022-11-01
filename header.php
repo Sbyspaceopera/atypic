@@ -1,5 +1,5 @@
 <?php
-use Atypic\Helpers\OG_Controller;
+use AtypicTheme\Helpers\OG_Controller;
 require_once get_template_directory() .
     "/inc/helpers/open_graph_tags_controller.php";
 ?>

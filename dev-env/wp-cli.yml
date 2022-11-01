@@ -1,0 +1,6 @@
+path: /var/www/html
+url: http://localhost:8880
+user: admin
+color: true
+disabled_commands:
+  - db drop

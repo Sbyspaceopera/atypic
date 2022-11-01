@@ -185,6 +185,8 @@ define("WP_DEBUG_LOG", true);
 // Désactive l’affichage des erreurs et des avertissements
 define("WP_DEBUG_DISPLAY", false);
 
+define('FS_METHOD','direct');
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
