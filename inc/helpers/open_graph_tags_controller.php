@@ -8,11 +8,6 @@ namespace AtypicTheme\Helpers;
 class OG_Controller
 {
     /**
-     * @var string Just a test for DocBlock
-     */
-    private string $test;
-
-    /**
      * Use to display the right value for Open Graph title. OG is used by third party sites as informations for shared links.
      *
      * @param string $arg Optional : Retrieves an arbitrary value
