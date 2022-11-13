@@ -11,10 +11,10 @@ require_once get_template_directory() .
     <meta name="description" content="<?php bloginfo("description"); ?>" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="<?php OG_Controller::get_the_title(); ?>" />
-    <meta property="og:description" content="<?php OG_Controller::get_the_description(); ?>" />
-    <meta property="og:url" content="<?php OG_Controller::get_the_url(); ?>" />
-    <?php wp_head(); ?>
+    <?php 
+    OG_Controller::display_open_graph_meta_tags();
+    wp_head(); 
+    ?>
 </head>
 
 <body class="h-full w-full flex flex-col justify-center atypic-background-pattern">
@@ -25,7 +25,7 @@ require_once get_template_directory() .
                             the_custom_logo();
                         } else {
                              ?>
-                        <img alt="Site logo" class="invert" src="<?php echo get_template_directory_uri(); ?>/assets/images/build/head_white.png">
+                        <img alt="Site logo" class="invert" src="<?php echo get_template_directory_uri(); ?>/assets/images/head_white.png">
                         <?php
                         } ?>
                 </div>
