@@ -1,0 +1,29 @@
+@use "./normalize";
+
+.atypic-header {
+  @include normalize.normalize;
+  .dashicons {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    @media screen and (min-width: 640px) {
+      font-size: 60px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+    }
+  }
+  .dashicons:before {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    @media screen and (min-width: 640px) {
+      font-size: 60px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+    }
+  }
+}

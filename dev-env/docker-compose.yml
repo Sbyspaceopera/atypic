@@ -1,0 +1,86 @@
+version: "3.1"
+
+services:
+  wordpress:
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wordpress
+    restart: always
+    networks:
+      - wptheme
+    ports:
+      - 8880:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: admin
+      WORDPRESS_DB_NAME: atypic
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define("WP_DEBUG_LOG", true);
+        define("WP_DEBUG_DISPLAY", true);
+        define('FS_METHOD','direct');
+      XDEBUG_CONFIG: client_host=host.docker.internal client_port=9003 mode=debug,develop start_with_request=yes log=/tmp/xdebug/xdebug.log cli_color=0 discover_client_host=true
+    volumes:
+      - wordpress:/var/www/html/
+      - ../:/var/www/html/wp-content/themes/atypic
+      - ./debug.log:/var/www/html/wp-content/debug.log
+      - ./xdebug.log:/tmp/xdebug/xdebug.log
+
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql
+    networks:
+      - wptheme
+    environment:
+      MYSQL_DATABASE: atypic
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - db:/var/lib/mysql
+
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    container_name: myadmin
+    restart: always
+    networks:
+      - wptheme
+    ports:
+      - "8080:80"
+    environment:
+      PMA_USER: admin
+      PMA_PASSWORD: admin
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: admin
+
+  wpcli:
+    depends_on:
+      - wordpress
+    container_name: wp-cli
+    image: wordpress:cli
+    user: xfs
+    networks:
+      - wptheme
+    command: tail -f /dev/null # Keep the container alive
+    volumes:
+      - wordpress:/var/www/html
+      - ./wp-cli.yml:/var/www/html/wp-cli.yml
+      - ../:/var/www/html/wp-content/themes/atypic
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: admin
+      WORDPRESS_DB_NAME: atypic
+
+volumes:
+  db:
+  wordpress:
+networks:
+  wptheme:

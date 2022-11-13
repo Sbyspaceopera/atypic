@@ -4,7 +4,7 @@ import { Fragment, useEffect, useState, useRef } from "@wordpress/element";
 import apiFetch from "@wordpress/api-fetch";
 import { SelectControl, Spinner } from "@wordpress/components";
 
-import "../../scss/header.scss";
+import "../../assets/scss/header.scss";
 import "../../style.css";
 
 export default function Edit({ attributes, setAttributes }) {
@@ -20,13 +20,12 @@ export default function Edit({ attributes, setAttributes }) {
   useEffect(() => {
     apiFetch({ path: "/wp/v2/atypic_gallery" })
       .then((data) => setCollections([...collections, ...data]))
-      .then((data) => console.log(data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     if (collections.length) {
-      let collection = collections.find(
+      const collection = collections.find(
         (collection) => collection.id === collectionID
       );
       setSelectedCollection(collection);
@@ -43,7 +42,7 @@ export default function Edit({ attributes, setAttributes }) {
     return (
       <Fragment>
         {!selectedCollection ? (
-          <option>--Select a collection to show--</option>
+          <option>--{__("Select a collection to show")}--</option>
         ) : null}
 
         {collections.map((collection) => (
@@ -62,7 +61,7 @@ export default function Edit({ attributes, setAttributes }) {
           value={collectionID}
           label={
             <div className="my-0 font-semibold underline decoration-yellow-500 decoration-4 text-lg font-semibold">
-              Choose A Collection :
+              {__("Choose A Collection :")}
             </div>
           }
           onChange={(value) => onChange(value)}>
@@ -74,7 +73,7 @@ export default function Edit({ attributes, setAttributes }) {
             <div
               className=" text-center ring-4 my-2 rounded-lg w-[200px] ring-yellow-500 ring-offset-3 border-4 border-solid border-black bg-white text-black font-semibold my-0 p-2 hover:cursor-pointer"
               onClick={() => setPreview(!preview)}>
-              {preview ? "Hide Preview" : "Show Preview"}
+              {preview ? __("Hide Preview") : __("Show Preview")}
             </div>
           </div>
         )}

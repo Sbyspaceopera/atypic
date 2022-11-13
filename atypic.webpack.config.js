@@ -1,36 +1,39 @@
 module.exports = {
-    mode:'production',
-    entry:"./js/index.js",
-    output:{
-        filename: "bundle.js"
+  mode: "production",
+  entry: "./assets/js/index.js",
+  output: {
+    filename: "bundle.js",
+  },
+  resolve: {
+    alias: {
+      react: "preact/compat",
+      "react-dom/test-utils": "preact/test-utils",
+      "react-dom": "preact/compat", // Must be below test-utils
+      "react/jsx-runtime": "preact/jsx-runtime",
     },
-    resolve: { 
-        alias: { 
-          "react": "preact/compat",
-          "react-dom/test-utils": "preact/test-utils",
-          "react-dom": "preact/compat",     // Must be below test-utils
-          "react/jsx-runtime": "preact/jsx-runtime"
-        }
-    },
-    module: {
-        rules: [
-          {
-            test: /\.m?jsx?$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: ['@babel/preset-env'],
-                plugins: [
-                    ['@babel/plugin-transform-react-jsx', {pragma:"h", pragmaFrag:"Fragment"}]
-                ],
-              }
-            }
-          }
-        ]
-    },
-    stats:{
-        errorDetails:true
-    },
-    devtool: 'source-map',
-}
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+            plugins: [
+              [
+                "@babel/plugin-transform-react-jsx",
+                { pragma: "h", pragmaFrag: "Fragment" },
+              ],
+            ],
+          },
+        },
+      },
+    ],
+  },
+  stats: {
+    errorDetails: true,
+  },
+  devtool: "source-map",
+};
