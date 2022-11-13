@@ -70,6 +70,6 @@
     "test:e2e": "wp-scripts test-e2e",
     "test:unit": "wp-scripts test-unit-js",
     "prepare": "husky install",
-    "wp":"docker exec wp-cli wp"
+    "wp": "docker exec wp-cli wp"
   }
 }

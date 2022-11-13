@@ -17,12 +17,12 @@ namespace {
      */
     abstract class WP_UnitTestCase_Base extends \PHPUnit\Framework\TestCase
     {
-        protected static $forced_tickets = array();
-        protected $expected_deprecated = array();
-        protected $caught_deprecated = array();
-        protected $expected_doing_it_wrong = array();
-        protected $caught_doing_it_wrong = array();
-        protected static $hooks_saved = array();
+        protected static $forced_tickets = [];
+        protected $expected_deprecated = [];
+        protected $caught_deprecated = [];
+        protected $expected_doing_it_wrong = [];
+        protected $caught_doing_it_wrong = [];
+        protected static $hooks_saved = [];
         protected static $ignore_files;
         public function __isset($name)
         {
@@ -287,8 +287,11 @@ namespace {
          * @param string     $message
          * @param int|string $code
          */
-        public function setExpectedException($exception, $message = '', $code = \null)
-        {
+        public function setExpectedException(
+            $exception,
+            $message = "",
+            $code = \null
+        ) {
         }
         /**
          * Adds a deprecated function to the list of caught deprecated calls.
@@ -312,7 +315,7 @@ namespace {
          * @param mixed  $actual  The value to check.
          * @param string $message Optional. Message to display when the assertion fails.
          */
-        public function assertWPError($actual, $message = '')
+        public function assertWPError($actual, $message = "")
         {
         }
         /**
@@ -321,7 +324,7 @@ namespace {
          * @param mixed  $actual  The value to check.
          * @param string $message Optional. Message to display when the assertion fails.
          */
-        public function assertNotWPError($actual, $message = '')
+        public function assertNotWPError($actual, $message = "")
         {
         }
         /**
@@ -330,7 +333,7 @@ namespace {
          * @param mixed  $actual  The value to check.
          * @param string $message Optional. Message to display when the assertion fails.
          */
-        public function assertIXRError($actual, $message = '')
+        public function assertIXRError($actual, $message = "")
         {
         }
         /**
@@ -339,7 +342,7 @@ namespace {
          * @param mixed  $actual  The value to check.
          * @param string $message Optional. Message to display when the assertion fails.
          */
-        public function assertNotIXRError($actual, $message = '')
+        public function assertNotIXRError($actual, $message = "")
         {
         }
         /**
@@ -658,7 +661,7 @@ namespace {
          *
          * @param string $structure Optional. Permalink structure to set. Default empty.
          */
-        public function set_permalink_structure($structure = '')
+        public function set_permalink_structure($structure = "")
         {
         }
         /**
@@ -729,7 +732,7 @@ namespace {
      */
     class Basic_Object
     {
-        private $foo = 'bar';
+        private $foo = "bar";
         public function __get($name)
         {
         }
@@ -796,7 +799,7 @@ namespace {
          * @param string $content    Optional. Block content. Default empty string.
          * @return string Rendered block HTML.
          */
-        public function render($attributes = array(), $content = '')
+        public function render($attributes = [], $content = "")
         {
         }
     }
@@ -866,7 +869,7 @@ namespace {
      */
     class WP_REST_Test_Search_Handler extends \WP_REST_Search_Handler
     {
-        protected $items = array();
+        protected $items = [];
         public function __construct($amount = 10)
         {
         }
@@ -892,7 +895,7 @@ namespace {
          *
          * @param string $object_type Optional. Object type name to use. Default 'test'.
          */
-        public function __construct($object_type = 'test')
+        public function __construct($object_type = "test")
         {
         }
         /**
@@ -902,7 +905,7 @@ namespace {
          * @param string $object_subtype Optional. Object subtype name. Default empty.
          * @return array List of URLs for a sitemap.
          */
-        public function get_url_list($page_num, $object_subtype = '')
+        public function get_url_list($page_num, $object_subtype = "")
         {
         }
         /**
@@ -911,7 +914,7 @@ namespace {
          * @param string $object_subtype Optional. Object subtype. Default empty.
          * @return int Total number of pages.
          */
-        public function get_max_num_pages($object_subtype = '')
+        public function get_max_num_pages($object_subtype = "")
         {
         }
     }
@@ -943,7 +946,7 @@ namespace {
          * @param string $object_subtype Optional. Object subtype name. Default empty.
          * @return array List of URLs for a sitemap.
          */
-        public function get_url_list($page_num, $object_subtype = '')
+        public function get_url_list($page_num, $object_subtype = "")
         {
         }
         /**
@@ -962,7 +965,7 @@ namespace {
          * @param string $object_subtype Optional. Object subtype. Default empty.
          * @return int Total number of pages.
          */
-        public function get_max_num_pages($object_subtype = '')
+        public function get_max_num_pages($object_subtype = "")
         {
         }
     }
@@ -978,7 +981,7 @@ namespace {
          *
          * @param string $object_type Optional. Object type name to use. Default 'test'.
          */
-        public function __construct($object_type = 'test')
+        public function __construct($object_type = "test")
         {
         }
         /**
@@ -997,7 +1000,7 @@ namespace {
          * @param string $object_subtype Optional. Object subtype name. Default empty.
          * @return array List of URLs for a sitemap.
          */
-        public function get_url_list($page_num, $object_subtype = '')
+        public function get_url_list($page_num, $object_subtype = "")
         {
         }
         /**
@@ -1006,7 +1009,7 @@ namespace {
          * @param string $object_subtype Optional. Object subtype. Default empty.
          * @return int Total number of pages.
          */
-        public function get_max_num_pages($object_subtype = '')
+        public function get_max_num_pages($object_subtype = "")
         {
         }
     }
@@ -1033,7 +1036,7 @@ namespace {
         /**
          * In-memory storage for files and directories simulated by this wrapper.
          */
-        public static $data = array();
+        public static $data = [];
         public $position;
         public $file;
         public $bucket;
@@ -1231,8 +1234,10 @@ namespace {
          * can be generators -- an object with next() method. There are some default generators: {@link WP_UnitTest_Generator_Sequence},
          * {@link WP_UnitTest_Generator_Locale_Name}, {@link WP_UnitTest_Factory_Callback_After_Create}.
          */
-        public function __construct($factory, $default_generation_definitions = array())
-        {
+        public function __construct(
+            $factory,
+            $default_generation_definitions = []
+        ) {
         }
         /**
          * Creates an object.
@@ -1241,7 +1246,7 @@ namespace {
          *
          * @return mixed The result. Can be anything.
          */
-        public abstract function create_object($args);
+        abstract public function create_object($args);
         /**
          * Updates an existing object.
          *
@@ -1250,7 +1255,7 @@ namespace {
          *
          * @return mixed The result. Can be anything.
          */
-        public abstract function update_object($object, $fields);
+        abstract public function update_object($object, $fields);
         /**
          * Creates an object.
          *
@@ -1259,7 +1264,7 @@ namespace {
          *
          * @return mixed The result. Can be anything.
          */
-        public function create($args = array(), $generation_definitions = \null)
+        public function create($args = [], $generation_definitions = \null)
         {
         }
         /**
@@ -1270,8 +1275,10 @@ namespace {
          *
          * @return mixed The created object. Can be anything.
          */
-        public function create_and_get($args = array(), $generation_definitions = \null)
-        {
+        public function create_and_get(
+            $args = [],
+            $generation_definitions = \null
+        ) {
         }
         /**
          * Retrieves an object by ID.
@@ -1280,7 +1287,7 @@ namespace {
          *
          * @return mixed The object. Can be anything.
          */
-        public abstract function get_object_by_id($object_id);
+        abstract public function get_object_by_id($object_id);
         /**
          * Creates multiple objects.
          *
@@ -1290,8 +1297,11 @@ namespace {
          *
          * @return array
          */
-        public function create_many($count, $args = array(), $generation_definitions = \null)
-        {
+        public function create_many(
+            $count,
+            $args = [],
+            $generation_definitions = \null
+        ) {
         }
         /**
          * Combines the given arguments with the generation_definitions (defaults) and applies
@@ -1303,8 +1313,11 @@ namespace {
          *
          * @return array|WP_Error Combined array on success. WP_Error when default value is incorrent.
          */
-        public function generate_args($args = array(), $generation_definitions = \null, &$callbacks = \null)
-        {
+        public function generate_args(
+            $args = [],
+            $generation_definitions = \null,
+            &$callbacks = \null
+        ) {
         }
         /**
          * Applies the callbacks on the created object.
@@ -1385,7 +1398,8 @@ namespace {
         {
         }
     }
-    class WP_UnitTest_Factory_For_Attachment extends \WP_UnitTest_Factory_For_Post
+    class WP_UnitTest_Factory_For_Attachment extends
+        \WP_UnitTest_Factory_For_Post
     {
         /**
          * Create an attachment fixture.
@@ -1401,8 +1415,11 @@ namespace {
          *
          * @return int|WP_Error The attachment ID on success. The value 0 or WP_Error on failure.
          */
-        public function create_object($args, $legacy_parent = 0, $legacy_args = array())
-        {
+        public function create_object(
+            $args,
+            $legacy_parent = 0,
+            $legacy_args = []
+        ) {
         }
         /**
          * Saves an attachment.
@@ -1475,7 +1492,8 @@ namespace {
      * @method object create_and_get( $args = array(), $generation_definitions = null )
      * @method int[] create_many( $count, $args = array(), $generation_definitions = null )
      */
-    class WP_UnitTest_Factory_For_Bookmark extends \WP_UnitTest_Factory_For_Thing
+    class WP_UnitTest_Factory_For_Bookmark extends
+        \WP_UnitTest_Factory_For_Thing
     {
         public function __construct($factory = \null)
         {
@@ -1536,8 +1554,12 @@ namespace {
          *
          * @return int[] Array with the comment IDs.
          */
-        public function create_post_comments($post_id, $count = 1, $args = array(), $generation_definitions = \null)
-        {
+        public function create_post_comments(
+            $post_id,
+            $count = 1,
+            $args = [],
+            $generation_definitions = \null
+        ) {
         }
         /**
          * Retrieves a comment by a given ID.
@@ -1588,7 +1610,7 @@ namespace {
     class WP_UnitTest_Factory_For_Term extends \WP_UnitTest_Factory_For_Thing
     {
         private $taxonomy;
-        const DEFAULT_TAXONOMY = 'post_tag';
+        const DEFAULT_TAXONOMY = "post_tag";
         public function __construct($factory = \null, $taxonomy = \null)
         {
         }
@@ -1627,8 +1649,12 @@ namespace {
          *
          * @return array|false|WP_Error Array of term taxonomy IDs of affected terms. WP_Error or false on failure.
          */
-        public function add_post_terms($post_id, $terms, $taxonomy, $append = \true)
-        {
+        public function add_post_terms(
+            $post_id,
+            $terms,
+            $taxonomy,
+            $append = \true
+        ) {
         }
         /**
          * Create a term and returns it as an object.
@@ -1638,8 +1664,10 @@ namespace {
          *
          * @return WP_Term|WP_Error|null WP_Term on success. WP_error if taxonomy does not exist. Null for miscellaneous failure.
          */
-        public function create_and_get($args = array(), $generation_definitions = \null)
-        {
+        public function create_and_get(
+            $args = [],
+            $generation_definitions = \null
+        ) {
         }
         /**
          * Retrieves the term by a given ID.
@@ -1776,7 +1804,7 @@ namespace {
         public static $incr = -1;
         public $next;
         public $template_string;
-        public function __construct($template_string = '%s', $start = \null)
+        public function __construct($template_string = "%s", $start = \null)
         {
         }
         public function next()
@@ -1810,11 +1838,11 @@ namespace {
         private $fs = \null;
         // Holds a array of /path/to/file.php and /path/to/dir/ map to an object in $fs above.
         // A fast, more efficient way of determining if a path exists, and access to that node.
-        private $fs_map = array();
+        private $fs_map = [];
         public $verbose = \false;
         // Enable to debug WP_Filesystem_Base::find_folder() / etc.
-        public $errors = array();
-        public $method = 'MockFS';
+        public $errors = [];
+        public $method = "MockFS";
         function __construct()
         {
         }
@@ -1830,7 +1858,7 @@ namespace {
          * Sets initial filesystem environment and/or clears the current environment.
          * Can also be passed the initial filesystem to be setup which is passed to self::setfs()
          */
-        function init($paths = '', $home_dir = '/')
+        function init($paths = "", $home_dir = "/")
         {
         }
         /**
@@ -1855,7 +1883,7 @@ namespace {
         function mkdir($path, $chmod = \false, $chown = \false, $chgrp = \false)
         {
         }
-        function put_contents($path, $contents = '', $mode = \null)
+        function put_contents($path, $contents = "", $mode = \null)
         {
         }
         function get_contents($file)
@@ -1876,8 +1904,11 @@ namespace {
         function is_dir($path)
         {
         }
-        function dirlist($path = '.', $include_hidden = \true, $recursive = \false)
-        {
+        function dirlist(
+            $path = ".",
+            $include_hidden = \true,
+            $recursive = \false
+        ) {
         }
     }
     class MockFS_Node
@@ -1900,15 +1931,15 @@ namespace {
     }
     class MockFS_Directory_Node extends \MockFS_Node
     {
-        public $type = 'd';
-        public $children = array();
+        public $type = "d";
+        public $children = [];
     }
     class MockFS_File_Node extends \MockFS_Node
     {
-        public $type = 'f';
-        public $contents = '';
+        public $type = "f";
+        public $contents = "";
         // The contents of the file.
-        function __construct($path, $contents = '')
+        function __construct($path, $contents = "")
         {
         }
     }
@@ -1916,9 +1947,9 @@ namespace {
     {
         public static $load_return = \true;
         public static $test_return = \true;
-        public static $save_return = array();
-        public static $spy = array();
-        public static $edit_return = array();
+        public static $save_return = [];
+        public static $spy = [];
+        public static $edit_return = [];
         public static $size_return = \null;
         // Allow testing of jpeg_quality filter.
         public function set_mime_type($mime_type = \null)
@@ -1927,7 +1958,7 @@ namespace {
         public function load()
         {
         }
-        public static function test($args = array())
+        public static function test($args = [])
         {
         }
         public static function supports_mime_type($mime_type)
@@ -1939,8 +1970,15 @@ namespace {
         public function multi_resize($sizes)
         {
         }
-        public function crop($src_x, $src_y, $src_w, $src_h, $dst_w = \null, $dst_h = \null, $src_abs = \false)
-        {
+        public function crop(
+            $src_x,
+            $src_y,
+            $src_w,
+            $src_h,
+            $dst_w = \null,
+            $dst_h = \null,
+            $src_abs = \false
+        ) {
         }
         public function rotate($angle)
         {
@@ -1960,7 +1998,7 @@ namespace {
     }
     class MockPHPMailer extends \PHPMailer\PHPMailer\PHPMailer
     {
-        public $mock_sent = array();
+        public $mock_sent = [];
         function preSend()
         {
         }
@@ -1991,8 +2029,11 @@ namespace {
          * @param int    $recipient_index Optional. The recipient index in the array.
          * @return bool|object Returns object on success, or false if any of the indices don't exist.
          */
-        public function get_recipient($address_type, $mock_sent_index = 0, $recipient_index = 0)
-        {
+        public function get_recipient(
+            $address_type,
+            $mock_sent_index = 0,
+            $recipient_index = 0
+        ) {
         }
     }
     // phpcs:disable WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid
@@ -2015,31 +2056,40 @@ namespace {
          *
          * @var array
          */
-        public $cache = array();
+        public $cache = [];
         /**
          * List of global groups.
          *
          * @var array
          */
-        public $global_groups = array('users', 'userlogins', 'usermeta', 'site-options', 'site-lookup', 'blog-lookup', 'blog-details', 'rss');
+        public $global_groups = [
+            "users",
+            "userlogins",
+            "usermeta",
+            "site-options",
+            "site-lookup",
+            "blog-lookup",
+            "blog-details",
+            "rss",
+        ];
         /**
          * List of groups not saved to Memcached.
          *
          * @var array
          */
-        public $no_mc_groups = array('comment', 'counts');
+        public $no_mc_groups = ["comment", "counts"];
         /**
          * Prefix used for global groups.
          *
          * @var string
          */
-        public $global_prefix = '';
+        public $global_prefix = "";
         /**
          * Prefix used for non-global groups.
          *
          * @var string
          */
-        public $blog_prefix = '';
+        public $blog_prefix = "";
         /**
          * Instantiates the Memcached class.
          *
@@ -2070,8 +2120,14 @@ namespace {
          * @param bool   $by_key     True to store in internal cache by key; false to not store by key.
          * @return bool True on success, false on failure.
          */
-        public function add($key, $value, $group = 'default', $expiration = 0, $server_key = '', $by_key = \false)
-        {
+        public function add(
+            $key,
+            $value,
+            $group = "default",
+            $expiration = 0,
+            $server_key = "",
+            $by_key = \false
+        ) {
         }
         /**
          * Adds a value to cache on a specific server.
@@ -2090,8 +2146,13 @@ namespace {
          * @param int    $expiration The expiration time, defaults to 0.
          * @return bool True on success, false on failure.
          */
-        public function addByKey($server_key, $key, $value, $group = 'default', $expiration = 0)
-        {
+        public function addByKey(
+            $server_key,
+            $key,
+            $value,
+            $group = "default",
+            $expiration = 0
+        ) {
         }
         /**
          * Adds a single server to the list of Memcached servers.
@@ -2140,8 +2201,13 @@ namespace {
          * @param bool   $by_key     True to store in internal cache by key; false to not store by key.
          * @return bool True on success, false on failure.
          */
-        public function append($key, $value, $group = 'default', $server_key = '', $by_key = \false)
-        {
+        public function append(
+            $key,
+            $value,
+            $group = "default",
+            $server_key = "",
+            $by_key = \false
+        ) {
         }
         /**
          * Appends data to an existing item by server key.
@@ -2161,8 +2227,12 @@ namespace {
          * @param string $group      The group value appended to the $key.
          * @return bool True on success, false on failure.
          */
-        public function appendByKey($server_key, $key, $value, $group = 'default')
-        {
+        public function appendByKey(
+            $server_key,
+            $key,
+            $value,
+            $group = "default"
+        ) {
         }
         /**
          * Performs a "check and set" to store data.
@@ -2181,8 +2251,15 @@ namespace {
          * @param bool   $by_key     True to store in internal cache by key; false to not store by key.
          * @return bool True on success, false on failure.
          */
-        public function cas($cas_token, $key, $value, $group = 'default', $expiration = 0, $server_key = '', $by_key = \false)
-        {
+        public function cas(
+            $cas_token,
+            $key,
+            $value,
+            $group = "default",
+            $expiration = 0,
+            $server_key = "",
+            $by_key = \false
+        ) {
         }
         /**
          * Performs a "check and set" to store data with a server key.
@@ -2200,8 +2277,14 @@ namespace {
          * @param int    $expiration The expiration time, defaults to 0.
          * @return bool True on success, false on failure.
          */
-        public function casByKey($cas_token, $server_key, $key, $value, $group = 'default', $expiration = 0)
-        {
+        public function casByKey(
+            $cas_token,
+            $server_key,
+            $key,
+            $value,
+            $group = "default",
+            $expiration = 0
+        ) {
         }
         /**
          * Decrements a numeric item's value.
@@ -2213,7 +2296,7 @@ namespace {
          * @param string $group  The group value appended to the $key.
          * @return int|bool Item's new value on success, false on failure.
          */
-        public function decrement($key, $offset = 1, $group = 'default')
+        public function decrement($key, $offset = 1, $group = "default")
         {
         }
         /**
@@ -2228,7 +2311,7 @@ namespace {
          * @param string $group  The group value appended to the $key.
          * @return int|bool Item's new value on success, false on failure.
          */
-        public function decr($key, $offset = 1, $group = 'default')
+        public function decr($key, $offset = 1, $group = "default")
         {
         }
         /**
@@ -2248,8 +2331,13 @@ namespace {
          * @param bool   $by_key     True to store in internal cache by key; false to not store by key.
          * @return bool True on success, false on failure.
          */
-        public function delete($key, $group = 'default', $time = 0, $server_key = '', $by_key = \false)
-        {
+        public function delete(
+            $key,
+            $group = "default",
+            $time = 0,
+            $server_key = "",
+            $by_key = \false
+        ) {
         }
         /**
          * Removes the item from the cache by server key.
@@ -2267,8 +2355,12 @@ namespace {
          * @param int    $time       The amount of time the server will wait to delete the item in seconds.
          * @return bool True on success, false on failure.
          */
-        public function deleteByKey($server_key, $key, $group = 'default', $time = 0)
-        {
+        public function deleteByKey(
+            $server_key,
+            $key,
+            $group = "default",
+            $time = 0
+        ) {
         }
         /**
          * Fetches the next result.
@@ -2326,8 +2418,16 @@ namespace {
          * @param null|float    $cas_token  The variable to store the CAS token in.
          * @return bool|mixed Cached object value.
          */
-        public function get($key, $group = 'default', $force = \false, &$found = \null, $server_key = '', $by_key = \false, $cache_cb = \null, &$cas_token = \null)
-        {
+        public function get(
+            $key,
+            $group = "default",
+            $force = \false,
+            &$found = \null,
+            $server_key = "",
+            $by_key = \false,
+            $cache_cb = \null,
+            &$cas_token = \null
+        ) {
         }
         /**
          * Retrieves object from cache from specified server.
@@ -2353,8 +2453,15 @@ namespace {
          * @param null|float  $cas_token  The variable to store the CAS token in.
          * @return bool|mixed Cached object value.
          */
-        public function getByKey($server_key, $key, $group = 'default', $force = \false, &$found = \null, $cache_cb = \null, &$cas_token = \null)
-        {
+        public function getByKey(
+            $server_key,
+            $key,
+            $group = "default",
+            $force = \false,
+            &$found = \null,
+            $cache_cb = \null,
+            &$cas_token = \null
+        ) {
         }
         /**
          * Requests multiple keys without blocking.
@@ -2368,8 +2475,12 @@ namespace {
          * @param null         $value_cb The result callback or null.
          * @return bool True on success, false on failure.
          */
-        public function getDelayed($keys, $groups = 'default', $with_cas = \false, $value_cb = \null)
-        {
+        public function getDelayed(
+            $keys,
+            $groups = "default",
+            $with_cas = \false,
+            $value_cb = \null
+        ) {
         }
         /**
          * Requests multiple keys without blocking from a specified server.
@@ -2384,8 +2495,13 @@ namespace {
          * @param null         $value_cb   The result callback or null.
          * @return bool True on success, false on failure.
          */
-        public function getDelayedByKey($server_key, $keys, $groups = 'default', $with_cas = \false, $value_cb = \null)
-        {
+        public function getDelayedByKey(
+            $server_key,
+            $keys,
+            $groups = "default",
+            $with_cas = \false,
+            $value_cb = \null
+        ) {
         }
         /**
          * Gets multiple values from memcached in one request.
@@ -2402,8 +2518,13 @@ namespace {
          * @param int          $flags      The flags for the get operation.
          * @return bool|array The array of found items on success, false on failure.
          */
-        public function getMulti($keys, $groups = 'default', $server_key = '', &$cas_tokens = \null, $flags = \null)
-        {
+        public function getMulti(
+            $keys,
+            $groups = "default",
+            $server_key = "",
+            &$cas_tokens = \null,
+            $flags = \null
+        ) {
         }
         /**
          * Gets multiple values from memcached in one request by specified server key.
@@ -2420,8 +2541,13 @@ namespace {
          * @param int          $flags      The flags for the get operation.
          * @return bool|array The array of found items on success, false on failure.
          */
-        public function getMultiByKey($server_key, $keys, $groups = 'default', &$cas_tokens = \null, $flags = \null)
-        {
+        public function getMultiByKey(
+            $server_key,
+            $keys,
+            $groups = "default",
+            &$cas_tokens = \null,
+            $flags = \null
+        ) {
         }
         /**
          * Retrieves a Memcached option value.
@@ -2505,7 +2631,7 @@ namespace {
          * @param string $group  The group value appended to the $key.
          * @return int|bool Item's new value on success, false on failure.
          */
-        public function increment($key, $offset = 1, $group = 'default')
+        public function increment($key, $offset = 1, $group = "default")
         {
         }
         /**
@@ -2521,7 +2647,7 @@ namespace {
          * @param string $group  The group value appended to the $key.
          * @return int|bool Item's new value on success, false on failure.
          */
-        public function incr($key, $offset = 1, $group = 'default')
+        public function incr($key, $offset = 1, $group = "default")
         {
         }
         /**
@@ -2544,8 +2670,13 @@ namespace {
          * @param bool   $by_key     True to store in internal cache by key; false to not store by key.
          * @return bool True on success, false on failure.
          */
-        public function prepend($key, $value, $group = 'default', $server_key = '', $by_key = \false)
-        {
+        public function prepend(
+            $key,
+            $value,
+            $group = "default",
+            $server_key = "",
+            $by_key = \false
+        ) {
         }
         /**
          * Appends data to an existing item by server key.
@@ -2566,8 +2697,12 @@ namespace {
          * @param string $group      The group value prepended to the $key.
          * @return bool True on success, false on failure.
          */
-        public function prependByKey($server_key, $key, $value, $group = 'default')
-        {
+        public function prependByKey(
+            $server_key,
+            $key,
+            $value,
+            $group = "default"
+        ) {
         }
         /**
          * Replaces a value in cache.
@@ -2585,8 +2720,14 @@ namespace {
          * @param int    $expiration The expiration time, defaults to 0.
          * @return bool True on success, false on failure.
          */
-        public function replace($key, $value, $group = 'default', $expiration = 0, $server_key = '', $by_key = \false)
-        {
+        public function replace(
+            $key,
+            $value,
+            $group = "default",
+            $expiration = 0,
+            $server_key = "",
+            $by_key = \false
+        ) {
         }
         /**
          * Replaces a value in cache on a specific server.
@@ -2603,8 +2744,13 @@ namespace {
          * @param int    $expiration The expiration time, defaults to 0.
          * @return bool True on success, false on failure.
          */
-        public function replaceByKey($server_key, $key, $value, $group = 'default', $expiration = 0)
-        {
+        public function replaceByKey(
+            $server_key,
+            $key,
+            $value,
+            $group = "default",
+            $expiration = 0
+        ) {
         }
         /**
          * Sets a value in cache.
@@ -2621,8 +2767,14 @@ namespace {
          * @param bool   $by_key     True to store in internal cache by key; false to not store by key.
          * @return bool True on success, false on failure.
          */
-        public function set($key, $value, $group = 'default', $expiration = 0, $server_key = '', $by_key = \false)
-        {
+        public function set(
+            $key,
+            $value,
+            $group = "default",
+            $expiration = 0,
+            $server_key = "",
+            $by_key = \false
+        ) {
         }
         /**
          * Sets a value in cache on a specific server.
@@ -2638,8 +2790,13 @@ namespace {
          * @param int    $expiration The expiration time, defaults to 0.
          * @return bool True on success, false on failure.
          */
-        public function setByKey($server_key, $key, $value, $group = 'default', $expiration = 0)
-        {
+        public function setByKey(
+            $server_key,
+            $key,
+            $value,
+            $group = "default",
+            $expiration = 0
+        ) {
         }
         /**
          * Sets multiple values to cache at once.
@@ -2659,8 +2816,13 @@ namespace {
          * @param bool         $by_key     True to store in internal cache by key; false to not store by key.
          * @return bool True on success, false on failure.
          */
-        public function setMulti($items, $groups = 'default', $expiration = 0, $server_key = '', $by_key = \false)
-        {
+        public function setMulti(
+            $items,
+            $groups = "default",
+            $expiration = 0,
+            $server_key = "",
+            $by_key = \false
+        ) {
         }
         /**
          * Sets multiple values to cache at once on specified server.
@@ -2679,8 +2841,12 @@ namespace {
          * @param int          $expiration  The expiration time, defaults to 0.
          * @return bool True on success, false on failure.
          */
-        public function setMultiByKey($server_key, $items, $groups = 'default', $expiration = 0)
-        {
+        public function setMultiByKey(
+            $server_key,
+            $items,
+            $groups = "default",
+            $expiration = 0
+        ) {
         }
         /**
          * Sets a Memcached option.
@@ -2706,7 +2872,7 @@ namespace {
          * @param string $group The group value appended to the $key.
          * @return string
          */
-        public function buildKey($key, $group = 'default')
+        public function buildKey($key, $group = "default")
         {
         }
         /**
@@ -2725,7 +2891,7 @@ namespace {
          * @param string|array $groups Group(s) to merge with key(s).
          * @return array Array that combines keys and groups into a single set of memcached keys.
          */
-        public function buildKeys($keys, $groups = 'default')
+        public function buildKeys($keys, $groups = "default")
         {
         }
         /**
@@ -2847,7 +3013,10 @@ namespace PHPUnit\Framework\MockObject\Builder {
          * @param string $id      The identification of the match builder
          * @param Match  $builder The builder which is being registered
          */
-        public function registerId($id, \PHPUnit\Framework\MockObject\Builder\ParametersMatch $builder);
+        public function registerId(
+            $id,
+            \PHPUnit\Framework\MockObject\Builder\ParametersMatch $builder
+        );
     }
     /**
      * Builder interface for parameter matchers.
@@ -2903,7 +3072,10 @@ namespace PHPUnit\Framework\MockObject {
      * Keeps track of all expectations and stubs as well as registering
      * identifications for builders.
      */
-    class InvocationMocker implements \PHPUnit\Framework\MockObject\Invokable, \PHPUnit\Framework\MockObject\Stub\MatcherCollection, \PHPUnit\Framework\MockObject\Builder\NamespaceMatch
+    class InvocationMocker implements
+        \PHPUnit\Framework\MockObject\Invokable,
+        \PHPUnit\Framework\MockObject\Stub\MatcherCollection,
+        \PHPUnit\Framework\MockObject\Builder\NamespaceMatch
     {
         /**
          * @var MatcherInvocation[]
@@ -2921,11 +3093,14 @@ namespace PHPUnit\Framework\MockObject {
          * @var bool
          */
         private $returnValueGeneration;
-        public function __construct(array $configurableMethods, bool $returnValueGeneration)
-        {
+        public function __construct(
+            array $configurableMethods,
+            bool $returnValueGeneration
+        ) {
         }
-        public function addMatcher(\PHPUnit\Framework\MockObject\Matcher\Invocation $matcher) : void
-        {
+        public function addMatcher(
+            \PHPUnit\Framework\MockObject\Matcher\Invocation $matcher
+        ): void {
         }
         public function hasMatchers()
         {
@@ -2939,26 +3114,31 @@ namespace PHPUnit\Framework\MockObject {
         /**
          * @throws RuntimeException
          */
-        public function registerId($id, \PHPUnit\Framework\MockObject\Builder\ParametersMatch $builder) : void
-        {
+        public function registerId(
+            $id,
+            \PHPUnit\Framework\MockObject\Builder\ParametersMatch $builder
+        ): void {
         }
         /**
          * @return BuilderInvocationMocker
          */
-        public function expects(\PHPUnit\Framework\MockObject\Matcher\Invocation $matcher)
-        {
+        public function expects(
+            \PHPUnit\Framework\MockObject\Matcher\Invocation $matcher
+        ) {
         }
         /**
          * @throws Exception
          */
-        public function invoke(\PHPUnit\Framework\MockObject\Invocation $invocation)
-        {
+        public function invoke(
+            \PHPUnit\Framework\MockObject\Invocation $invocation
+        ) {
         }
         /**
          * @return bool
          */
-        public function matches(\PHPUnit\Framework\MockObject\Invocation $invocation)
-        {
+        public function matches(
+            \PHPUnit\Framework\MockObject\Invocation $invocation
+        ) {
         }
         /**
          * @throws \PHPUnit\Framework\ExpectationFailedException
@@ -3023,16 +3203,34 @@ namespace PHPUnit\Framework\MockObject {
          * @var bool
          */
         private $allowsReturnNull;
-        public static function fromReflection(\ReflectionMethod $method, bool $callOriginalMethod, bool $cloneArguments) : self
-        {
+        public static function fromReflection(
+            \ReflectionMethod $method,
+            bool $callOriginalMethod,
+            bool $cloneArguments
+        ): self {
         }
-        public static function fromName(string $fullClassName, string $methodName, bool $cloneArguments) : self
-        {
+        public static function fromName(
+            string $fullClassName,
+            string $methodName,
+            bool $cloneArguments
+        ): self {
         }
-        public function __construct(string $className, string $methodName, bool $cloneArguments, string $modifier, string $argumentsForDeclaration, string $argumentsForCall, string $returnType, string $reference, bool $callOriginalMethod, bool $static, ?string $deprecation, bool $allowsReturnNull)
-        {
+        public function __construct(
+            string $className,
+            string $methodName,
+            bool $cloneArguments,
+            string $modifier,
+            string $argumentsForDeclaration,
+            string $argumentsForCall,
+            string $returnType,
+            string $reference,
+            bool $callOriginalMethod,
+            bool $static,
+            ?string $deprecation,
+            bool $allowsReturnNull
+        ) {
         }
-        public function getName() : string
+        public function getName(): string
         {
         }
         /**
@@ -3040,10 +3238,10 @@ namespace PHPUnit\Framework\MockObject {
          * @throws \PHPUnit\Framework\MockObject\RuntimeException
          * @throws \InvalidArgumentException
          */
-        public function generateCode() : string
+        public function generateCode(): string
         {
         }
-        private function getTemplate(string $template) : \Text_Template
+        private function getTemplate(string $template): \Text_Template
         {
         }
         /**
@@ -3051,8 +3249,10 @@ namespace PHPUnit\Framework\MockObject {
          *
          * @throws RuntimeException
          */
-        private static function getMethodParameters(\ReflectionMethod $method, bool $forCall = false) : string
-        {
+        private static function getMethodParameters(
+            \ReflectionMethod $method,
+            bool $forCall = false
+        ): string {
         }
     }
 }
@@ -3090,13 +3290,13 @@ namespace {
          *
          * @var array
          */
-        protected $slow = array();
+        protected $slow = [];
         /**
          * Construct a new instance.
          *
          * @param array $options
          */
-        public function __construct(array $options = array())
+        public function __construct(array $options = [])
         {
         }
         /**
@@ -3106,8 +3306,11 @@ namespace {
          * @param Exception              $e
          * @param float                  $time
          */
-        public function addError(\PHPUnit\Framework\Test $test, \Throwable $t, float $time) : void
-        {
+        public function addError(
+            \PHPUnit\Framework\Test $test,
+            \Throwable $t,
+            float $time
+        ): void {
         }
         /**
          * A warning occurred.
@@ -3117,8 +3320,11 @@ namespace {
          * @param float                     $time
          * @since Method available since Release 5.1.0
          */
-        public function addWarning(\PHPUnit\Framework\Test $test, \PHPUnit\Framework\Warning $e, float $time) : void
-        {
+        public function addWarning(
+            \PHPUnit\Framework\Test $test,
+            \PHPUnit\Framework\Warning $e,
+            float $time
+        ): void {
         }
         /**
          * A failure occurred.
@@ -3127,8 +3333,11 @@ namespace {
          * @param PHPUnit_Framework_AssertionFailedError $e
          * @param float                                  $time
          */
-        public function addFailure(\PHPUnit\Framework\Test $test, \PHPUnit\Framework\AssertionFailedError $e, float $time) : void
-        {
+        public function addFailure(
+            \PHPUnit\Framework\Test $test,
+            \PHPUnit\Framework\AssertionFailedError $e,
+            float $time
+        ): void {
         }
         /**
          * Incomplete test.
@@ -3137,8 +3346,11 @@ namespace {
          * @param Exception              $e
          * @param float                  $time
          */
-        public function addIncompleteTest(\PHPUnit\Framework\Test $test, \Throwable $t, float $time) : void
-        {
+        public function addIncompleteTest(
+            \PHPUnit\Framework\Test $test,
+            \Throwable $t,
+            float $time
+        ): void {
         }
         /**
          * Risky test.
@@ -3148,8 +3360,11 @@ namespace {
          * @param float                  $time
          * @since  Method available since Release 4.0.0
          */
-        public function addRiskyTest(\PHPUnit\Framework\Test $test, \Throwable $t, float $time) : void
-        {
+        public function addRiskyTest(
+            \PHPUnit\Framework\Test $test,
+            \Throwable $t,
+            float $time
+        ): void {
         }
         /**
          * Skipped test.
@@ -3158,15 +3373,18 @@ namespace {
          * @param Exception              $e
          * @param float                  $time
          */
-        public function addSkippedTest(\PHPUnit\Framework\Test $test, \Throwable $t, float $time) : void
-        {
+        public function addSkippedTest(
+            \PHPUnit\Framework\Test $test,
+            \Throwable $t,
+            float $time
+        ): void {
         }
         /**
          * A test started.
          *
          * @param PHPUnit_Framework_Test $test
          */
-        public function startTest(\PHPUnit\Framework\Test $test) : void
+        public function startTest(\PHPUnit\Framework\Test $test): void
         {
         }
         /**
@@ -3175,23 +3393,26 @@ namespace {
          * @param PHPUnit_Framework_Test $test
          * @param float                  $time
          */
-        public function endTest(\PHPUnit\Framework\Test $test, float $time) : void
-        {
+        public function endTest(
+            \PHPUnit\Framework\Test $test,
+            float $time
+        ): void {
         }
         /**
          * A test suite started.
          *
          * @param PHPUnit_Framework_TestSuite $suite
          */
-        public function startTestSuite(\PHPUnit\Framework\TestSuite $suite) : void
-        {
+        public function startTestSuite(
+            \PHPUnit\Framework\TestSuite $suite
+        ): void {
         }
         /**
          * A test suite ended.
          *
          * @param PHPUnit_Framework_TestSuite $suite
          */
-        public function endTestSuite(\PHPUnit\Framework\TestSuite $suite) : void
+        public function endTestSuite(\PHPUnit\Framework\TestSuite $suite): void
         {
         }
         /**
@@ -3316,8 +3537,8 @@ namespace {
     }
     class Spy_REST_Server extends \WP_REST_Server
     {
-        public $sent_headers = array();
-        public $sent_body = '';
+        public $sent_headers = [];
+        public $sent_body = "";
         public $last_request = \null;
         public $override_by_default = \false;
         /**
@@ -3374,8 +3595,12 @@ namespace {
          *                           Default false. Also set `$GLOBALS['wp_rest_server']->override_by_default = true`
          *                           to set overrides when you don't have access to the caller context.
          */
-        public function register_route($namespace, $route, $route_args, $override = \false)
-        {
+        public function register_route(
+            $namespace,
+            $route,
+            $route_args,
+            $override = \false
+        ) {
         }
         /**
          * Serves the request and returns the result.
@@ -3402,13 +3627,22 @@ namespace {
          *
          * @var string
          */
-        protected $_last_response = '';
+        protected $_last_response = "";
         /**
          * List of Ajax actions called via GET.
          *
          * @var array
          */
-        protected static $_core_actions_get = array('fetch-list', 'ajax-tag-search', 'wp-compression-test', 'imgedit-preview', 'oembed-cache', 'autocomplete-user', 'dashboard-widgets', 'logged-in');
+        protected static $_core_actions_get = [
+            "fetch-list",
+            "ajax-tag-search",
+            "wp-compression-test",
+            "imgedit-preview",
+            "oembed-cache",
+            "autocomplete-user",
+            "dashboard-widgets",
+            "logged-in",
+        ];
         /**
          * Saved error reporting level.
          *
@@ -3420,7 +3654,77 @@ namespace {
          *
          * @var array
          */
-        protected static $_core_actions_post = array('oembed_cache', 'image-editor', 'delete-comment', 'delete-tag', 'delete-link', 'delete-meta', 'delete-post', 'trash-post', 'untrash-post', 'delete-page', 'dim-comment', 'add-link-category', 'add-tag', 'get-tagcloud', 'get-comments', 'replyto-comment', 'edit-comment', 'add-menu-item', 'add-meta', 'add-user', 'closed-postboxes', 'hidden-columns', 'update-welcome-panel', 'menu-get-metabox', 'wp-link-ajax', 'menu-locations-save', 'menu-quick-search', 'meta-box-order', 'get-permalink', 'sample-permalink', 'inline-save', 'inline-save-tax', 'find_posts', 'widgets-order', 'save-widget', 'set-post-thumbnail', 'date_format', 'time_format', 'wp-fullscreen-save-post', 'wp-remove-post-lock', 'dismiss-wp-pointer', 'send-attachment-to-editor', 'heartbeat', 'nopriv_heartbeat', 'get-revision-diffs', 'save-user-color-scheme', 'update-widget', 'query-themes', 'parse-embed', 'set-attachment-thumbnail', 'parse-media-shortcode', 'destroy-sessions', 'install-plugin', 'update-plugin', 'press-this-save-post', 'press-this-add-category', 'crop-image', 'generate-password', 'save-wporg-username', 'delete-plugin', 'search-plugins', 'search-install-plugins', 'activate-plugin', 'update-theme', 'delete-theme', 'install-theme', 'get-post-thumbnail-html', 'wp-privacy-export-personal-data', 'wp-privacy-erase-personal-data');
+        protected static $_core_actions_post = [
+            "oembed_cache",
+            "image-editor",
+            "delete-comment",
+            "delete-tag",
+            "delete-link",
+            "delete-meta",
+            "delete-post",
+            "trash-post",
+            "untrash-post",
+            "delete-page",
+            "dim-comment",
+            "add-link-category",
+            "add-tag",
+            "get-tagcloud",
+            "get-comments",
+            "replyto-comment",
+            "edit-comment",
+            "add-menu-item",
+            "add-meta",
+            "add-user",
+            "closed-postboxes",
+            "hidden-columns",
+            "update-welcome-panel",
+            "menu-get-metabox",
+            "wp-link-ajax",
+            "menu-locations-save",
+            "menu-quick-search",
+            "meta-box-order",
+            "get-permalink",
+            "sample-permalink",
+            "inline-save",
+            "inline-save-tax",
+            "find_posts",
+            "widgets-order",
+            "save-widget",
+            "set-post-thumbnail",
+            "date_format",
+            "time_format",
+            "wp-fullscreen-save-post",
+            "wp-remove-post-lock",
+            "dismiss-wp-pointer",
+            "send-attachment-to-editor",
+            "heartbeat",
+            "nopriv_heartbeat",
+            "get-revision-diffs",
+            "save-user-color-scheme",
+            "update-widget",
+            "query-themes",
+            "parse-embed",
+            "set-attachment-thumbnail",
+            "parse-media-shortcode",
+            "destroy-sessions",
+            "install-plugin",
+            "update-plugin",
+            "press-this-save-post",
+            "press-this-add-category",
+            "crop-image",
+            "generate-password",
+            "save-wporg-username",
+            "delete-plugin",
+            "search-plugins",
+            "search-install-plugins",
+            "activate-plugin",
+            "update-theme",
+            "delete-theme",
+            "install-theme",
+            "get-post-thumbnail-html",
+            "wp-privacy-export-personal-data",
+            "wp-privacy-erase-personal-data",
+        ];
         public static function setUpBeforeClass()
         {
         }
@@ -3518,7 +3822,7 @@ namespace {
          *
          * @var string[]
          */
-        private $registered_block_names = array();
+        private $registered_block_names = [];
         /**
          * Tear down each test method.
          */
@@ -3588,8 +3892,11 @@ namespace {
          * @param string $expected_classes Expected output class attr string.
          * @param string $expected_styles Expected output styles attr string.
          */
-        private function assert_styles_and_classes_match($block, $expected_classes, $expected_styles)
-        {
+        private function assert_styles_and_classes_match(
+            $block,
+            $expected_classes,
+            $expected_styles
+        ) {
         }
         /**
          * Runs assertions that the rendered output has expected content and class/style attrs.
@@ -3598,8 +3905,11 @@ namespace {
          * @param string $expected_classes Expected output class attr string.
          * @param string $expected_styles Expected output styles attr string.
          */
-        private function assert_content_and_styles_and_classes_match($block, $expected_classes, $expected_styles)
-        {
+        private function assert_content_and_styles_and_classes_match(
+            $block,
+            $expected_classes,
+            $expected_styles
+        ) {
         }
         /**
          * Tests color support for named color support for named colors.
@@ -3727,16 +4037,16 @@ namespace {
     {
         public static $old_current_user;
         public static $author_id;
-        public static $post_ids = array();
-        public static $comment_ids = array();
-        public static $term_ids = array();
-        public static $terms = array();
-        public static $old_options = array();
+        public static $post_ids = [];
+        public static $comment_ids = [];
+        public static $term_ids = [];
+        public static $terms = [];
+        public static $old_options = [];
         /**
          * This can be defined in a subclass of this class which contains its own data() method.
          * Those tests will be run against the specified permastruct.
          */
-        public $structure = '/%year%/%monthnum%/%day%/%postname%/';
+        public $structure = "/%year%/%monthnum%/%day%/%postname%/";
         public static function wpSetUpBeforeClass(\WP_UnitTest_Factory $factory)
         {
         }
@@ -3753,8 +4063,9 @@ namespace {
          *
          * @since 4.1.0
          */
-        public static function generate_shared_fixtures(\WP_UnitTest_Factory $factory)
-        {
+        public static function generate_shared_fixtures(
+            \WP_UnitTest_Factory $factory
+        ) {
         }
         /**
          * Clean up shared fixtures.
@@ -3774,8 +4085,12 @@ namespace {
          * @param int    $ticket                  Optional. Trac ticket number.
          * @param array  $expected_doing_it_wrong Array of class/function names expected to throw _doing_it_wrong() notices.
          */
-        public function assertCanonical($test_url, $expected, $ticket = 0, $expected_doing_it_wrong = array())
-        {
+        public function assertCanonical(
+            $test_url,
+            $expected,
+            $ticket = 0,
+            $expected_doing_it_wrong = []
+        ) {
         }
         /**
          * Get the canonical URL given a raw URL.
@@ -3791,11 +4106,15 @@ namespace {
     }
     abstract class WP_Test_REST_TestCase extends \WP_UnitTestCase
     {
-        protected function assertErrorResponse($code, $response, $status = \null)
-        {
+        protected function assertErrorResponse(
+            $code,
+            $response,
+            $status = \null
+        ) {
         }
     }
-    abstract class WP_Test_REST_Controller_Testcase extends \WP_Test_REST_TestCase
+    abstract class WP_Test_REST_Controller_Testcase extends
+        \WP_Test_REST_TestCase
     {
         protected $server;
         public function setUp()
@@ -3804,28 +4123,31 @@ namespace {
         public function tearDown()
         {
         }
-        public abstract function test_register_routes();
-        public abstract function test_context_param();
-        public abstract function test_get_items();
-        public abstract function test_get_item();
-        public abstract function test_create_item();
-        public abstract function test_update_item();
-        public abstract function test_delete_item();
-        public abstract function test_prepare_item();
-        public abstract function test_get_item_schema();
+        abstract public function test_register_routes();
+        abstract public function test_context_param();
+        abstract public function test_get_items();
+        abstract public function test_get_item();
+        abstract public function test_create_item();
+        abstract public function test_update_item();
+        abstract public function test_delete_item();
+        abstract public function test_prepare_item();
+        abstract public function test_get_item_schema();
         public function filter_rest_url_for_leading_slash($url, $path)
         {
         }
     }
-    abstract class WP_Test_REST_Post_Type_Controller_Testcase extends \WP_Test_REST_Controller_Testcase
+    abstract class WP_Test_REST_Post_Type_Controller_Testcase extends
+        \WP_Test_REST_Controller_Testcase
     {
         protected function check_post_data($post, $data, $context, $links)
         {
         }
-        protected function check_get_posts_response($response, $context = 'view')
-        {
+        protected function check_get_posts_response(
+            $response,
+            $context = "view"
+        ) {
         }
-        protected function check_get_post_response($response, $context = 'view')
+        protected function check_get_post_response($response, $context = "view")
         {
         }
         protected function check_create_post_response($response)
@@ -3834,10 +4156,10 @@ namespace {
         protected function check_update_post_response($response)
         {
         }
-        protected function set_post_data($args = array())
+        protected function set_post_data($args = [])
         {
         }
-        protected function set_raw_post_data($args = array())
+        protected function set_raw_post_data($args = [])
         {
         }
         /**
@@ -3891,7 +4213,7 @@ namespace {
          * @param string $actualXml
          * @param string $message   Optional. Message to display when the assertion fails.
          */
-        public function assertXMLEquals($expectedXml, $actualXml, $message = '')
+        public function assertXMLEquals($expectedXml, $actualXml, $message = "")
         {
         }
         /**
@@ -3908,8 +4230,11 @@ namespace {
          * @param string $actualXml
          * @param string $message   Optional. Message to display when the assertion fails.
          */
-        public function assertXMLNotEquals($expectedXml, $actualXml, $message = '')
-        {
+        public function assertXMLNotEquals(
+            $expectedXml,
+            $actualXml,
+            $message = ""
+        ) {
         }
     }
     class WP_XMLRPC_UnitTestCase extends \WP_UnitTestCase
@@ -3932,7 +4257,7 @@ namespace {
          *
          * @var array
          */
-        protected static $trac_ticket_cache = array();
+        protected static $trac_ticket_cache = [];
         /**
          * Checks if track ticket #$ticket_id is resolved
          *
@@ -3997,7 +4322,7 @@ namespace {
         {
         }
         // Return a count of the number of times the action was called since the last reset.
-        function get_call_count($tag = '')
+        function get_call_count($tag = "")
         {
         }
         // Return an array of the tags that triggered calls to this action.
@@ -4014,7 +4339,7 @@ namespace {
     class TestXMLParser
     {
         public $xml;
-        public $data = array();
+        public $data = [];
         /**
          * PHP5 constructor.
          */
@@ -4151,8 +4476,12 @@ namespace {
      * @param int      $accepted_args   Optional. The number of arguments the function accepts. Default 1.
      * @return true
      */
-    function tests_add_filter($tag, $function_to_add, $priority = 10, $accepted_args = 1)
-    {
+    function tests_add_filter(
+        $tag,
+        $function_to_add,
+        $priority = 10,
+        $accepted_args = 1
+    ) {
     }
     /**
      * Generates a unique function ID based on the given arguments.
@@ -4187,7 +4516,7 @@ namespace {
      * @param string $title   The title.
      * @param array  $args    Array with arguments.
      */
-    function _wp_die_handler($message, $title = '', $args = array())
+    function _wp_die_handler($message, $title = "", $args = [])
     {
     }
     /**
@@ -4316,7 +4645,7 @@ namespace {
      * @param int    $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_add($key, $value, $group = '', $expiration = 0)
+    function wp_cache_add($key, $value, $group = "", $expiration = 0)
     {
     }
     /**
@@ -4336,8 +4665,13 @@ namespace {
      * @param int    $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_add_by_key($server_key, $key, $value, $group = '', $expiration = 0)
-    {
+    function wp_cache_add_by_key(
+        $server_key,
+        $key,
+        $value,
+        $group = "",
+        $expiration = 0
+    ) {
     }
     /**
      * Adds a single server to the list of Memcached servers.
@@ -4384,7 +4718,7 @@ namespace {
      * @param string $group The group value appended to the $key.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_append($key, $value, $group = '')
+    function wp_cache_append($key, $value, $group = "")
     {
     }
     /**
@@ -4405,7 +4739,7 @@ namespace {
      * @param string $group      The group value appended to the $key.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_append_by_key($server_key, $key, $value, $group = '')
+    function wp_cache_append_by_key($server_key, $key, $value, $group = "")
     {
     }
     /**
@@ -4423,8 +4757,13 @@ namespace {
      * @param int    $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_cas($cas_token, $key, $value, $group = '', $expiration = 0)
-    {
+    function wp_cache_cas(
+        $cas_token,
+        $key,
+        $value,
+        $group = "",
+        $expiration = 0
+    ) {
     }
     /**
      * Performs a "check and set" to store data with a server key.
@@ -4442,8 +4781,14 @@ namespace {
      * @param int    $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_cas_by_key($cas_token, $server_key, $key, $value, $group = '', $expiration = 0)
-    {
+    function wp_cache_cas_by_key(
+        $cas_token,
+        $server_key,
+        $key,
+        $value,
+        $group = "",
+        $expiration = 0
+    ) {
     }
     /**
      * Closes the cache.
@@ -4470,7 +4815,7 @@ namespace {
      * @param string $group  The group value appended to the $key.
      * @return int|bool Item's new value on success, false on failure.
      */
-    function wp_cache_decrement($key, $offset = 1, $group = '')
+    function wp_cache_decrement($key, $offset = 1, $group = "")
     {
     }
     /**
@@ -4486,7 +4831,7 @@ namespace {
      * @param string $group  The group value appended to the $key.
      * @return int|bool Item's new value on success, false on failure.
      */
-    function wp_cache_decr($key, $offset = 1, $group = '')
+    function wp_cache_decr($key, $offset = 1, $group = "")
     {
     }
     /**
@@ -4504,7 +4849,7 @@ namespace {
      * @param int    $time  The amount of time the server will wait to delete the item in seconds.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_delete($key, $group = '', $time = 0)
+    function wp_cache_delete($key, $group = "", $time = 0)
     {
     }
     /**
@@ -4523,7 +4868,7 @@ namespace {
      * @param int    $time       The amount of time the server will wait to delete the item in seconds.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_delete_by_key($server_key, $key, $group = '', $time = 0)
+    function wp_cache_delete_by_key($server_key, $key, $group = "", $time = 0)
     {
     }
     /**
@@ -4578,8 +4923,14 @@ namespace {
      * @param null|float  $cas_token The variable to store the CAS token in.
      * @return bool|mixed Cached object value.
      */
-    function wp_cache_get($key, $group = '', $force = \false, &$found = \null, $cache_cb = \null, &$cas_token = \null)
-    {
+    function wp_cache_get(
+        $key,
+        $group = "",
+        $force = \false,
+        &$found = \null,
+        $cache_cb = \null,
+        &$cas_token = \null
+    ) {
     }
     /**
      * Retrieves object from cache from specified server.
@@ -4600,8 +4951,15 @@ namespace {
      * @param null|float  $cas_token  The variable to store the CAS token in.
      * @return bool|mixed Cached object value.
      */
-    function wp_cache_get_by_key($server_key, $key, $group = '', $force = \false, &$found = \null, $cache_cb = \null, &$cas_token = \null)
-    {
+    function wp_cache_get_by_key(
+        $server_key,
+        $key,
+        $group = "",
+        $force = \false,
+        &$found = \null,
+        $cache_cb = \null,
+        &$cas_token = \null
+    ) {
     }
     /**
      * Requests multiple keys without blocking.
@@ -4615,8 +4973,12 @@ namespace {
      * @param null         $value_cb The result callback or null.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_get_delayed($keys, $groups = '', $with_cas = \false, $value_cb = \null)
-    {
+    function wp_cache_get_delayed(
+        $keys,
+        $groups = "",
+        $with_cas = \false,
+        $value_cb = \null
+    ) {
     }
     /**
      * Requests multiple keys without blocking from a specified server.
@@ -4631,8 +4993,13 @@ namespace {
      * @param null         $value_cb   The result callback or null.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_get_delayed_by_key($server_key, $keys, $groups = '', $with_cas = \false, $value_cb = \null)
-    {
+    function wp_cache_get_delayed_by_key(
+        $server_key,
+        $keys,
+        $groups = "",
+        $with_cas = \false,
+        $value_cb = \null
+    ) {
     }
     /**
      * Gets multiple values from memcached in one request.
@@ -4648,8 +5015,12 @@ namespace {
      * @param int          $flags      The flags for the get operation.
      * @return bool|array The array of found items on success, false on failure.
      */
-    function wp_cache_get_multi($keys, $groups = '', &$cas_tokens = \null, $flags = \null)
-    {
+    function wp_cache_get_multi(
+        $keys,
+        $groups = "",
+        &$cas_tokens = \null,
+        $flags = \null
+    ) {
     }
     /**
      * Gets multiple values from memcached in one request by specified server key.
@@ -4666,8 +5037,13 @@ namespace {
      * @param int          $flags      The flags for the get operation.
      * @return bool|array The array of found items on success, false on failure.
      */
-    function wp_cache_get_multi_by_key($server_key, $keys, $groups = '', &$cas_tokens = \null, $flags = \null)
-    {
+    function wp_cache_get_multi_by_key(
+        $server_key,
+        $keys,
+        $groups = "",
+        &$cas_tokens = \null,
+        $flags = \null
+    ) {
     }
     /**
      * Retrieves a Memcached option value.
@@ -4751,7 +5127,7 @@ namespace {
      * @param string $group  The group value appended to the $key.
      * @return int|bool Item's new value on success, false on failure.
      */
-    function wp_cache_increment($key, $offset = 1, $group = '')
+    function wp_cache_increment($key, $offset = 1, $group = "")
     {
     }
     /**
@@ -4767,7 +5143,7 @@ namespace {
      * @param string $group  The group value appended to the $key.
      * @return int|bool Item's new value on success, false on failure.
      */
-    function wp_cache_incr($key, $offset = 1, $group = '')
+    function wp_cache_incr($key, $offset = 1, $group = "")
     {
     }
     /**
@@ -4788,7 +5164,7 @@ namespace {
      * @param string $group The group value prepended to the $key.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_prepend($key, $value, $group = '')
+    function wp_cache_prepend($key, $value, $group = "")
     {
     }
     /**
@@ -4810,7 +5186,7 @@ namespace {
      * @param string $group      The group value prepended to the $key.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_prepend_by_key($server_key, $key, $value, $group = '')
+    function wp_cache_prepend_by_key($server_key, $key, $value, $group = "")
     {
     }
     /**
@@ -4827,7 +5203,7 @@ namespace {
      * @param int    $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_replace($key, $value, $group = '', $expiration = 0)
+    function wp_cache_replace($key, $value, $group = "", $expiration = 0)
     {
     }
     /**
@@ -4845,8 +5221,13 @@ namespace {
      * @param int    $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_replace_by_key($server_key, $key, $value, $group = '', $expiration = 0)
-    {
+    function wp_cache_replace_by_key(
+        $server_key,
+        $key,
+        $value,
+        $group = "",
+        $expiration = 0
+    ) {
     }
     /**
      * Sets a value in cache.
@@ -4861,7 +5242,7 @@ namespace {
      * @param int    $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_set($key, $value, $group = '', $expiration = 0)
+    function wp_cache_set($key, $value, $group = "", $expiration = 0)
     {
     }
     /**
@@ -4878,8 +5259,13 @@ namespace {
      * @param int    $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_set_by_key($server_key, $key, $value, $group = '', $expiration = 0)
-    {
+    function wp_cache_set_by_key(
+        $server_key,
+        $key,
+        $value,
+        $group = "",
+        $expiration = 0
+    ) {
     }
     /**
      * Sets multiple values to cache at once.
@@ -4895,7 +5281,7 @@ namespace {
      * @param int          $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_set_multi($items, $groups = '', $expiration = 0)
+    function wp_cache_set_multi($items, $groups = "", $expiration = 0)
     {
     }
     /**
@@ -4913,8 +5299,12 @@ namespace {
      * @param int          $expiration The expiration time, defaults to 0.
      * @return bool True on success, false on failure.
      */
-    function wp_cache_set_multi_by_key($server_key, $items, $groups = 'default', $expiration = 0)
-    {
+    function wp_cache_set_multi_by_key(
+        $server_key,
+        $items,
+        $groups = "default",
+        $expiration = 0
+    ) {
     }
     /**
      * Sets a Memcached option.
@@ -5040,7 +5430,7 @@ namespace {
     function dmp_filter($a)
     {
     }
-    function get_echo($callable, $args = array())
+    function get_echo($callable, $args = [])
     {
     }
     // Recursively generate some quick assertEquals() tests based on an array.
@@ -5057,7 +5447,7 @@ namespace {
     {
     }
     // Mask out any input fields matching the given name.
-    function mask_input_value($in, $name = '_wpnonce')
+    function mask_input_value($in, $name = "_wpnonce")
     {
     }
     /**

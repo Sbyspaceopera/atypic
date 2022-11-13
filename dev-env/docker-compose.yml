@@ -10,7 +10,7 @@ services:
     container_name: wordpress
     restart: always
     networks:
-     - wptheme
+      - wptheme
     ports:
       - 8880:80
     environment:
@@ -29,14 +29,13 @@ services:
       - ../:/var/www/html/wp-content/themes/atypic
       - ./debug.log:/var/www/html/wp-content/debug.log
       - ./xdebug.log:/tmp/xdebug/xdebug.log
-      
 
   db:
     image: mysql:5.7
     restart: always
     container_name: mysql
     networks:
-     - wptheme
+      - wptheme
     environment:
       MYSQL_DATABASE: atypic
       MYSQL_USER: admin
@@ -52,7 +51,7 @@ services:
     container_name: myadmin
     restart: always
     networks:
-     - wptheme
+      - wptheme
     ports:
       - "8080:80"
     environment:
@@ -68,7 +67,7 @@ services:
     image: wordpress:cli
     user: xfs
     networks:
-     - wptheme
+      - wptheme
     command: tail -f /dev/null # Keep the container alive
     volumes:
       - wordpress:/var/www/html

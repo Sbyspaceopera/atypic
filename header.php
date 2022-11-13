@@ -11,9 +11,9 @@ require_once get_template_directory() .
     <meta name="description" content="<?php bloginfo("description"); ?>" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php 
+    <?php
     OG_Controller::display_open_graph_meta_tags();
-    wp_head(); 
+    wp_head();
     ?>
 </head>
 
