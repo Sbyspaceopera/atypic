@@ -8,9 +8,6 @@
         <div>
             <p class="text-lg text-yellow-500 italic font-semibold text-center"><?php echo get_the_date(); ?></p>
         </div>
-        <?php if (has_post_thumbnail()) {
-            the_post_thumbnail("full", ["class" => "w-full self-center mb-2"]);
-        } ?>
         <div class="flex gap-3 py-1 text-black font-semibold flex-wrap justify-center">
             <?php
             // Styles : index.scss
