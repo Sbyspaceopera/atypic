@@ -30,7 +30,10 @@ add_action(
 function atypic_allowed_block_types($allowed_block_types, $editor_context)
 {
     // Limit blocks in 'gallery' post type
-    if (isset($editor_context->post->post_type) && $editor_context->post->post_type === "atypic_gallery") {
+    if (
+        isset($editor_context->post->post_type) &&
+        $editor_context->post->post_type === "atypic_gallery"
+    ) {
         // Return an array containing the allowed block types
         return [];
     }

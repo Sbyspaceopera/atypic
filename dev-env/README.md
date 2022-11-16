@@ -1,6 +1,6 @@
 # dev-env
 
-The dev-env is handled through docker. You can alternatively use your own since it's just a theme. 
+The dev-env is handled through docker. You can alternatively use your own since it's just a theme.
 
 ## Ports
 
@@ -17,6 +17,6 @@ In order to use browser-sync with your custom dev-env, please change the port nu
 
 ```javascript
 browserSync.init({
-    proxy: "yourproxyaddress"
-  });
+  proxy: "yourproxyaddress",
+});
 ```

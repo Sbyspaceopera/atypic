@@ -2,13 +2,13 @@
 
 Styles in this folder should be global styles.
 
-## _normalize.scss
+## \_normalize.scss
 
-_normalize.scss is a mixin used to normalize parts of the theme that doesn't need to be manually setup by the WordPress editor. It's beaceause hardcoded styles should be handled through Tailwind in our theme and Tailwind needs a normalization to work properly.
+\_normalize.scss is a mixin used to normalize parts of the theme that doesn't need to be manually setup by the WordPress editor. It's beaceause hardcoded styles should be handled through Tailwind in our theme and Tailwind needs a normalization to work properly.
 
 Header, footer, and home are not handled by the user for now.
 
-DO NOT include _normalize.scss in a class that can conflict with WordPress styles.
+DO NOT include \_normalize.scss in a class that can conflict with WordPress styles.
 
 ## Tailwind
 

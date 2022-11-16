@@ -1,5 +1,4 @@
 const plugin = require("tailwindcss/plugin");
-const colors = require("tailwindcss/colors")
 
 module.exports = {
   content: [
@@ -13,9 +12,9 @@ module.exports = {
     fontFamily: {
       title: ['"Abril Fatface"', "cursive"],
     },
-    extend:{
-      colors:{
-        'atypic-primary': "var(--wp--preset--color--atypic-primary)",
+    extend: {
+      colors: {
+        "atypic-primary": "var(--wp--preset--color--atypic-primary)",
       },
     },
   },
