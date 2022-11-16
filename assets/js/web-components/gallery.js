@@ -3,7 +3,7 @@ import { useEffect, useState, useRef, useCallback } from "preact/hooks";
 
 import apiFetch from "@wordpress/api-fetch";
 import { Spinner } from "@wordpress/components";
-import __ from "@wordpress/i18n";
+import { __ } from "@wordpress/i18n";
 
 const Gallery = ({ collectionid }) => {
   const [collection, setCollection] = useState(null);
@@ -73,7 +73,7 @@ const Gallery = ({ collectionid }) => {
 
             {showDescription && (
               <p className="text-atypic-primary text-center m-0 font-semibold italic p-1">
-                {selectedImage.description}
+                {collection.cmb2.gallery.description || __("No description.")}
               </p>
             )}
           </div>
@@ -107,10 +107,10 @@ const Gallery = ({ collectionid }) => {
       {/* Selected Image Meta */}
       <div className={isFullscreen ? "h-[11vh]" : ""}>
         <h4 className="text-center p-1  my-0 text-white text-lg font-semibold">
-          {selectedImage ? selectedImage.title : null}
+          {selectedImage && selectedImage.title ? selectedImage.title : null}
         </h4>
         <p className="text-center p-1 italic my-0 text-white">
-          "{selectedImage ? selectedImage.description : null}"
+          "{selectedImage && selectedImage.description ? selectedImage.description : null}"
         </p>
       </div>
 
