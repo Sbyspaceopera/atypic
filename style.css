@@ -61,53 +61,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --tw-backdrop-sepia:  
 }
 
-::-webkit-backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  
-}
-
 ::backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -211,7 +164,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   }
 }
 
-.atypic-single,  .atypic-page,  .atypic-tag,  .atypic-category {
+.atypic-single, .atypic-page, .atypic-tag, .atypic-category {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
   width: 100%;
@@ -222,7 +175,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 @media (min-width: 640px) {
-  .atypic-single,  .atypic-page,  .atypic-tag,  .atypic-category {
+  .atypic-single, .atypic-page, .atypic-tag, .atypic-category {
     border-radius: 0.5rem;
     padding: 0.75rem;
     padding-left: 2rem;
@@ -310,8 +263,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --tw-divide-y-reverse: 0;
   border-top-width: calc(4px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(4px * var(--tw-divide-y-reverse));
-  --tw-divide-opacity: 1;
-  border-color: rgb(234 179 8 / var(--tw-divide-opacity))
+  border-color: var(--wp--preset--color--atypic-primary)
 }
 
 .atypic-nav-menu-bottom > * > * {
@@ -450,6 +402,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
   display: table !important
 }
 
+.contents {
+  display: contents !important
+}
+
 .hidden {
   display: none !important
 }
@@ -543,6 +499,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important
+}
+
+.resize {
+  resize: both !important
 }
 
 .grid-cols-3 {
@@ -685,9 +645,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important
 }
 
-.border-yellow-500 {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(234 179 8 / var(--tw-border-opacity)) !important
+.border-atypic-primary {
+  border-color: var(--wp--preset--color--atypic-primary) !important
 }
 
 .border-white {
@@ -705,9 +664,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important
 }
 
-.bg-yellow-500 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(234 179 8 / var(--tw-bg-opacity)) !important
+.bg-atypic-primary {
+  background-color: var(--wp--preset--color--atypic-primary) !important
 }
 
 .bg-white\/25 {
@@ -846,9 +804,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   color: rgb(0 0 0 / var(--tw-text-opacity)) !important
 }
 
-.text-yellow-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
+.text-atypic-primary {
+  color: var(--wp--preset--color--atypic-primary) !important
 }
 
 .text-blue-500 {
@@ -861,29 +818,29 @@ Use it to make something cool, have fun, and share what you've learned with othe
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important
 }
 
+.text-yellow-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(234 179 8 / var(--tw-text-opacity)) !important
+}
+
 .underline {
-  -webkit-text-decoration-line: underline !important;
-          text-decoration-line: underline !important
+  text-decoration-line: underline !important
+}
+
+.decoration-atypic-primary {
+  text-decoration-color: var(--wp--preset--color--atypic-primary) !important
 }
 
 .decoration-yellow-500 {
-  -webkit-text-decoration-color: #eab308 !important;
-          text-decoration-color: #eab308 !important
-}
-
-.decoration-yellow-400 {
-  -webkit-text-decoration-color: #facc15 !important;
-          text-decoration-color: #facc15 !important
+  text-decoration-color: #eab308 !important
 }
 
 .decoration-dotted {
-  -webkit-text-decoration-style: dotted !important;
-          text-decoration-style: dotted !important
+  text-decoration-style: dotted !important
 }
 
 .decoration-dashed {
-  -webkit-text-decoration-style: dashed !important;
-          text-decoration-style: dashed !important
+  text-decoration-style: dashed !important
 }
 
 .decoration-2 {
@@ -918,9 +875,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000) !important
 }
 
-.ring-yellow-500 {
-  --tw-ring-opacity: 1 !important;
-  --tw-ring-color: rgb(234 179 8 / var(--tw-ring-opacity)) !important
+.ring-atypic-primary {
+  --tw-ring-color: var(--wp--preset--color--atypic-primary) !important
 }
 
 .invert {
@@ -945,9 +901,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   cursor: pointer !important
 }
 
-.active\:decoration-yellow-500:active {
-  -webkit-text-decoration-color: #eab308 !important;
-          text-decoration-color: #eab308 !important
+.active\:decoration-atypic-primary:active {
+  text-decoration-color: var(--wp--preset--color--atypic-primary) !important
 }
 
 .child\:mx-auto > * {

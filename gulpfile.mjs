@@ -50,7 +50,7 @@ function img() {
 
 function watchFiles() {
   browserSync.init({
-    proxy: "testing.local",
+    port: 8880,
   });
 
   watch(

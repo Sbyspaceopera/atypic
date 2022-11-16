@@ -12,6 +12,11 @@ module.exports = {
     fontFamily: {
       title: ['"Abril Fatface"', "cursive"],
     },
+    extend: {
+      colors: {
+        "atypic-primary": "var(--wp--preset--color--atypic-primary)",
+      },
+    },
   },
   plugins: [
     plugin(function ({ addVariant }) {

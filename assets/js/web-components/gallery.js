@@ -56,11 +56,11 @@ const Gallery = ({ collectionid }) => {
         <Fragment>
           {/* Header */}
           <div className={isFullscreen ? "h-[12vh]" : ""}>
-            <h3 className="text-center p-2 my-0 text-yellow-500 text-2xl font-semibold sm:rounded-t-lg">
+            <h3 className="text-center p-2 my-0 text-atypic-primary text-2xl font-semibold sm:rounded-t-lg">
               {collection.title.rendered}
               <span
                 onClick={() => setShowDescription(!showDescription)}
-                className="dashicons dashicons-info-outline hover:cursor-pointer text-2xl text-yellow-500 text-center mx-2"></span>
+                className="dashicons dashicons-info-outline hover:cursor-pointer text-2xl text-atypic-primary text-center mx-2"></span>
             </h3>
             <span
               onClick={() => handleFullscreen(galleryRef.current)}
@@ -72,7 +72,7 @@ const Gallery = ({ collectionid }) => {
               }></span>
 
             {showDescription && (
-              <p className="text-yellow-500 text-center m-0 font-semibold italic p-1">
+              <p className="text-atypic-primary text-center m-0 font-semibold italic p-1">
                 {selectedImage.description}
               </p>
             )}
@@ -128,7 +128,7 @@ const Gallery = ({ collectionid }) => {
               isFullscreen ? "h-full" : "h-[100px]"
             } hover:cursor-pointer rounded-md ${
               selectedImage && image.url_id === selectedImage.url_id
-                ? "border-solid border-4 border-yellow-500"
+                ? "border-solid border-4 border-atypic-primary"
                 : ""
             }`}
             src={image.url}

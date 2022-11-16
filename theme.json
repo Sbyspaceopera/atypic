@@ -5,19 +5,9 @@
     "color": {
       "palette": [
         {
-          "name": "Atypic Yellow",
-          "slug": "atypic_yellow",
-          "color": "#eab308"
-        },
-        {
-          "name": "White",
-          "slug": "white",
-          "color": "#FFFFFF"
-        },
-        {
-          "name": "Black",
-          "slug": "black",
-          "color": "#000000"
+          "name": "Atypic Primary",
+          "slug": "atypic-primary",
+          "color": "#0ea5e9"
         }
       ]
     },

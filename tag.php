@@ -2,8 +2,8 @@
 
 <main class="atypic-main text-center">
     <div class="atypic-tag">
-        <header class="border-t-0 border-l-0 border-r-0 border-solid border-yellow-500">
-            <h2 class="bg-yellow-500 p-0.5 inline text-3xl bottom-0">#<?php single_tag_title(); ?></h2>
+        <header class="border-t-0 border-l-0 border-r-0 border-solid border-atypic-primary">
+            <h2 class="bg-atypic-primary p-0.5 inline text-3xl bottom-0">#<?php single_tag_title(); ?></h2>
         </header>
         <?php // Display optional category description
 
@@ -18,7 +18,7 @@ if (tag_description()): ?>
             while ($wp_query->have_posts()):
                 the_post(); ?>
                 <h3 class="text-center text-2xl font-semibold">
-                    <a class="text-black underline decoration-yellow-500 decoration-dotted" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <a class="text-black underline decoration-atypic-primary decoration-dotted" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h3>
 
                 <div class="flex justify-center text-black font-semibold flex-wrap gap-3">
@@ -31,7 +31,7 @@ if (tag_description()): ?>
                     <?php echo wp_trim_words(get_the_content(), 35); ?>
                 </p>
                 <div class="flex justify-between items-center">
-                                    <a class="text-black underline font-semibold decoration-yellow-500 decoration-2 underline-offset-2 decoration-dashed" href="<?php echo get_permalink(
+                                    <a class="text-black underline font-semibold decoration-atypic-primary decoration-2 underline-offset-2 decoration-dashed" href="<?php echo get_permalink(
                                         $post->ID,
                                     ); ?>">Lire la suite</a>
                                     <p class="text-sm italic font-semibold text-black"><?php echo get_the_date(); ?></p>

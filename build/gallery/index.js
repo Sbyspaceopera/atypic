@@ -45,8 +45,9 @@ function Edit(_ref) {
   const [preview, setPreview] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: "bg-white sm:p-3 lg:px-20 border-solid border-x-0 border-y-4"
-  }); //Todo : make a custom rest api routes to query only titles and ids from collections
+  });
 
+  //Todo : make a custom rest api routes to query only titles and ids from collections
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_3___default()({
       path: "/wp/v2/atypic_gallery"
@@ -58,37 +59,33 @@ function Edit(_ref) {
       setSelectedCollection(collection);
     }
   }, [collectionID, collections]);
-
   const onChange = value => {
     setAttributes({
       collectionID: parseInt(value, 10)
     });
   };
-
   const renderOptionHTML = () => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, !selectedCollection ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("option", null, "--", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select a collection to show"), "--") : null, collections.map(collection => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("option", {
       key: collection.id,
       value: collection.id
     }, collection.title.rendered)));
   };
-
   const renderForm = () => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
       value: collectionID,
       label: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-        className: "my-0 font-semibold underline decoration-yellow-500 decoration-4 text-lg font-semibold"
+        className: "my-0 font-semibold underline decoration-atypic-primary decoration-4 text-lg font-semibold"
       }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Choose A Collection :")),
       onChange: value => onChange(value)
     }, renderOptionHTML()), collectionID && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "flex items-center justify-center"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: " text-center ring-4 my-2 rounded-lg w-[200px] ring-yellow-500 ring-offset-3 border-4 border-solid border-black bg-white text-black font-semibold my-0 p-2 hover:cursor-pointer",
+      className: " text-center ring-4 my-2 rounded-lg w-[200px] ring-atypic-primary ring-offset-3 border-4 border-solid border-black bg-white text-black font-semibold my-0 p-2 hover:cursor-pointer",
       onClick: () => setPreview(!preview)
     }, preview ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hide Preview") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Preview"))), preview && collectionID && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("atypic-gallery", {
       collectionID: collectionID
     }));
   };
-
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, collections.length ? renderForm() : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Spinner, null));
 }
 

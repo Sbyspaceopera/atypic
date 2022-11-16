@@ -2,11 +2,11 @@
 
 <main class="atypic-main">
     <div class="atypic-single">
-        <h1 class="text-2xl text-center font-semibold underline decoration-dotted decoration-yellow-500 decoration-[5px]">
+        <h1 class="text-2xl text-center font-semibold underline decoration-dotted decoration-atypic-primary decoration-[5px]">
             <?php the_title(); ?>
         </h1>
         <div>
-            <p class="text-lg text-yellow-500 italic font-semibold text-center"><?php echo get_the_date(); ?></p>
+            <p class="text-lg text-atypic-primary italic font-semibold text-center"><?php echo get_the_date(); ?></p>
         </div>
         <div class="flex gap-3 py-1 text-black font-semibold flex-wrap justify-center">
             <?php
