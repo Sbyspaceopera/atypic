@@ -110,11 +110,9 @@ const Gallery = ({ collectionid }) => {
           {selectedImage && selectedImage.title ? selectedImage.title : null}
         </h4>
         <p className="text-center p-1 italic my-0 text-white">
-          "
           {selectedImage && selectedImage.description
             ? selectedImage.description
             : null}
-          "
         </p>
       </div>
 
