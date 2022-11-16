@@ -9,7 +9,7 @@
         </div>
         <p class="text-center font-semibold text-gray-600">
             Cette page n'existe pas, retournez plutôt sur
-            <a class="underline text-black decoration-yellow-500 decoration-2 underline-offset-2 active:decoration-yellow-500 " href="<?php site_url(); ?>"> la page d'acceuil</a> ou servez vous des menus.
+            <a class="underline text-black decoration-atypic-primary decoration-2 underline-offset-2 active:decoration-atypic-primary " href="<?php site_url(); ?>"> la page d'acceuil</a> ou servez vous des menus.
         </p>
     </div>
 </main>

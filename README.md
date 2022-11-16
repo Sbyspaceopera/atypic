@@ -1,6 +1,6 @@
 # Atypic - A WordPress theme (bêta)
 
-This theme intended to be an all-in-one plugin-free theme at terms. It is basically designed for my own personal blog but feel free to use it or fork it as it is under [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html)
+This theme is basically designed for my own personal blog but feel free to use it or fork it as it is under [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Local Development
 

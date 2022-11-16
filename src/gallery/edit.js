@@ -60,7 +60,7 @@ export default function Edit({ attributes, setAttributes }) {
         <SelectControl
           value={collectionID}
           label={
-            <div className="my-0 font-semibold underline decoration-yellow-500 decoration-4 text-lg font-semibold">
+            <div className="my-0 font-semibold underline decoration-atypic-primary decoration-4 text-lg font-semibold">
               {__("Choose A Collection :")}
             </div>
           }
@@ -71,7 +71,7 @@ export default function Edit({ attributes, setAttributes }) {
         {collectionID && (
           <div className="flex items-center justify-center">
             <div
-              className=" text-center ring-4 my-2 rounded-lg w-[200px] ring-yellow-500 ring-offset-3 border-4 border-solid border-black bg-white text-black font-semibold my-0 p-2 hover:cursor-pointer"
+              className=" text-center ring-4 my-2 rounded-lg w-[200px] ring-atypic-primary ring-offset-3 border-4 border-solid border-black bg-white text-black font-semibold my-0 p-2 hover:cursor-pointer"
               onClick={() => setPreview(!preview)}>
               {preview ? __("Hide Preview") : __("Show Preview")}
             </div>

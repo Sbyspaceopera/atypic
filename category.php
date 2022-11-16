@@ -3,9 +3,9 @@
 <main class="atypic-main">
     <div class="atypic-category p-0 sm:rounded-t-lg">
         <header class="w-full sm:rounded-t-lg">
-            <h1 class="text-center text-yellow-500 text-3xl bg-black mt-0 p-3 sm:rounded-t-lg"><?php single_cat_title(); ?></h1>
-            <div class="border-2 border-x-0 border-t-0 border-dashed border-yellow-500">
-                <span class="text-center font-semibold center italic semi-bold border-2 border-x-0 border-t-0 border-dashed border-yellow-500"><?php echo category_description(); ?></span>
+            <h1 class="text-center text-atypic-primary text-3xl bg-black mt-0 p-3 sm:rounded-t-lg"><?php single_cat_title(); ?></h1>
+            <div class="border-2 border-x-0 border-t-0 border-dashed border-atypic-primary">
+                <span class="text-center font-semibold center italic semi-bold border-2 border-x-0 border-t-0 border-dashed border-atypic-primary"><?php echo category_description(); ?></span>
             </div>
         </header>
 
@@ -17,7 +17,7 @@
             while ($wp_query->have_posts()):
                 the_post(); ?>
                 <h3 class="text-center text-2xl font-semibold">
-                    <a class="text-black underline decoration-yellow-500 decoration-dotted" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <a class="text-black underline decoration-atypic-primary decoration-dotted" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h3>
 
                 <div class="flex text-black justify-center font-semibold flex-wrap gap-3">
