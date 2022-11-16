@@ -22,7 +22,7 @@ jobs:
             **/src/**
             **/.github/**
             package.json
-            READLE.md
+            README.md
             tailwind.config.js
             gulpfile.mjs
             .gitignore
