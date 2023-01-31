@@ -27,8 +27,8 @@ services:
     volumes:
       - wordpress:/var/www/html/
       - ../:/var/www/html/wp-content/themes/atypic
-      - ./debug.log:/var/www/html/wp-content/debug.log
-      - ./xdebug.log:/tmp/xdebug/xdebug.log
+      - ./logs/debug.log:/var/www/html/wp-content/debug.log
+      - ./logs/xdebug.log:/tmp/xdebug/xdebug.log
 
   db:
     image: mysql:5.7

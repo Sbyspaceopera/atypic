@@ -1,0 +1,158 @@
+import { h, createRef, Fragment } from "preact";
+import { useEffect, useState, useRef, useCallback } from "preact/hooks";
+
+import apiFetch from "@wordpress/api-fetch";
+import { Spinner } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
+
+import { useLoader } from '@react-three/fiber'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { Suspense } from "@wordpress/element/build-types";
+
+import plane from '../assets/3d/plane.glb'
+
+const Gallery = ({ collectionid }) => {
+    const [collection, setCollection] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [previewImageFormat, setPreviewImageFormat] = useState("");
+    const [imagesRef, setImagesRef] = useState([]);
+    const [showDescription, setShowDescription] = useState(false);
+    const [isFullscreen, setIsFullscreen] = useState(false);
+    const previewImageRef = useRef();
+    const galleryRef = useRef();
+
+    const gltf = useLoader(GLTFLoader, plane);
+
+    useEffect(() => {
+        if (collectionid) {
+            apiFetch({ path: `/wp-json/wp/v2/atypic_gallery_3d/${collectionid}` })
+                .then((data) => setCollection({ ...data }))
+                .catch((err) => setCollection({
+                    ...[{
+                        cmb2: {
+                            gallery: {
+                                images: [
+                                    {
+                                        url: plane.src,
+                                        title: "Title Test",
+                                        description: "Don't forget to handle the error properly insteed of this mockup."
+                                    }
+                                ]
+                            }
+                        }
+                    }]
+                }));
+        }
+    }, [collectionid]);
+
+    useEffect(() => {
+        if (collection) {
+            setSelectedImage({ ...collection.cmb2.gallery.images[0] });
+            setImagesRef((imagesRef) =>
+                Array(collection.cmb2.gallery.images.length)
+                    .fill()
+                    .map((_, i) => imagesRef[i] || createRef())
+            );
+        }
+    }, [collection]);
+
+    const handleFullscreen = useCallback(
+        (target) => {
+            if (document.fullscreenElement || ShadowRoot.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                target.requestFullscreen();
+            }
+            setIsFullscreen(!isFullscreen);
+        },
+        [isFullscreen]
+    );
+
+    return collection ? (
+        <div
+            className={`bg-black sm:rounded-md md:max-w-[750px] relative my-4 mx-auto ${isFullscreen ? "h-full" : ""
+                }`}
+            ref={galleryRef}>
+            {selectedImage ? (
+                <Fragment>
+                    {/* Header */}
+                    <div className={isFullscreen ? "h-[12vh]" : ""}>
+                        <h3 className="text-center p-2 my-0 text-atypic-primary text-2xl font-semibold sm:rounded-t-lg">
+                            {collection.title.rendered}
+                            <span
+                                onClick={() => setShowDescription(!showDescription)}
+                                className="dashicons dashicons-info-outline hover:cursor-pointer text-2xl text-atypic-primary text-center mx-2"></span>
+                        </h3>
+                        <span
+                            onClick={() => handleFullscreen(galleryRef.current)}
+                            className={
+                                (isFullscreen
+                                    ? "dashicons-fullscreen-exit-alt"
+                                    : "dashicons-fullscreen-alt") +
+                                " dashicons text-right text-3xl text-white absolute top-2 right-4 hover:cursor-pointer"
+                            }></span>
+
+                        {showDescription && (
+                            <p className="text-atypic-primary text-center m-0 font-semibold italic p-1">
+                                {collection.cmb2.gallery.description || __("No description.")}
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Selected image */}
+                    <div
+                        className={`${isFullscreen ? "h-[60vh]" : "h-[400px]"
+                            } w-full flex items-center justify-center`}>
+                        <img
+                            ref={previewImageRef}
+                            key={selectedImage.url}
+                            className={previewImageFormat + " hover:cursor-pointer"}
+                            onLoad={() =>
+                                setPreviewImageFormat(
+                                    previewImageRef.current.width > previewImageRef.current.height
+                                        ? "w-[100%] max-w-md sm:max-w-xl block"
+                                        : `${isFullscreen ? "h-[60vh]" : "max-h-[400px]"
+                                        } max-w-[100%] block`
+                                )
+                            }
+                            onClick={(e) => handleFullscreen(e.target)}
+                            src={selectedImage.url}
+                            alt={selectedImage.description}
+                        />
+                    </div>
+                </Fragment>
+            ) : null}
+
+            {/* Selected Image Meta */}
+            <div className={isFullscreen ? "h-[11vh]" : ""}>
+                <h4 className="text-center p-1  my-0 text-white text-lg font-semibold">
+                    {selectedImage && selectedImage.title ? selectedImage.title : null}
+                </h4>
+                <p className="text-center p-1 italic my-0 text-white">
+                    {selectedImage && selectedImage.description
+                        ? selectedImage.description
+                        : null}
+                </p>
+            </div>
+
+            {/* Slider */}
+            <div
+                className={`${isFullscreen ? "h-[17vh]" : ""
+                    } flex gap-2 border-8 border-solid p-3 bg-white/25 py-2 atypic-scroll-x scroll-smooth rounded-[1rem]`}>
+                {Object.values(collection.cmb2.gallery.images).map((image, index) => (
+                    <Canvas>
+                        <Suspense fallback={console.log()}>
+                            <primitive object={gltf.scene} />
+                        <Suspense />
+                    </Canvas>
+                ))}
+            </div>
+        </div>
+    ) : (
+        <div className="mx-auto child:mx-auto child:block">
+            <Spinner />
+        </div>
+    );
+};
+
+export default Gallery;

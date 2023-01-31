@@ -6,6 +6,7 @@ namespace AtypicTheme\Functions;
 function atypic_blocks()
 {
     register_block_type(__DIR__ . "/../build/gallery");
+    register_block_type(__DIR__ . "/../build/gallery-3d");
 }
 add_action("init", "\AtypicTheme\Functions\atypic_blocks");
 
