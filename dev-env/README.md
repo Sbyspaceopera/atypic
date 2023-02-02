@@ -1,4 +1,4 @@
-# dev-env
+# dev-env (still in dev)
 
 The dev-env is handled through docker. You can alternatively use your own since it's just a theme.
 
