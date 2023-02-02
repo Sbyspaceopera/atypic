@@ -7,11 +7,11 @@ import { __ } from "@wordpress/i18n";
 
 import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { Suspense } from "@wordpress/element/build-types";
+import { Suspense } from 'react'
 
-import plane from '../assets/3d/plane.glb'
+import plane from '../../models/plane.glb'
 
-const Gallery = ({ collectionid }) => {
+const Gallery3D = ({ collectionid }) => {
     const [collection, setCollection] = useState(null);
     const [selectedImage, setSelectedImage] = useState(null);
     const [previewImageFormat, setPreviewImageFormat] = useState("");
@@ -33,7 +33,7 @@ const Gallery = ({ collectionid }) => {
                             gallery: {
                                 images: [
                                     {
-                                        url: plane.src,
+                                        url: "https://via.placeholder.com/150",
                                         title: "Title Test",
                                         description: "Don't forget to handle the error properly insteed of this mockup."
                                     }
@@ -103,22 +103,11 @@ const Gallery = ({ collectionid }) => {
                     <div
                         className={`${isFullscreen ? "h-[60vh]" : "h-[400px]"
                             } w-full flex items-center justify-center`}>
-                        <img
-                            ref={previewImageRef}
-                            key={selectedImage.url}
-                            className={previewImageFormat + " hover:cursor-pointer"}
-                            onLoad={() =>
-                                setPreviewImageFormat(
-                                    previewImageRef.current.width > previewImageRef.current.height
-                                        ? "w-[100%] max-w-md sm:max-w-xl block"
-                                        : `${isFullscreen ? "h-[60vh]" : "max-h-[400px]"
-                                        } max-w-[100%] block`
-                                )
-                            }
-                            onClick={(e) => handleFullscreen(e.target)}
-                            src={selectedImage.url}
-                            alt={selectedImage.description}
-                        />
+                        <Canvas>
+                            <Suspense fallback={console.log(gltf)}>
+                                <primitive object={gltf.scene} />
+                            </Suspense>
+                        </Canvas>
                     </div>
                 </Fragment>
             ) : null}
@@ -140,11 +129,30 @@ const Gallery = ({ collectionid }) => {
                 className={`${isFullscreen ? "h-[17vh]" : ""
                     } flex gap-2 border-8 border-solid p-3 bg-white/25 py-2 atypic-scroll-x scroll-smooth rounded-[1rem]`}>
                 {Object.values(collection.cmb2.gallery.images).map((image, index) => (
-                    <Canvas>
-                        <Suspense fallback={console.log()}>
-                            <primitive object={gltf.scene} />
-                        <Suspense />
-                    </Canvas>
+                    <img
+                    ref={imagesRef[index]}
+                    id={image.url_id}
+                    key={image.url}
+                    className={`${
+                      isFullscreen ? "h-full" : "h-[100px]"
+                    } hover:cursor-pointer rounded-md ${
+                      selectedImage && image.url_id === selectedImage.url_id
+                        ? "border-solid border-4 border-atypic-primary"
+                        : ""
+                    }`}
+                    src={image.url}
+                    alt={image.description}
+                    onClick={() => {
+                      setSelectedImage({ ...image });
+                      setPreviewImageFormat(
+                        imagesRef[index].current.width > imagesRef[index].current.height
+                          ? "w-[100%] max-w-md sm:max-w-xl block"
+                          : `${
+                              isFullscreen ? "h-full" : "max-h-[400px]"
+                            } max-w-[100%] block`
+                      );
+                    }}
+                  />
                 ))}
             </div>
         </div>
@@ -155,4 +163,4 @@ const Gallery = ({ collectionid }) => {
     );
 };
 
-export default Gallery;
+export default Gallery3D;

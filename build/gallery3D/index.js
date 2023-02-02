@@ -82,7 +82,7 @@ function Edit(_ref) {
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: " text-center ring-4 my-2 rounded-lg w-[200px] ring-atypic-primary ring-offset-3 border-4 border-solid border-black bg-white text-black font-semibold my-0 p-2 hover:cursor-pointer",
       onClick: () => setPreview(!preview)
-    }, preview ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hide Preview") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Preview"))), preview && collectionID && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("atypic-gallery", {
+    }, preview ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hide Preview") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Preview"))), preview && collectionID && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("atypic-gallery-3d", {
       collectionID: collectionID
     }));
   };
@@ -107,7 +107,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)("atypic/gallery", {
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)("atypic/gallery-3d", {
   apiVersion: 2,
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -146,7 +146,7 @@ function Save(_ref) {
   const {
     collectionID
   } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("atypic-gallery", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("atypic-gallery-3d", {
     collectionid: collectionID
   }));
 }
